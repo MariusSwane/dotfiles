@@ -1,3 +1,3 @@
-#!/bin/bash
+#!/bin/fish
 
-konsole -e "sudo pamac update"
+kitty sudo pacman -Squ

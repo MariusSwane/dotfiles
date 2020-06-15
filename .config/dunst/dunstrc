@@ -7,7 +7,7 @@
 [global]
     monitor = 0
     follow = keyboard
-    geometry = "300x60-20+48"
+    geometry = "400x60-20+48"
     indicate_hidden = yes
     shrink = yes
     transparency = 10
@@ -58,7 +58,8 @@
     show_indicators = yes
     icon_position = left
     max_icon_size = 40
-    #icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/:/usr/share/icons/Adwaita/256x256/status/
+    icon_path = /usr/share/icons/oxygen/base/32x32/actions:/usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/:/usr/share/icons/Adwaita/256x256/status/
+    
     sticky_history = yes
     history_length = 20
     dmenu = /usr/bin/dmenu -p dunst:
