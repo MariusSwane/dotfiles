@@ -4,7 +4,7 @@
 export EDITOR="vim"
 export PATH="$HOME/.local/bin:$PATH"
 export NNN_OPENER=$HOME/.config/nnn/plugins/nuke
-export NNN_BMS='c:~/.config/;j:/run/media/OSDisk/Users/mariussw/ARC_Project Dropbox/;k:/run/media/OSDisk/;h:~/'
+export NNN_BMS='c:~/.config/;j:/run/media/OSDisk/Users/mariussw/ARC_Project Dropbox/;k:/run/media/;h:~/'
 export NNN_PLUG='m:nmount;f:fzcd;o:fzopen;e:suedit;i:preview-tui'
 
 ##############################
