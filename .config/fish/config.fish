@@ -1,7 +1,7 @@
 #############################
 #   Environment VAriables  ##
 #############################
-export EDITOR="vim"
+export EDITOR="nvim"
 export PATH="$HOME/.local/bin:$PATH"
 export NNN_OPENER=$HOME/.config/nnn/plugins/nuke
 export NNN_BMS='c:~/.config/;j:/run/media/OSDisk/Users/mariussw/ARC_Project Dropbox/;k:/run/media/;h:~/'
@@ -30,3 +30,10 @@ alias dotfile='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
 # Pywal colors
 cat ~/.cache/wal/sequences
+
+###########################
+#####   Bindings    #######
+###########################
+
+bind \t accept-autosuggestion
+bind \t\t complete

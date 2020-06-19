@@ -54,6 +54,7 @@ ffmpeg
 ffmpegthumbs
 figlet
 file
+filelight
 filesystem
 filezilla
 findutils
@@ -195,6 +196,7 @@ mutt-wizard-git
 nano
 ncmpcpp
 neofetch
+neovim
 nerd-fonts-source-code-pro
 networkmanager
 networkmanager-dmenu-git

@@ -25,7 +25,7 @@ syntax on
 set wildmode=longest,list,full
 
 " Disables automatic commenting on newline:
-"autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 "Map leader
 let mapleader = ","
@@ -147,7 +147,7 @@ let g:startify_custom_header =
           \ startify#pad(g:ascii + startify#fortune#cowsay())
 
 let g:startify_bookmarks = [
-	\'~/.vimrc',
+	\'~/.config/nvim/init.vim',
 	\'~/Documents/Todo.txt',
 	\'~/.config/i3/config',
 	\'/run/media/OSDisk/Users/mariussw/ARC_Project Dropbox/Marius Wishman/GEO-ISD/isd_v2_11_06_2019_merged-Africa.csv']
