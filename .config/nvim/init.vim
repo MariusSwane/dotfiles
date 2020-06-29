@@ -54,7 +54,7 @@ cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 nnoremap ; :Files /home/mariuswis<CR>
 
 "Fuzzyfind in Dropbox
-"nnoremap <Leader>db :Files /run/media/mariuswis/OSDisk/Users/mariussw/Dropbox/<cr>
+nnoremap <Leader>db :Files /run/media/OSDisk/Users/mariussw/Dropbox/<cr>
 
 "Fuzzyfind ingnores git and wine
 let $FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
@@ -90,9 +90,9 @@ Plug 'mhinz/vim-startify'
 
 Plug 'tpope/vim-surround'
 
-Plug 'junegunn/vim-emoji'
+"Plug 'junegunn/vim-emoji'
 
-Plug 'itchyny/calendar.vim'
+"Plug 'itchyny/calendar.vim'
 
 Plug 'vim-airline/vim-airline'
 
@@ -148,7 +148,7 @@ let g:startify_custom_header =
 
 let g:startify_bookmarks = [
 	\'~/.config/nvim/init.vim',
-	\'~/Documents/Todo.txt',
+	\'/run/media/OSDisk/Users/mariussw/ARC_Project Dropbox/Marius Wishman/Todo.txt',
 	\'~/.config/i3/config',
 	\'/run/media/OSDisk/Users/mariussw/ARC_Project Dropbox/Marius Wishman/GEO-ISD/isd_v2_11_06_2019_merged-Africa.csv']
 

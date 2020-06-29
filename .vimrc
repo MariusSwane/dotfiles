@@ -196,7 +196,7 @@ let g:startify_bookmarks = [
 	\'~/.vimrc',
 	\'~/Documents/Todo.txt',
 	\'~/.config/i3/config',
-	\'/run/media/OSDisk/Users/mariussw/ARC_Project Dropbox/Marius Wishman/GEO-ISD/isd_v2_11_06_2019_merged-Africa.csv']
+	\'/run/media/mariuswis/OSDisk/Users/mariussw/ARC_Project Dropbox/Marius Wishman/GEO-ISD/isd_v2_11_06_2019_merged-Africa.csv']
 
     let g:startify_lists = [
           \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },

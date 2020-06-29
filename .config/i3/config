@@ -29,7 +29,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- m
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet
+#exec --no-startup-id nm-applet
 
 # Autostart 
 exec --no-startup-id $HOME/Scripts/wall
@@ -37,6 +37,7 @@ exec --no-startup-id unclutter
 exec --no-startup-id dunst
 exec_always --no-startup-id autotiling
 exec --no-startup-id $HOME/Scripts/startup
+exec --no-startup-id udiskie -nTa
 
 # Gaps 
 for_window [class=".*"] border pixel 2
@@ -111,7 +112,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+#bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -173,7 +174,7 @@ exec --no-startup-id xautolock -time 1 -locker betterlockscreen -l blur
 # Launch Apps and scripts
 bindsym $mod+b exec brave
 bindsym $mod+m exec kitty -e neomutt
-bindsym $mod+v exec kitty vim
+bindsym $mod+v exec kitty nvim
 bindsym $mod+n exec kitty neofetch --loop
 bindsym $mod+e exec kitty nnn -cax
 bindsym $mod+Shift+m exec mbsync -a

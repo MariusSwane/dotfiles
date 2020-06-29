@@ -4,7 +4,7 @@
 export EDITOR="nvim"
 export PATH="$HOME/.local/bin:$PATH"
 export NNN_OPENER=$HOME/.config/nnn/plugins/nuke
-export NNN_BMS='c:~/.config/;j:/run/media/OSDisk/Users/mariussw/ARC_Project Dropbox/;k:/run/media/;h:~/'
+export NNN_BMS='c:~/.config/;j:/run/media/OSDisk/Users/mariussw/ARC_Project Dropbox/Marius Wishman/;k:/run/media/;h:~/'
 export NNN_PLUG='m:nmount;f:fzcd;o:fzopen;e:suedit;i:preview-tui'
 
 ##############################
@@ -15,7 +15,6 @@ alias install='pamac install'
 alias nm='neomutt'
 alias v='vim'
 alias n='nnn -cax'
-alias wall='$HOME/Scripts/wall'
 alias pui='sudo pacman -Syu'
 alias p='sudo pacman'
 alias cp='cp -iv'
@@ -34,6 +33,4 @@ cat ~/.cache/wal/sequences
 ###########################
 #####   Bindings    #######
 ###########################
-
-bind \t accept-autosuggestion
-bind \t\t complete
+bind --user \e\t forward-char
