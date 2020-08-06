@@ -54,7 +54,7 @@ cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 nnoremap ; :Files /home/mariuswis<CR>
 
 "Fuzzyfind in Dropbox
-nnoremap <Leader>db :Files /run/media/OSDisk/Users/mariussw/Dropbox/<cr>
+nnoremap <Leader>db :Files /run/media/OSDisk/Users/mariussw/ARC_Project Dropbox/Marius Wishman<cr>
 
 "Fuzzyfind ingnores git and wine
 let $FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
@@ -144,13 +144,13 @@ let g:ascii = [
 \]
 
 let g:startify_custom_header =  
-          \ startify#pad(g:ascii + startify#fortune#cowsay())
+          \ startify#pad(g:ascii)
 
 let g:startify_bookmarks = [
 	\'~/.config/nvim/init.vim',
 	\'/run/media/OSDisk/Users/mariussw/ARC_Project Dropbox/Marius Wishman/Todo.txt',
 	\'~/.config/i3/config',
-	\'/run/media/OSDisk/Users/mariussw/ARC_Project Dropbox/Marius Wishman/GEO-ISD/isd_v2_11_06_2019_merged-Africa.csv']
+	\'/run/media/OSDisk/Users/mariussw/ARC_Project Dropbox/Marius Wishman/GEO-ISD/ISDV2_Africa.csv']
 
     let g:startify_lists = [
           \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
