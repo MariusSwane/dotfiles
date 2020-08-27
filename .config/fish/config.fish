@@ -2,7 +2,7 @@
 #   Environment VAriables  ##
 #############################
 export EDITOR="nvim"
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/.wine/drive_c/users/username/Desktop:$PATH"
 export NNN_OPENER=$HOME/.config/nnn/plugins/nuke
 export NNN_BMS='c:~/.config/;j:/run/media/OSDisk/Users/mariussw/ARC_Project Dropbox/Marius Wishman/;k:/run/media/;h:~/'
 export NNN_PLUG='m:nmount;f:fzcd;o:fzopen;e:suedit;i:preview-tui'

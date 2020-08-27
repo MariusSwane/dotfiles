@@ -14,12 +14,12 @@ font pango:monospace 10
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- m
+#exec --no-startup-id xss-lock --transfer-sleep-lock -- m
 #i3lock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
-#exec --no-startup-id nm-applet
+exec --no-startup-id nm-applet
 
 # Autostart 
 exec --no-startup-id $HOME/Scripts/wall
@@ -28,6 +28,9 @@ exec --no-startup-id dunst
 exec_always --no-startup-id autotiling
 exec --no-startup-id $HOME/Scripts/startup
 exec --no-startup-id udiskie -nTa
+exec --no-startup-id protonmail-bridge
+exec --no-startup-id blueman-applet
+exec --no-startup-id nm-applet
 
 # Gaps 
 gaps inner 40
@@ -48,7 +51,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec urxvt
 
 # kill focused window
 bindsym $mod+q kill
@@ -160,7 +163,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 #bindsym $mod+shift+x exec mantablockscreen -sc
 bindsym $mod+shift+x exec betterlockscreen -l blur
 #exec --no-startup-id xautolock -time 1 -locker mantablockscreen -sc
-exec --no-startup-id xautolock -time 1 -locker betterlockscreen -l blur
+#exec --no-startup-id xautolock -time 1 -locker betterlockscreen -l blur
 
 # Launch Apps and scripts
 bindsym $mod+b exec brave
