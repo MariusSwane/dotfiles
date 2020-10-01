@@ -31,6 +31,7 @@ exec --no-startup-id udiskie -nTa
 exec --no-startup-id protonmail-bridge
 exec --no-startup-id blueman-applet
 exec --no-startup-id nm-applet
+exec_always --no-startup-id light-locker --lock-on-lid
 
 # Gaps 
 gaps inner 40
@@ -161,16 +162,13 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # Lockscreen
 #bindsym $mod+shift+x exec mantablockscreen -sc
-bindsym $mod+shift+x exec betterlockscreen -l blur
+#bindsym $mod+shift+x exec betterlockscreen -l blur
+bindsym $mod+shift+x exec light-locker-command -l
 #exec --no-startup-id xautolock -time 1 -locker mantablockscreen -sc
 #exec --no-startup-id xautolock -time 1 -locker betterlockscreen -l blur
 
 # Launch Apps and scripts
 bindsym $mod+b exec brave
-bindsym $mod+m exec kitty -e neomutt
-bindsym $mod+v exec kitty nvim
-bindsym $mod+n exec kitty neofetch --loop
-bindsym $mod+e exec kitty nnn -cax
 bindsym $mod+Shift+m exec mbsync -a
 bindsym $mod+shift+z exec ~/Zotero_linux-x86_64/zotero
 bindsym $mod+shift+a exec ~/Scripts/AlbumPick

@@ -50,6 +50,11 @@ nnoremap s :set spell<CR>
 "Save file as sudo on files that require root
 cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 
+" Remap save to ctrl+enter
+map <C-s> :w<CR>
+vmap <c-s> <Esc><c-s>gv
+imap <c-s> <Esc><c-s>
+
 "Fuzzy files config
 nnoremap ; :Files /home/mariuswis<CR>
 

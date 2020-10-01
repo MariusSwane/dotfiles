@@ -14,6 +14,7 @@ settings:
     global:
     - https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
   content.notifications:
+    https://www.facebook.com: false
     https://www.reddit.com: false
     https://www.youtube.com: false
   content.plugins:
