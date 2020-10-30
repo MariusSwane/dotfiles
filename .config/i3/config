@@ -17,10 +17,6 @@ font pango:monospace 10
 #exec --no-startup-id xss-lock --transfer-sleep-lock -- m
 #i3lock --nofork
 
-# NetworkManager is the most popular way to manage wireless networks on Linux,
-# and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet
-
 # Autostart 
 exec --no-startup-id $HOME/Scripts/wall
 exec --no-startup-id unclutter
@@ -28,7 +24,7 @@ exec --no-startup-id dunst
 exec_always --no-startup-id autotiling
 exec --no-startup-id $HOME/Scripts/startup
 exec --no-startup-id udiskie -nTa
-exec --no-startup-id protonmail-bridge
+exec --no-startup-id protonmail-bridge --no-window
 exec --no-startup-id blueman-applet
 exec --no-startup-id nm-applet
 exec_always --no-startup-id light-locker --lock-on-lid
@@ -52,7 +48,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec st -f iosevka:medium:italic:size=12
 
 # kill focused window
 bindsym $mod+q kill
@@ -168,14 +164,12 @@ bindsym $mod+shift+x exec light-locker-command -l
 #exec --no-startup-id xautolock -time 1 -locker betterlockscreen -l blur
 
 # Launch Apps and scripts
-bindsym $mod+b exec brave
+bindsym $mod+b exec qutebrowser
 bindsym $mod+Shift+m exec mbsync -a
-bindsym $mod+shift+z exec ~/Zotero_linux-x86_64/zotero
 bindsym $mod+shift+a exec ~/Scripts/AlbumPick
-bindsym $mod+shift+c exec ~/Scripts/cavacolor
 bindsym $mod+shift+d exec ~/Scripts/coronaout
-bindsym $mod+shift+s exec ~/.wine/drive_c/Program\ Files/Lizardtech/MrSID\ Viewer/MrSIDViewer.exe 
 bindsym $mod+shift+p exec ~/.config/polybar/launch.sh
+bindsym $mod+shift+b exec bitwarden-desktop
 
 # resize window (you can also use the mouse for that)
 mode "resize" {

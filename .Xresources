@@ -71,3 +71,8 @@ URxvt*depth: 32
 URxvt.font: xft:iosevka:medium:italic
 ! URxvt.letterSpace: -1
 URxvt.scrollBar: invisible
+! Font size extention
+URxvt.perl-ext-common: font-size
+
+! St config
+*.alpha: 0.65

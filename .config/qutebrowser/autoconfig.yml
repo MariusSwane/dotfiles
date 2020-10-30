@@ -14,11 +14,14 @@ settings:
     global:
     - https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
   content.notifications:
+    https://mail.protonmail.com: true
     https://www.facebook.com: false
     https://www.reddit.com: false
     https://www.youtube.com: false
   content.plugins:
     global: true
+  content.register_protocol_handler:
+    https://mail.google.com?extsrc=mailto&url=%25s: false
   fonts.completion.category:
     global: italic bold default_size default_family
   fonts.completion.entry:

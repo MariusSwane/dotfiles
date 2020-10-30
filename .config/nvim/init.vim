@@ -1,6 +1,6 @@
 "INIT.VIM"
 
-set number "Line numbering
+set number relativenumber "Line numbering
 
 set incsearch "Set incremental search
 
@@ -50,10 +50,11 @@ nnoremap s :set spell<CR>
 "Save file as sudo on files that require root
 cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 
-" Remap save to ctrl+enter
-map <C-s> :w<CR>
-vmap <c-s> <Esc><c-s>gv
-imap <c-s> <Esc><c-s>
+" Remapping splits resizing
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 "Fuzzy files config
 nnoremap ; :Files /home/mariuswis<CR>
@@ -95,6 +96,8 @@ Plug 'mhinz/vim-startify'
 
 Plug 'tpope/vim-surround'
 
+Plug 'jalvesaq/Nvim-R'
+
 "Plug 'junegunn/vim-emoji'
 
 "Plug 'itchyny/calendar.vim'
@@ -112,6 +115,10 @@ let g:vimtex_view_method = 'zathura'
 
 " For all text files set 'textwidth' to 80 characters.
 autocmd FileType text setlocal textwidth=80
+augroup END
+
+" For all tex files set 'textwidth' to 80 characters.
+autocmd FileType tex setlocal textwidth=80
 augroup END
 
 "Colorizer
