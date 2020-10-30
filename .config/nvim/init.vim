@@ -44,8 +44,14 @@ let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
 " Map substitute
 nnoremap S :%s//g<Left><Left>
 
-" Turn off spell checking
+" Turn on spell checking
 nnoremap s :set spell<CR>
+
+" Yank file dir path
+nnoremap <Leader>yp :let @+=expand('%:p:h')<CR> 
+
+"Paste file dir path
+nnoremap <Leader>pp :put =expand('%:p:h')<CR>
 
 "Save file as sudo on files that require root
 cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
