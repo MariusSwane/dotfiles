@@ -8,6 +8,8 @@ config_version: 2
 settings:
   auto_save.session:
     global: true
+  content.autoplay:
+    global: false
   content.cookies.accept:
     global: no-3rdparty
   content.host_blocking.lists:
@@ -15,6 +17,7 @@ settings:
     - https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
   content.notifications:
     https://mail.protonmail.com: true
+    https://mariuswis.cloud.seedboxes.cc: true
     https://www.facebook.com: false
     https://www.reddit.com: false
     https://www.youtube.com: false

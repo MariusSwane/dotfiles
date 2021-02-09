@@ -1,33 +1,102 @@
 <!DOCTYPE html>
 <html>
 <head>
- <title>W3.CSS Template</title>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1">
- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<title>Home</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
  <link rel="stylesheet" href="https://code.cdn.mozilla.net/fonts/fira.css">
+
  <style>
- body,h1 {font-family: "Fira Sans"}
- body, html {height: 100%}
- .bgimg {
-   background-image: url('../../Pictures/wal/wall.jpg');
-   min-height: 100%;
-   background-position: center;
-   background-size: cover;
+ body{
+	font-family: "Fira Sans";
+	background-image: url('../../Pictures/wal/wall.jpg');
+  	background-repeat: no-repeat;
+  	background-attachment: fixed;
+   	background-position: center;
+   	background-size: cover;
  }
+
+ .container {
+	 width: 100%;
+	 height: 100vh;
+	 display: flex;
+	 align-items: center;
+	 justify content: center;
+	 flex-direction; column;
+ }
+ 
+ #clock {
+	 font-size: 4.0rem;
+	 color: #fff;
+	 margin-bottom: .25em;
+	 margin-top: 4em;
+	 text-align: center;
+ }
+
+ #weather-container {
+	 padding: 1em;
+	 border-radius: 3px;
+	 color: #fff;
+	 font-size: 3.0rem;
+	 text-align: center;
+ }
+
+ .inline {
+	 display: inline-block;
+ }
+
  </style>
- <script src="background.js"></script>
+
 </head>
 
-<body onload="startTime();date()">
- <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
-   <div class="w3-display-middle">
-     <h1 class="w3-jumbo w3-animate-top">
-     <div id="txt"></div></h1>
-     <hr class="w3-border-grey" style="margin:auto;width:40%">
-     <p class="w3-large w3-center" id="printdate"></p>
-   </div>
- </div>
+<body>
+		<div id="clock"></div>
+		<div id="weather-container">
+				<div id="weather-description" class="inline"></div>
+				<div class="inline">|</div>
+				<div id="temp" class="inline"></div>
+		</div>
+
+    <script>
+        // Get current time and format
+        getTime = () => {
+            let date = new Date(),
+                min = date.getMinutes(),
+                hour = date.getHours();
+
+            return "" + 
+                (hour < 10 ? ("0" + hour) : hour) + ":" + 
+                (min < 10 ? ("0" + min) : min); 
+        }
+
+        window.onload = () => {
+            let xhr = new XMLHttpRequest();
+            // Request to open weather map
+            xhr.open('GET', 'https://api.openweathermap.org/data/2.5/weather?id=3133880&units=metric&appid=8e5dadbb9476f9f47555f9205fdff286');
+            xhr.onload = () => {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        let json = JSON.parse(xhr.responseText);
+                        console.log(json);
+                        document.getElementById("temp").innerHTML = json.main.temp.toFixed(0) + " C°";
+                        document.getElementById("weather-description").innerHTML = json.weather[0].description;
+                    } else {
+                        console.log('error msg: ' + xhr.status);
+                    }
+                }
+            }
+            xhr.send();
+            // Set up the clock
+            document.getElementById("clock").innerHTML = getTime();
+            // Set clock interval to tick clock
+            setInterval( () => {
+                document.getElementById("clock").innerHTML = getTime();
+            },100);
+        }
+    </script>
 </body>
 
 </html>

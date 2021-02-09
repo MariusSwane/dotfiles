@@ -48,10 +48,13 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec st -f iosevka:medium:italic:size=12
+bindsym $mod+Return exec st 
 
 # kill focused window
 bindsym $mod+q kill
+
+# start rofi
+#bindsym $mod+d exec rofi -show
 
 # start dmenu
 bindsym $mod+d exec dmenu_run

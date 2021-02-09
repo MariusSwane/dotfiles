@@ -92,7 +92,7 @@ Plug 'chrisbra/csv.vim'
 
 Plug 'lervag/vimtex'
 
-Plug 'SirVer/ultisnips'
+"Plug 'SirVer/ultisnips'
 
 Plug 'junegunn/fzf', { 'do': './install --bin' }
 

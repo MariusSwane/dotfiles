@@ -26,6 +26,8 @@ alias grep="grep --color=auto"
 alias diff="diff --color=auto" 
 alias ccat="highlight --out-format=ansi"
 alias dotfile='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+alias starti3='startx $HOME/.i3/.xinitrc'
+alias startsowm='startx $HOME/.sowm/.xinitrc'
 
 # Pywal colors
 cat ~/.cache/wal/sequences
