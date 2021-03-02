@@ -18,7 +18,7 @@ font pango:monospace 10
 #i3lock --nofork
 
 # Autostart 
-exec --no-startup-id $HOME/Scripts/wall
+exec --no-startup-id $HOME/Scripts/wall2
 exec --no-startup-id unclutter
 exec --no-startup-id dunst
 exec_always --no-startup-id autotiling
@@ -48,7 +48,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec st 
+bindsym $mod+Return exec urxvt
 
 # kill focused window
 bindsym $mod+q kill
@@ -57,7 +57,7 @@ bindsym $mod+q kill
 #bindsym $mod+d exec rofi -show
 
 # start dmenu
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec rofi -show
 
 # change borders
 bindsym $mod+u border none
