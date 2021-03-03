@@ -21,13 +21,11 @@ font pango:monospace 10
 exec --no-startup-id $HOME/Scripts/wall2
 exec --no-startup-id unclutter
 exec --no-startup-id dunst
-exec_always --no-startup-id autotiling
+#exec_always --no-startup-id autotiling
 exec --no-startup-id $HOME/Scripts/startup
 exec --no-startup-id udiskie -nTa
-exec --no-startup-id protonmail-bridge --no-window
 exec --no-startup-id blueman-applet
 exec --no-startup-id nm-applet
-exec_always --no-startup-id light-locker --lock-on-lid
 
 # Gaps 
 gaps inner 40
@@ -54,10 +52,10 @@ bindsym $mod+Return exec urxvt
 bindsym $mod+q kill
 
 # start rofi
-#bindsym $mod+d exec rofi -show
+bindsym $mod+d exec rofi -show
 
 # start dmenu
-bindsym $mod+d exec rofi -show
+#bindsym $mod+d exec dmenu
 
 # change borders
 bindsym $mod+u border none
@@ -162,7 +160,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # Lockscreen
 #bindsym $mod+shift+x exec mantablockscreen -sc
 #bindsym $mod+shift+x exec betterlockscreen -l blur
-bindsym $mod+shift+x exec light-locker-command -l
+#bindsym $mod+shift+x exec light-locker-command -l
 #exec --no-startup-id xautolock -time 1 -locker mantablockscreen -sc
 #exec --no-startup-id xautolock -time 1 -locker betterlockscreen -l blur
 
@@ -202,4 +200,4 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 #Colors
-client.unfocused  #444957d0  #30333dd0  #5c6063d0  #30333dd0  #30333dd0
+#client.unfocused  #444957d0  #30333dd0  #5c6063d0  #30333dd0  #30333dd0

@@ -1,11 +1,12 @@
 #############################
-#   Environment VAriables  ##
+#   Environment Variables  ##
 #############################
 export EDITOR="nvim"
 export PATH="$HOME/.local/bin:$HOME/.wine/drive_c/users/username/Desktop:$PATH"
 export NNN_OPENER=$HOME/.config/nnn/plugins/nuke
 export NNN_BMS='c:~/.config/;j:/run/media/OSDisk/Users/mariussw/ARC_Project Dropbox/Marius Wishman/;k:/run/media/;h:~/'
 export NNN_PLUG='m:nmount;f:fzcd;o:fzopen;e:suedit;i:preview-tui'
+export BW_SESSION="Tno0HMCJs3s3v2fd9xXLowOYxyApOi0j4WS0vQagH9knW6SZSpVwh1Tv/OTsl2LY33WQi8zr8N/Bkvkz611XLg=="
 
 ##############################
 #####    ALIASES    ##########
