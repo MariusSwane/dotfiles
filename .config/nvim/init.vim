@@ -1,21 +1,27 @@
 "INIT.VIM"
 
-set number relativenumber "Line numbering
-
-set incsearch "Set incremental search
-
-set showcmd "show which commands are read
-
-set ic "Set Ignore case in search as default
-
-set scrolloff=50 "Setting scroll centering
-
-set showmatch "highlight matching {[()]}"
-
-set clipboard+=unnamedplus "yank to clipboard
-
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Some basics:
+set number relativenumber "Line numbering
+set incsearch "Set incremental search
+set showcmd "show which commands are read
+set ic "Set Ignore case in search as default
+set scrolloff=50 "Setting scroll centering
+set showmatch "highlight matching {[()]}"
+set clipboard+=unnamedplus "yank to clipboard
 set nocompatible
+set tw=80
+
+" For all text files set 'textwidth' to 80 characters.
+"autocmd FileType text setlocal textwidth=80
+"augroup END
+"
+"" For all tex files set 'textwidth' to 80 characters.
+"autocmd FileType tex setlocal textwidth=80
+"augroup END
+
+"Using latex
+let g:tex_flavor = 'latex'
 
 filetype plugin on
 
@@ -27,8 +33,10 @@ set wildmode=longest,list,full
 " Disables automatic commenting on newline:
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-"Set text width
-set tw=80
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Omnicompletion
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
 
 " Use Ctrl+Space to do omnicompletion:
 if has('nvim') || has('gui_running')
@@ -37,26 +45,23 @@ else
 	inoremap <Nul> <C-x><C-o>
 endif
 
-"Map leader
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Map leaders
 let mapleader = ";"
 let maplocalleader = ","
 
-" Set ultisnips triggers and other Ultisnipps things
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-
-let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
-
-"Set UltiSnips file types
-"au FileType todo :UltiSnipsAddFiletypes todo
-"au FileType txt :UltiSnipsAddFiletypes txt 
-
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""
+" Remappings "
+""""""""""""""
 " Map substitute
-nnoremap S :%s//g<Left><Left>
+nnoremap <LocalLeader>S :%s//g<Left><Left>
 
 " Turn on spell checking
 nnoremap s :set spell<CR>
+
+" Spell suggestions
+nnoremap S ea<C-X><C-S>
 
 " Yank file dir path
 nnoremap <Leader>yp :let @+=expand('%:p:h')<CR> 
@@ -73,48 +78,12 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-"Fuzzy files config
-nnoremap ff :Files /home/mariuswis<CR>
-
-"Fuzzyfind in Dropbox
-nnoremap <Leader>db :Files /run/media/OSDisk/Users/mariussw/ARC_Project Dropbox/Marius Wishman<cr>
-
-"Fuzzyfind ingnores git and wine
-let $FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
-let $FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .wine'
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Options and bindings for Nvim-R
-
-let R_auto_start = 1
-let R_objbr_place = 'console,above'
-let R_objbr_h = 30
-
-function! s:customNvimRMappings()
-	nmap <buffer> <Leader>sr <Plug>RStart
-	nmap <buffer> <Space> <Plug>RDSendLine
-   	vmap <Space> <Plug>RDSendSelection
-endfunction
-
-augroup myNvimR
-	au!
-	autocmd filetype r call s:customNvimRMappings()
-augroup end
-
-autocmd FileType r setlocal formatoptions+=t
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"Vimtex-compile
-nnoremap <Leader>c :VimtexCompile<CR>
+""""""""""""""""""""
+" Vim-plug section "
+""""""""""""""""""""
 
-"Remap thesaurus"
-nnoremap <Leader>t :ThesaurusQueryReplaceCurrentWord<CR>
-
-"Using latex
-let g:tex_flavor = 'latex'
-
-"Vim-plug section
 call plug#begin(stdpath('data') . '/plugged')
 
 Plug 'chrisbra/Colorizer'
@@ -147,23 +116,76 @@ Plug 'vim-airline/vim-airline'
 
 call plug#end()
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"""""""""""""""""""
+" Plugin settings "
+"""""""""""""""""""
+
+"Options and bindings for Nvim-R
+
+let R_auto_start = 1
+let R_objbr_place = 'console,above'
+let R_objbr_h = 30
+autocmd VimResized * let R_editor_width = 80
+
+function! s:customNvimRMappings()
+	nmap <buffer> <Leader>sr <Plug>RStart
+	nmap <buffer> <Space> <Plug>RDSendLine
+   	vmap <Space> <Plug>RDSendSelection
+endfunction
+
+augroup myNvimR
+	au!
+	autocmd filetype r call s:customNvimRMappings()
+augroup end
+
+autocmd FileType r setlocal formatoptions+=t
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Set ultisnips triggers and other Ultisnipps things
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
+
+"Set UltiSnips file types
+"au FileType todo :UltiSnipsAddFiletypes todo
+"au FileType txt :UltiSnipsAddFiletypes txt 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Fuzzy files config
+nnoremap ff :Files /home/mariuswis<CR>
+
+"Fuzzyfind in Dropbox
+nnoremap <Leader>db :Files /run/media/OSDisk/Users/mariussw/ARC_Project Dropbox/Marius Wishman<cr>
+
+"Fuzzyfind ingnores git and wine
+let $FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+let $FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .wine'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Vimtex-compile
+nnoremap <LocalLeader>c :VimtexCompile<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Remap thesaurus"
+nnoremap <LocalLeader>t :ThesaurusQueryReplaceCurrentWord<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "colorscheme wal 
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Zathura/vimtex
 let g:vimtex_view_method = 'zathura'
 
-" For all text files set 'textwidth' to 80 characters.
-"autocmd FileType text setlocal textwidth=80
-"augroup END
-"
-"" For all tex files set 'textwidth' to 80 characters.
-"autocmd FileType tex setlocal textwidth=80
-"augroup END
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Colorizer
-let g:colorizer_auto_color = 1 "Currently not working...
+let g:colorizer_auto_color = 1
 nnoremap <Leader>h :ColorHighlight<CR>
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Startify customization
 
 let g:ascii = [
