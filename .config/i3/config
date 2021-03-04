@@ -22,6 +22,7 @@ exec --no-startup-id $HOME/Scripts/wall2
 exec --no-startup-id unclutter
 exec --no-startup-id dunst
 #exec_always --no-startup-id autotiling
+#exec_always --no-startup-id .cargo/bin/13-auto-layout
 exec --no-startup-id $HOME/Scripts/startup
 exec --no-startup-id udiskie -nTa
 exec --no-startup-id blueman-applet
@@ -57,7 +58,7 @@ bindsym $mod+Return exec urxvt
 bindsym $mod+q kill
 
 # start rofi
-bindsym $mod+d exec rofi -show
+bindsym $mod+d exec rofi -show run
 
 # start dmenu
 #bindsym $mod+d exec dmenu

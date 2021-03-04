@@ -27,8 +27,19 @@ set wildmode=longest,list,full
 " Disables automatic commenting on newline:
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
+"Set text width
+set tw=80
+
+" Use Ctrl+Space to do omnicompletion:
+if has('nvim') || has('gui_running')
+	inoremap <C-Space> <C-x><C-o>
+else
+	inoremap <Nul> <C-x><C-o>
+endif
+
 "Map leader
-let mapleader = ","
+let mapleader = ";"
+let maplocalleader = ","
 
 " Set ultisnips triggers and other Ultisnipps things
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -63,7 +74,7 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 "Fuzzy files config
-nnoremap ; :Files /home/mariuswis<CR>
+nnoremap ff :Files /home/mariuswis<CR>
 
 "Fuzzyfind in Dropbox
 nnoremap <Leader>db :Files /run/media/OSDisk/Users/mariussw/ARC_Project Dropbox/Marius Wishman<cr>
@@ -71,6 +82,28 @@ nnoremap <Leader>db :Files /run/media/OSDisk/Users/mariussw/ARC_Project Dropbox/
 "Fuzzyfind ingnores git and wine
 let $FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 let $FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .wine'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Options and bindings for Nvim-R
+
+let R_auto_start = 1
+let R_objbr_place = 'console,above'
+let R_objbr_h = 30
+
+function! s:customNvimRMappings()
+	nmap <buffer> <Leader>sr <Plug>RStart
+	nmap <buffer> <Space> <Plug>RDSendLine
+   	vmap <Space> <Plug>RDSendSelection
+endfunction
+
+augroup myNvimR
+	au!
+	autocmd filetype r call s:customNvimRMappings()
+augroup end
+
+autocmd FileType r setlocal formatoptions+=t
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "Vimtex-compile
 nnoremap <Leader>c :VimtexCompile<CR>
@@ -120,12 +153,12 @@ call plug#end()
 let g:vimtex_view_method = 'zathura'
 
 " For all text files set 'textwidth' to 80 characters.
-autocmd FileType text setlocal textwidth=80
-augroup END
-
-" For all tex files set 'textwidth' to 80 characters.
-autocmd FileType tex setlocal textwidth=80
-augroup END
+"autocmd FileType text setlocal textwidth=80
+"augroup END
+"
+"" For all tex files set 'textwidth' to 80 characters.
+"autocmd FileType tex setlocal textwidth=80
+"augroup END
 
 "Colorizer
 let g:colorizer_auto_color = 1 "Currently not working...
