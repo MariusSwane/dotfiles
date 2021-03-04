@@ -61,7 +61,7 @@ nnoremap <LocalLeader>S :%s//g<Left><Left>
 nnoremap s :set spell<CR>
 
 " Spell suggestions
-nnoremap S ea<C-X><C-S><Esc>
+nnoremap S ea<C-X><C-S>
 
 " Yank file dir path
 nnoremap <Leader>yp :let @+=expand('%:p:h')<CR> 
