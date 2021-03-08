@@ -94,7 +94,7 @@ Plug 'chrisbra/csv.vim'
 
 Plug 'lervag/vimtex'
 
-"Plug 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips', { 'do': '/usr/local/bin/python3 install.py' }
 
 Plug 'junegunn/fzf', { 'do': './install --bin' }
 

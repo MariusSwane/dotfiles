@@ -18,8 +18,7 @@ font pango:monospace 10
 #i3lock --nofork
 
 # Autostart 
-exec --no-startup-id $HOME/Scripts/wall2
-exec --no-startup-id unclutter
+#exec --no-startup-id unclutter
 exec --no-startup-id dunst
 #exec_always --no-startup-id autotiling
 #exec_always --no-startup-id .cargo/bin/13-auto-layout
@@ -27,6 +26,7 @@ exec --no-startup-id $HOME/Scripts/startup
 exec --no-startup-id udiskie -nTa
 exec --no-startup-id blueman-applet
 exec --no-startup-id nm-applet
+exec --no-startup-id $HOME/Scripts/wall2
 
 # Gaps 
 gaps inner 40
@@ -161,7 +161,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+e exec i3-msg exit
 
 # Lockscreen
 #bindsym $mod+shift+x exec mantablockscreen -sc
