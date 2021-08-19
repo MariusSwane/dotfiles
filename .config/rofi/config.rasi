@@ -1,0 +1,6 @@
+configuration {modi: "run";
+font: "iosevka medium italic 12";
+theme: "~/.cache/wal/colors-rofi-dark.rasi";
+show-icons: true;
+lines: 4;
+}

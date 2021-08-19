@@ -1,0 +1,52 @@
+autocenter_mode = "yes"
+follow_now_playing_lyrics = "yes"
+ignore_leading_the = "yes"
+ignore_diacritics = "yes"
+default_place_to_search_in = "database"
+
+## Display Modes ##
+playlist_editor_display_mode = "columns"
+search_engine_display_mode = "columns"
+browser_display_mode = "columns"
+playlist_display_mode = "columns"
+
+## Song List ##
+#song_list_format = "{$7%a - $9}{$5%t$9}|{$5%f$9}$R{$6%b $9}{$3%l$9}"
+
+## Classic Interface ##
+#song_status_format = " $6%a $7⟫⟫ $3%t $7⟫⟫ $4%b "
+
+## Navigation ##
+cyclic_scrolling = "yes"
+header_text_scrolling = "yes"
+jump_to_now_playing_song_at_start = "yes"
+lines_scrolled = "2"
+
+## Other ##
+system_encoding = "utf-8"
+regular_expressions = "extended"
+
+## Selected tracks ##
+selected_item_prefix = "* "
+
+## Seeking ##
+incremental_seeking = "yes"
+seek_time = "1"
+
+## Progress Bar ##
+progressbar_look =  "=>-"
+
+## Now Playing ##
+now_playing_prefix = "> "
+centered_cursor = "yes"
+
+## Misc ##
+display_bitrate = "yes"
+enable_window_title = "yes"
+empty_tag_marker = ""
+
+## Notification ##
+execute_on_song_change =  notifyMusic
+
+## Lyrics ##
+lyrics_fetchers = genius, azlyrics, musixmatch, sing365, metrolyrics, justsomelyrics, jahlyrics, plyrics, tekstowo, zeneszoveg, internet

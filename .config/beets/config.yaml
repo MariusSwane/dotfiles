@@ -1,0 +1,4 @@
+directory: ~/Music
+library: ~/.local/share/beets/laptop.db
+plugins: fetchart embedart fromfilename random
+

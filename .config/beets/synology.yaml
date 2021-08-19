@@ -1,0 +1,4 @@
+directory: ~/Synology/Music
+library: ~/.local/share/beets/synology.db
+plugins: fetchart embedart fromfilename random
+
