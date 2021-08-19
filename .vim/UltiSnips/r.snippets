@@ -1,0 +1,67 @@
+# install/update
+snippet inst
+install.packages("${0:package}")
+endsnippet
+
+snippet upt
+update.packages()
+endsnippet
+
+# includes
+snippet lib
+library(${0:package})
+endsnippet
+
+snippet source
+source('${0:file}')
+endsnippet
+
+# conditionals
+snippet if
+if (${1:condition}) {
+	${0}
+}
+endsnippet
+
+snippet el
+else {
+	${0}
+}
+endsnippet
+
+snippet ei
+else if (${1:condition}) {
+	${0}
+}
+endsnippet
+
+# loops
+snippet wh
+while(${1}) {
+	${2}
+}
+endsnippet
+
+snippet for
+for (${1:item} in ${2:list}) {
+	${3}
+}
+endsnippet
+
+snippet foreach
+foreach (${1:item} = ${2:list}) {
+	${3}
+}
+endsnippet
+
+# functions
+snippet fun
+${1:name} <- function (${2:variables}) {
+	${0}
+}
+endsnippet
+
+# pipes
+snippet p
+%>% $1
+endsnippet
