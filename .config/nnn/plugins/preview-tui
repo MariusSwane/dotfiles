@@ -12,15 +12,24 @@
 #    - less or $PAGER
 #    - tree or exa or ls
 #    - mediainfo or file
+#    - mktemp
 #    - unzip
 #    - tar
 #    - man
 #    - optional: bat for code syntax highlighting
-#    - optional: kitty terminal or catimg for images
+#    - optional: kitty terminal, catimg, viu, or ueberzug for images
 #    - optional: scope.sh file viewer from ranger.
 #                To use:
 #                1. drop scope.sh executable in $PATH
 #                2. set/export $USE_SCOPE as 1
+#    - optional: pistol file viewer (https://github.com/doronbehar/pistol).
+#                To use:
+#                1. install pistol
+#                2. set/export $USE_PISTOL as 1
+#    - optional: ffmpegthumbnailer for video thumbnails (https://github.com/dirkvdb/ffmpegthumbnailer).
+#                To use:
+#                1. install ffmpegthumbnailer
+#                2. set/export USE_VIDEOTHUMB as 1
 #
 # Usage:
 #   You need to set a NNN_FIFO path and a key for the plugin with NNN_PLUG,
@@ -35,7 +44,7 @@
 #   Then in `nnn`, launch the `preview-tui` plugin.
 #
 #   If you provide the same NNN_FIFO to all nnn instances, there will be a
-#   single common preview window. I you provide different FIFO path (e.g.
+#   single common preview window. If you provide different FIFO path (e.g.
 #   with -a), they will be independent.
 #
 #   The previews will be shown in a tmux split. If that isn't possible, it
@@ -43,7 +52,8 @@
 #   different terminal window will be used ($TERMINAL).
 #
 #   Tmux and kitty users can configure $SPLIT to either "h" or "v" to set a
-#   'h'orizontal split or a 'v'ertical split.
+#   'h'orizontal split or a 'v'ertical split (as in, the line that splits the
+#   windows will be horizontal or vertical).
 #
 #   Kitty users need `allow_remote_control` set to `yes`. To customize the
 #   window split, `enabled_layouts` has to be set to `all` or `splits` (the
@@ -53,8 +63,13 @@
 # Shell: POSIX compliant
 # Authors: Todd Yamakawa, Léo Villeveygoux, @Recidiviste, Mario Ortiz Manero
 
+SPLIT="v"  # you can set a permanent split here
+TERMINAL="$TERMINAL"  # same goes for the terminal
 USE_SCOPE="${USE_SCOPE:-0}"
+USE_PISTOL="${USE_PISTOL:-0}"
+USE_VIDEOTHUMB="${USE_VIDEOTHUMB:-1}"
 PAGER="${PAGER:-less -R}"
+[ "$PAGER" = "most" ] && PAGER="less -R"
 
 if [ -e "${TMUX%%,*}" ] && tmux -V | grep -q '[ -][3456789]\.'; then
     TERMINAL=tmux
@@ -64,14 +79,14 @@ else
     TERMINAL="${TERMINAL:-xterm}"
 fi
 
-if [ -z "$SPLIT" ] && [ $(($(tput lines) * 2)) -gt "$(tput cols)" ] ; then
-    SPLIT='v'
-elif [ "$SPLIT" != 'v' ] ; then
+if [ -z "$SPLIT" ] && [ $(($(tput lines) * 2)) -gt "$(tput cols)" ]; then
     SPLIT='h'
+elif [ "$SPLIT" != 'h' ]; then
+    SPLIT='v'
 fi
 
 exists() {
-    command -v "$1" >/dev/null 2>&1
+    which "$1" >/dev/null 2>&1
 }
 
 fifo_pager() {
@@ -106,6 +121,19 @@ preview_file () {
     kill %- %+ 2>/dev/null && wait %- %+ 2>/dev/null
     clear
 
+    # Trying to use pistol if it's available.
+    if [ "$USE_PISTOL" -ne 0 ] && exists pistol; then
+        fifo_pager pistol "$1"
+        return
+    fi
+
+    # Trying to use scope.sh if it's available.
+    if [ "$USE_SCOPE" -ne 0 ] && exists scope.sh; then
+        fifo_pager scope.sh "$1" "$cols" "$lines" "$(mktemp -d)" \
+            "True" 2>/dev/null
+        return
+    fi
+
     # Detecting the exact type of the file: the encoding, mime type, and
     # extension in lowercase.
     encoding="$(file -Lb --mime-encoding -- "$1")"
@@ -117,31 +145,34 @@ preview_file () {
     lines=$(($(tput lines)-1))
     cols=$(tput cols)
 
-    # Trying to use scope.sh if it's available.
-    if [ "$USE_SCOPE" -ne 0 ] && exists scope.sh; then
-        fifo_pager scope.sh "$1" "$cols" "$lines" "$(mktemp -d)" \
-            "True" 2>/dev/null
-        return
-    fi
-
     # Otherwise, falling back to the defaults.
     if [ -d "$1" ]; then
         cd "$1" || return
         if exists tree; then
-            fifo_pager tree
+            fifo_pager tree -L 3 -F
         elif exists exa; then
             fifo_pager exa -G --colour=always 2>/dev/null
         else
             fifo_pager ls --color=always
         fi
     elif [ "$encoding" = "binary" ]; then
-        if [ "${mimetype%%/*}" = "image" ] ; then
+        if [ "${mimetype%%/*}" = "image" ] || [ "${mimetype%%/*}" = "video" ]; then
+            if [ "${mimetype%%/*}" = "video" ] && [ "$USE_VIDEOTHUMB" -ne 0 ] && exists ffmpegthumbnailer; then
+                videothumb="/tmp/videothumb.$$.png"
+                ffmpegthumbnailer -s 512 -i "$1" -o "$videothumb" >/dev/null 2>&1
+                set "$videothumb"
+                trap 'rm "$videothumb"' EXIT
+            fi
             if [ "$TERMINAL" = "kitty" ]; then
                 # Kitty terminal users can use the native image preview method.
                 kitty +kitten icat --silent --transfer-mode=stream --stdin=no \
                     "$1" &
             elif exists catimg; then
                 catimg "$1"
+            elif exists viu; then
+                viu -t "$1"
+            elif exists ueberzug; then
+                preview_ueberzug "$cols" "$lines" "$1"
             else
                 fifo_pager print_bin_info "$1"
             fi
@@ -156,12 +187,19 @@ preview_file () {
         fifo_pager man -Pcat -l "$1"
     else
         if exists bat; then
-            fifo_pager bat --paging=never --decorations=always --color=always \
+            fifo_pager bat --terminal-width="$cols" --paging=never --decorations=always --color=always \
                 "$1" 2>/dev/null
         else
             $PAGER "$1" &
         fi
     fi
+}
+
+preview_ueberzug() {
+    {
+        printf '{"action": "add", "identifier": "nnn_ueberzug", "x": 0, "y": 0, "width": "%s", "height": "%s", "path": "%s"}\n' "$1" "$2" "$3"
+        read -r
+    } | ueberzug layer --parser json
 }
 
 if [ "$PREVIEW_MODE" ] ; then
@@ -179,6 +217,13 @@ if [ "$PREVIEW_MODE" ] ; then
     while read -r selection ; do
         preview_file "$selection"
     done
+
+    # Restoring the previous layout for kitty users. This will only work for
+    # kitty >= 0.18.0.
+    if [ "$TERMINAL" = "kitty" ]; then
+        kitty @ last-used-layout --no-response >/dev/null 2>&1
+    fi
+
     exit 0
 fi
 
@@ -188,16 +233,19 @@ if [ "$TERMINAL" = "tmux" ]; then
 
     tmux split-window -e "NNN_FIFO=$NNN_FIFO" -e "PREVIEW_MODE=1" -d"$SPLIT" "$0" "$1"
 elif [ "$TERMINAL" = "kitty" ]; then
-    # Setting the layout for the new window.
+    # Setting the layout for the new window. It will be restored after the
+    # script ends.
     kitty @ goto-layout splits >/dev/null
 
     # Trying to use kitty's integrated window management as the split window.
+    # All environmental variables that will be used in the new window must
+    # be explicitly passed.
     kitty @ launch --no-response --title "nnn preview" --keep-focus \
-          --cwd "$PWD" --env "NNN_FIFO=$NNN_FIFO" --env "PREVIEW_MODE=1" \
+          --cwd "$PWD" --env "PATH=$PATH" --env "NNN_FIFO=$NNN_FIFO" \
+          --env "PREVIEW_MODE=1" --env "PAGER=$PAGER" \
+          --env "USE_SCOPE=$USE_SCOPE" --env "SPLIT=$SPLIT" \
+          --env "USE_PISTOL=$USE_PISTOL" \
           --location "${SPLIT}split" "$0" "$1" >/dev/null
-
-    # Restoring the previous layout.
-    kitty @ last-used-layout --no-response >/dev/null 2>&1
 else
     PREVIEW_MODE=1 $TERMINAL -e "$0" "$1" &
 fi

@@ -10,11 +10,11 @@ settings:
     global: true
   content.autoplay:
     global: false
-  content.cookies.accept:
-    global: no-3rdparty
-  content.host_blocking.lists:
+  content.blocking.hosts.lists:
     global:
     - https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+  content.cookies.accept:
+    global: no-3rdparty
   content.notifications:
     https://mail.protonmail.com: true
     https://mariuswis.cloud.seedboxes.cc: true
@@ -60,7 +60,7 @@ settings:
   fonts.web.family.cursive:
     global: null
   url.default_page:
-    global: file:///home/mariuswis/Documents/startpg/startpg.html
+    global: file:///home/mariussw/Documents/startpg/startpg.html
   url.incdec_segments:
     global:
     - path
@@ -71,4 +71,4 @@ settings:
     global:
       DEFAULT: https://duckduckgo.com/?q={}
   url.start_pages:
-    global: file:///home/mariuswis/Documents/startpg/startpg.html
+    global: file:///home/mariussw/Documents/startpg/startpg.html

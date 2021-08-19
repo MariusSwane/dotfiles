@@ -9,7 +9,7 @@ killall -q polybar
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch bar1 and bar2
-#polybar -c ~/.config/polybar/config.ini main &
+#polybar -c ~/.config/polybar/config.ini main top &
 
 if type "xrandr"; then
   for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
@@ -17,4 +17,13 @@ if type "xrandr"; then
   done
 else
   polybar --reload -c ~/.config/polybar/config.ini main &
+fi
+
+# Top
+if type "xrandr"; then
+  for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+    MONITOR=$m polybar --reload -c ~/.config/polybar/config.ini top &
+  done
+else
+  polybar --reload -c ~/.config/polybar/config.ini top &
 fi

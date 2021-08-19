@@ -68,7 +68,8 @@ XClock*secondColor: rgba:c1/c1/c1/ff
 URxvt*depth: 32
 
 ! URxvt config.
-URxvt.font: xft:iosevka:medium:italic
+URxvt.font: xft:iosevka:medium:italic:size=18,  xft:FontAwesome:size=6
+
 ! URxvt.letterSpace: -1
 URxvt.scrollBar: invisible
 ! Font size extention

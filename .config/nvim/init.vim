@@ -1,7 +1,40 @@
-"INIT.VIM"
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Some basics:
+" ██╗   ██╗██╗      ██╗  ██╗██╗███╗   ██╗ ██████╗      ██████╗ ██████╗ ███╗   ██╗███████╗██╗ ██████╗ 
+" ██║   ██║██║      ██║ ██╔╝██║████╗  ██║██╔════╝     ██╔════╝██╔═══██╗████╗  ██║██╔════╝██║██╔════╝ 
+" ██║   ██║██║█████╗█████╔╝ ██║██╔██╗ ██║██║  ███╗    ██║     ██║   ██║██╔██╗ ██║█████╗  ██║██║  ███╗
+" ╚██╗ ██╔╝██║╚════╝██╔═██╗ ██║██║╚██╗██║██║   ██║    ██║     ██║   ██║██║╚██╗██║██╔══╝  ██║██║   ██║
+"  ╚████╔╝ ██║      ██║  ██╗██║██║ ╚████║╚██████╔╝    ╚██████╗╚██████╔╝██║ ╚████║██║     ██║╚██████╔╝
+"   ╚═══╝  ╚═╝      ╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝      ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝     ╚═╝ ╚═════╝  
+"       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀       
+"       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣢⣿⣿⣿⣸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣪⣿⣿⣿⣘⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀	      
+"       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣪⣿⣿⣿⣿⣿⣸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣪⣿⣿⣿⣿⣿⣸⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀       
+"       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣪⣿⣿⡿⠕⠅⠷⣿⡿⣻⣈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⣿⣿⠟⠅⠇⢿⣿⣿⣸⣈⠀⠀⠀⠀⠀⠀⠀⠀       
+"       ⠀⠀⠀⠀⣀⣠⣨⣺⠿⠵⠸⣿⡿⠁⠀⠀⠀⠇⣿⣿⢿⣸⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣪⡿⣿⣿⠕⠀⠀⠀⠄⢿⣿⠪⠏⠿⣺⣨⣈⣀⠀⠀⠀       
+"       ⠀⠀⣿⣿⡿⣗⣗⡃⡆⣕⠣⣿⡙⠀⠀⠀⠀⠀⠄⢷⣿⣿⣿⣘⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣢⣿⣿⣿⡟⠁⠀⠀⠀⠀⠀⢦⣿⠜⣇⢑⢔⣗⣗⢿⣿⣿⠀	      
+"       ⠀⠀⠆⣿⣻⣼⡍⣉⠢⢲⡣⣿⣙⠀⠀⠀⠀⠀⠀⠀⠇⢿⣿⣿⣻⣈⠀⠀⠀⠀⢀⣪⣸⡀⠀⠀⠀⠀⣠⣾⣿⣿⡿⠕⠀⠀⠀⠀⠀⠀⠀⣦⣿⢜⡚⠘⣤⢥⣫⣾⣿⠑⠀	      
+"       ⠀⠀⠀⠆⢿⣿⣿⣬⣎⢳⡣⣿⣿⣻⣈⣀⡀⠀⠀⠀⠀⠀⠧⣿⣿⣿⣹⣀⣠⣺⣿⣿⣿⣿⣺⣈⢀⣮⣿⣿⣿⠟⠀⠀⠀⠀⠀⢀⣀⣠⣾⣿⣿⢜⡞⣱⣩⣿⣿⡿⠑⠀⠀       
+"       ⠀⠀⠀⠀⠀⠷⢿⣿⣿⣿⣻⣼⣿⣿⣿⣿⣿⣹⡀⠀⠀⠀⠀⠄⠷⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠁⠀⠀⠀⠀⢀⣮⣿⣿⣿⣿⣿⣫⣾⣿⣿⣿⡿⠟⠀⠀⠀⠀	      
+"       ⠀⠀⠀⠀⠀⠀⠀⠇⠷⠿⢿⣿⣿⡿⠿⠟⠗⠅⠀⠀⠀⠀⠀⠀⣠⣿⣿⣿⣿⣿⣷⣿⣿⣛⣿⣿⣿⣿⣿⣈⠀⠀⠀⠀⠀⠀⠅⠗⠷⠿⢿⣿⣿⡿⠿⠟⠕⠀⠀⠀⠀⠀⠀       
+"       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣢⣿⣿⣿⣿⣿⣿⣶⣿⣿⣛⣿⣿⣿⣿⣿⣿⡘⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀       
+"       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿⣿⣿⣿⣾⣿⣿⡻⣿⣿⣿⣿⣿⣿⣿⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀       
+"       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢦⣿⣿⣿⣿⣿⣿⣿⢯⣿⣿⣽⣿⣿⣿⣿⣿⣿⣿⡙⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀       
+"       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⠿⢿⣿⣻⣿⣿⣿⣿⣿⣿⣿⣿⣾⣿⡿⠿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀       
+"       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠢⣿⣽⣾⣷⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⣟⣻⣿⣿⡘⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀       
+"       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⣿⢟⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡷⣿⣿⣸⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀       
+"       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣾⣿⣎⣹⣺⡺⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⢺⣺⣮⣷⣿⣿⣻⣈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀       
+"       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣪⣿⣿⣿⣿⠟⢧⡿⣹⠀⠀⠇⠷⣿⣿⣿⣿⣿⣿⠟⠕⠀⠀⣮⢿⡙⠇⢿⣿⣿⣿⣻⣈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀       
+"       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣪⣿⣿⣿⣿⠟⠁⠀⠀⢿⣻⣫⡀⠀⠀⠄⢧⣿⣿⣿⠁⠀⠀⢀⣾⣹⡿⠀⠀⠀⠄⠷⣿⣿⣿⣿⣸⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀       
+"       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⣿⣿⣿⣿⠟⠁⠀⠀⠀⠀⠄⢷⣿⣿⣻⣸⣨⣿⣿⣿⣿⣨⣺⣾⣿⣿⡟⠁⠀⠀⠀⠀⠀⠄⠷⣿⣿⣿⣿⣸⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀       
+"       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣮⣿⣿⣿⣿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠇⠿⣿⣿⣿⣿⣿⣷⣿⣿⣿⣿⠿⠕⠀⠀⠀⠀⠀⠀⠀⠀⠀⠆⢿⣿⣿⣿⣿⣸⠀⠀⠀⠀⠀⠀⠀⠀       
+"       ⠀⠀⠀⠀⠀⠀⠀⠀⢢⣿⣿⣿⣿⡟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠅⠗⣿⣟⣿⣿⠟⠅⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠇⢿⣿⣿⣿⣻⠀⠀⠀⠀⠀⠀⠀       
+"       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠷⣿⡿⠕⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠅⠅⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠷⣿⣿⠑⠀⠀⠀⠀⠀⠀⠀       
+"       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠅⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠄⠁⠀⠀⠀⠀⠀⠀⠀⠀       
+
+
+"============================================================================="
+"	Some basics:							      "
+"============================================================================="
+
 set number relativenumber "Line numbering
 set incsearch "Set incremental search
 set showcmd "show which commands are read
@@ -15,12 +48,8 @@ set tw=80
 " For all text files set 'textwidth' to 80 characters.
 "autocmd FileType text setlocal textwidth=80
 "augroup END
-"
-"" For all tex files set 'textwidth' to 80 characters.
-"autocmd FileType tex setlocal textwidth=80
-"augroup END
 
-"Using latex
+" Using latex
 let g:tex_flavor = 'latex'
 
 filetype plugin on
@@ -33,9 +62,20 @@ set wildmode=longest,list,full
 " Disables automatic commenting on newline:
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" For all tex files turn on spell checking
+autocmd FileType tex setlocal spell
+augroup END
+
+"============================================================================="
+
+" Dictionary
+set dictionary?
+set dictionary+=/usr/share/dict/words
+set complete+=k
+
+"============================================================================="
+
 " Omnicompletion
-filetype plugin on
 set omnifunc=syntaxcomplete#Complete
 
 " Use Ctrl+Space to do omnicompletion:
@@ -45,15 +85,20 @@ else
 	inoremap <Nul> <C-x><C-o>
 endif
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Map leaders
+"============================================================================="
+"	Mapping leaders							      "
+"============================================================================="
+
 let mapleader = ";"
 let maplocalleader = ","
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""""""""""""""
-" Remappings "
-""""""""""""""
+"============================================================================="
+"	Remappings 					            	      "
+"============================================================================="
+
+" Remap $ (end-of-line)
+nnoremap å $
+
 " Map substitute
 nnoremap <LocalLeader>S :%s//g<Left><Left>
 
@@ -66,10 +111,10 @@ nnoremap S ea<C-X><C-S>
 " Yank file dir path
 nnoremap <Leader>yp :let @+=expand('%:p:h')<CR> 
 
-"Paste file dir path
+" Paste file dir path
 nnoremap <Leader>pp :put =expand('%:p:h')<CR>
 
-"Save file as sudo on files that require root
+" Save file as sudo on files that require root
 cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 
 " Remapping splits resizing
@@ -78,11 +123,20 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Tabs
+nnoremap th  :tabfirst<CR>
+nnoremap tk  :tabnext<CR>
+nnoremap tj  :tabprev<CR>
+nnoremap tl  :tablast<CR>
+nnoremap tx  :tabclose<CR>
+nnoremap tn :tabnew<CR>
 
-""""""""""""""""""""
-" Vim-plug section "
-""""""""""""""""""""
+" Help opens in new tab
+:cabbrev help tab help
+
+"============================================================================="
+"	Vim-plug section                                                      "
+"============================================================================="
 
 call plug#begin(stdpath('data') . '/plugged')
 
@@ -110,28 +164,38 @@ Plug 'jalvesaq/Nvim-R'
 
 "Plug 'itchyny/calendar.vim'
 
-Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline'
+
+Plug 'itchyny/lightline.vim'
 
 "Plug 'dylanaraps/wal.vim'
 
 call plug#end()
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"""""""""""""""""""
-" Plugin settings "
-"""""""""""""""""""
+"============================================================================="
+"	Plugin settings 						      "
+"============================================================================="
 
-"Options and bindings for Nvim-R
+" Nvim-R settings
 
 let R_auto_start = 1
+let R_assign = 0
+let R_editor_w = 100
 let R_objbr_place = 'console,above'
 let R_objbr_h = 30
-autocmd VimResized * let R_editor_width = 80
+let Rout_more_colors = 1
+
+"let R_set_omnifunc = ["r",  "rmd", "rnoweb", "rhelp", "rrst"]
+"let R_auto_omni = ["r",  "rmd", "rnoweb", "rhelp", "rrst"]
+
+autocmd VimResized * let R_editor_width = 100
+autocmd VimResized * let R_editor_height = 80
 
 function! s:customNvimRMappings()
-	nmap <buffer> <Leader>sr <Plug>RStart
-	nmap <buffer> <Space> <Plug>RDSendLine
+	nmap <buffer> <Leader>rs<Plug>RStart
+	nmap <buffer> <Leader>rx<Plug>RClose
+	nmap <buffer> <Space> <Plug>REDSendParagraph
    	vmap <Space> <Plug>RDSendSelection
 endfunction
 
@@ -142,7 +206,9 @@ augroup end
 
 autocmd FileType r setlocal formatoptions+=t
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"============================================================================="
+" UltiSnips Settings
+
 " Set ultisnips triggers and other Ultisnipps things
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
@@ -154,40 +220,91 @@ let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
 "au FileType todo :UltiSnipsAddFiletypes todo
 "au FileType txt :UltiSnipsAddFiletypes txt 
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Fuzzy files config
-nnoremap ff :Files /home/mariuswis<CR>
+"============================================================================="
+" Fzf settings
 
-"Fuzzyfind in Dropbox
-nnoremap <Leader>db :Files /run/media/OSDisk/Users/mariussw/ARC_Project Dropbox/Marius Wishman<cr>
+" Fuzzy files config
+nnoremap ff :Files $HOME/<CR>
 
-"Fuzzyfind ingnores git and wine
-let $FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
-let $FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .wine'
+" Fuzzyfind ingnores git and wine
+let $FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude ".git"'
+let $FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude ".wine"'
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Vimtex-compile
+"============================================================================="
+" VimTeX 
+
+" Supress over/underfull warnings
+let g:vimtex_quickfix_ignore_filters = [
+      \ '\(Ov\|Und\)erfull']
+
+" Vimtex-compile
 nnoremap <LocalLeader>c :VimtexCompile<CR>
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Remap thesaurus"
-nnoremap <LocalLeader>t :ThesaurusQueryReplaceCurrentWord<CR>
+" Compile on initialization, cleanup on quit
+augroup vimtex_event_1
+  au!
+  au User VimtexEventQuit     call vimtex#compiler#clean(0)
+  au User VimtexEventInitPost call vimtex#compiler#compile()
+augroup END
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"colorscheme wal 
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Zathura/vimtex
 let g:vimtex_view_method = 'zathura'
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Colorizer
+"============================================================================="
+" Remap thesaurus"
+
+nnoremap <LocalLeader>t :ThesaurusQueryReplaceCurrentWord<CR>
+
+"============================================================================="
+" Colorizer
 let g:colorizer_auto_color = 1
 nnoremap <Leader>h :ColorHighlight<CR>
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Startify customization
+"============================================================================="
+" Lightline
 
+function! WordCount()
+    let currentmode = mode()
+    if !exists("g:lastmode_wc")
+        let g:lastmode_wc = currentmode
+    endif
+    " if we modify file, open a new buffer, be in visual ever, or switch modes
+    " since last run, we recompute.
+    if &modified || !exists("b:wordcount") || currentmode =~? '\c.*v' || currentmode != g:lastmode_wc
+        let g:lastmode_wc = currentmode
+        let l:old_position = getpos('.')
+        let l:old_status = v:statusmsg
+        execute "silent normal g\<c-g>"
+        if v:statusmsg == "--No lines in buffer--"
+            let b:wordcount = 0
+        else
+            let s:split_wc = split(v:statusmsg)
+            if index(s:split_wc, "Selected") < 0
+                let b:wordcount = str2nr(s:split_wc[11])
+            else
+                let b:wordcount = str2nr(s:split_wc[5])
+            endif
+            let v:statusmsg = l:old_status
+        endif
+        call setpos('.', l:old_position)
+        return b:wordcount
+    else
+        return b:wordcount
+    endif
+endfunction
+
+"let g:lightline = {
+"      \ 'active': {
+"      \   'right': [ [ 'lineinfo' ], [ 'percent', 'wordcount' ], [ 'fileformat', 'fileencoding', 'filetype' ] ]
+"      \ },
+"      \ 'component_function': {
+"      \   'wordcount': 'WordCount',
+"      \ },
+"      \ }
+
+"============================================================================="
+
+"Startify customization
 let g:ascii = [
 \'                                            ..						',
 \'                                         .::::.						',
@@ -221,9 +338,8 @@ let g:startify_custom_header =
 
 let g:startify_bookmarks = [
 	\'~/.config/nvim/init.vim',
-	\'/run/media/OSDisk/Users/mariussw/ARC_Project Dropbox/Marius Wishman/Todo.txt',
 	\'~/.config/i3/config',
-	\'/run/media/OSDisk/Users/mariussw/ARC_Project Dropbox/Marius Wishman/GEO-ISD/ISDV2_Africa.csv']
+	\]
 
     let g:startify_lists = [
           \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
@@ -233,7 +349,7 @@ let g:startify_bookmarks = [
           \ { 'type': 'commands',  'header': ['   Commands']       },
           \ ]
 
-"Start new windows running Startify"
+"Start new splits running Startify"
 nnoremap <Leader>vs :vsp<bar>Startify<CR>
 nnoremap <Leader>hs :sp<bar>Startify<CR>
 nnoremap <Leader>s :Startify<CR>
