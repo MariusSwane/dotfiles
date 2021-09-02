@@ -40,9 +40,10 @@ set incsearch "Set incremental search
 set showcmd "show which commands are read
 set ic "Set Ignore case in search as default
 set scrolloff=50 "Setting scroll centering
-set showmatch "highlight matching {[()]}"
+"set showmatch "highlight matching {[()]}"
 set clipboard+=unnamedplus "yank to clipboard
 set nocompatible
+set nohlsearch
 set tw=80
 
 " For all text files set 'textwidth' to 80 characters.
@@ -102,8 +103,11 @@ nnoremap å $
 " Map substitute
 nnoremap <LocalLeader>S :%s//g<Left><Left>
 
-" Turn on spell checking
-nnoremap s :set spell<CR>
+" Turn on/off spell checking
+nnoremap s :set spell! nospell?<CR>
+
+" Turn on/off search highlights
+noremap <F4> :set hlsearch! hlsearch?<CR>
 
 " Spell suggestions
 nnoremap S ea<C-X><C-S>
@@ -133,6 +137,13 @@ nnoremap tn :tabnew<CR>
 
 " Help opens in new tab
 :cabbrev help tab help
+
+"=============================================================================="
+"	Permanent macros						       "
+"=============================================================================="	
+
+let @h = "yyp:s/./=/g"
+let @s = "yyp:s/./-/g"
 
 "============================================================================="
 "	Vim-plug section                                                      "

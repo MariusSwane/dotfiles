@@ -1,6 +1,12 @@
 configuration {modi: "run";
 font: "iosevka medium italic 12";
-theme: "~/.cache/wal/colors-rofi-dark.rasi";
 show-icons: true;
 lines: 4;
+}
+
+@theme "~/.cache/wal/colors-rofi-dark.rasi"
+
+element-text, element-icon {
+    background-color: inherit;
+    text-color:       inherit;
 }

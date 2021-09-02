@@ -64,7 +64,7 @@ snippet beamerblack "Black Beamer presentation " b
 \documentclass{beamer}
 
 \usepackage{graphicx}
-\usepackage{opensans}
+\usepackage[light]{FiraSans}
 \usepackage[british]{datetime2}
 \usetheme{default}
 \setbeamertemplate{navigation symbols}{} % No navigation symbols
@@ -134,55 +134,12 @@ snippet beamerblack "Black Beamer presentation " b
 \end{document}
 endsnippet
 
-snippet frame "potentially useless comment" b
-\begin{frame}{${1:Frame title}}
-	$2
-\end {frame}
-endsnippet
-
-snippet fig "" b
-\begin{figure}[!htb]
-	\includegraphics[width=\textwidth,keepaspectratio]{img/$1}
-	\caption{$2}
-	\label{$3}
-\end{figure}
-endsnippet
-
-snippet hyp "" b
-\bigskip
-\hangindent = 3.5em
-\textit{H\textsubscript{$1}:$2}
-\bigskip
-endsnippet
-
-snippet comment
-% `echo $USER` `!v strftime("%c")`: $1
-endsnippet
-
-snippet bullets "" b
-\begin{itemize}
-	\item $1
-\end{itemize}
-endsnippet
-
-snippet bbullets "" b
-\begin{itemize}
-	\item $1 \pause${2:
-	\item }
-\end{itemize}
-endsnippet
-
-snippet bitem "" b
-	\item $1 \pause${2:
-	\item }
-endsnippet
-
 snippet beamer "White themed beamer" b
 
 \documentclass{beamer}
 
 \usepackage{graphicx}
-\usepackage{opensans}
+\usepackage[light]{FiraSans}
 \usepackage[british]{datetime2}
 \usetheme{default}
 \setbeamertemplate{navigation symbols}{} % No navigation symbols
@@ -300,7 +257,7 @@ snippet enum "Enumerate" b
 \end{enumerate}
 endsnippet
 
-snippet item "Itemize" b
+snippet items "Itemize" b
 \begin{itemize}
 
 	\item $0
@@ -319,3 +276,36 @@ endsnippet
 snippet \f
 \footnote{$1}
 endsnippet
+
+snippet frame "" b
+\begin{frame}{${1:Frame title}}
+
+	$2
+
+\end{frame}
+endsnippet
+
+snippet hyp "" b
+\bigskip
+\hangindent = 3.5em
+\textit{H\textsubscript{$1}:$2}
+\bigskip
+endsnippet
+
+snippet comment
+% `echo $USER` `!v strftime("%c")`: $1
+endsnippet
+
+snippet bullets "" b
+\begin{itemize}
+	\item $1
+\end{itemize}
+endsnippet
+
+snippet bb "" b
+\begin{itemize}[<+- | alert@+>]
+	\item $1 
+\end{itemize}
+endsnippet
+
+
