@@ -182,10 +182,11 @@ alias startsowm='startx $HOME/.sowm/.xinitrc'
 alias f='fff'
 alias n='nnn -eaxP i'
 #alias r='ranger'
-alias arc='autorandr -c'
-alias ttyc='tty-clock -c'
+#alias arc='autorandr -c'
+alias tc='tty-clock -c'
 alias ncmp='ncmpcpp ; yams'
 alias mpdas='mpdas -d -c .config/mpdasrc'
+alias cc='CALCURSE_CALDAV_PASSWORD=$(pass show seedboxes.cc | head -n1) calcurse-caldav'
 
 # Pywal colors
 cat ~/.cache/wal/sequences

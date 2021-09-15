@@ -113,15 +113,27 @@ noremap <F4> :set hlsearch! hlsearch?<CR>
 nnoremap S ea<C-X><C-S>
 
 " Yank file dir path
-nnoremap <Leader>yp :let @+=expand('%:p:h')<CR> 
+nnoremap <Leader>yd :let @+=expand('%:p:h')<CR> 
+
+" Yank file path
+nnoremap <Leader>yf :let @+=expand('%:p:f')<CR> 
 
 " Paste file dir path
-nnoremap <Leader>pp :put =expand('%:p:h')<CR>
+nnoremap <Leader>pd :put =expand('%:p:h')<CR>
+
+" Paste file path
+nnoremap <Leader>pf :put =expand('%:p:f')<CR>
 
 " Save file as sudo on files that require root
 cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 
 " Remapping splits resizing
+nnoremap <silent> <LocalLeader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
+nnoremap <silent> <LocalLeader>- :exe "resize " . (winheight(0) * 2/3)<CR>
+nnoremap <silent> <LocalLeader>> :exe "vertical resize " . (winwidth(0) * 3/2)<CR>
+nnoremap <silent> <LocalLeader>< :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
+
+" Remapping split window navigation
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>

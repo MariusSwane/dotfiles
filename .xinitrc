@@ -3,7 +3,9 @@
 # Here Xfce is kept as default
 session=${1:-i3}
 
-#message="Available wm's: i3	|	sowm	|	awesom	|	dwm	"
+message="Available wm's: i3	|	sowm	|	awesom	|	dwm	"
+
+[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 
 case $session in
     i3|i3wm		) exec i3;;
@@ -11,5 +13,5 @@ case $session in
     #xfce|xfce4         ) exec startxfce4;;
     awesome		) exec awesome;;
     dwm			) exec dwm;;
-    *                 	) exec $1;;
+    *                 	) echo $message;;
 esac
