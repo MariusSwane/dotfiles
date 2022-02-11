@@ -45,6 +45,7 @@ set clipboard+=unnamedplus "yank to clipboard
 set nocompatible
 set nohlsearch
 set tw=80
+set foldmethod=syntax
 
 " For all text files set 'textwidth' to 80 characters.
 "autocmd FileType text setlocal textwidth=80
@@ -157,6 +158,19 @@ nnoremap tn :tabnew<CR>
 let @h = "yyp:s/./=/g"
 let @s = "yyp:s/./-/g"
 
+"=============================================================================="
+"	Functions							       "
+"=============================================================================="
+
+" Copy search matches
+function! CopyMatches(reg)
+  let hits = []
+  %s//\=len(add(hits, submatch(0))) ? submatch(0) : ''/gne
+  let reg = empty(a:reg) ? '+' : a:reg
+  execute 'let @'.reg.' = join(hits, "\n") . "\n"'
+endfunction
+command! -register CopyMatches call CopyMatches(<q-reg>)
+
 "============================================================================="
 "	Vim-plug section                                                      "
 "============================================================================="
@@ -171,6 +185,8 @@ Plug 'chrisbra/csv.vim'
 
 Plug 'lervag/vimtex'
 
+Plug 'matze/vim-tex-fold'
+
 Plug 'SirVer/ultisnips', { 'do': '/usr/local/bin/python3 install.py' }
 
 Plug 'junegunn/fzf', { 'do': './install --bin' }
@@ -184,6 +200,8 @@ Plug 'tpope/vim-surround'
 Plug 'jalvesaq/Nvim-R'
 
 "Plug 'junegunn/vim-emoji'
+
+Plug 'kshenoy/vim-signature'
 
 "Plug 'itchyny/calendar.vim'
 
@@ -257,8 +275,10 @@ let $FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude ".wine"'
 " VimTeX 
 
 " Supress over/underfull warnings
-let g:vimtex_quickfix_ignore_filters = [
-      \ '\(Ov\|Und\)erfull']
+"let g:vimtex_quickfix_ignore_filters = 
+"      \ "\(Ov\|Und\)erfull"
+"      \ "I moved some lines"
+
 
 " Vimtex-compile
 nnoremap <LocalLeader>c :VimtexCompile<CR>

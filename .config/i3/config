@@ -139,10 +139,13 @@ bindsym $mod+shift+b exec bitwarden-desktop
 bindsym $mod+shift+a exec --no-startup-id $HOME/scripts/arc
 
 # reapply wallpaper
-bindsym $mod+shift+f exec --no-startup-id $HOME/.fehbg 
+#bindsym $mod+shift+f exec --no-startup-id $HOME/.fehbg 
 
 # check agenda
 bindsym $mod+a exec --no-startup-id agenda
+
+# Flash current window
+bindsym $mod+shift+f exec --no-startup-id flash_window
 
 #=============================================================================#
 #	Workspace and windows managment

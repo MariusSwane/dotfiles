@@ -1,4 +1,5 @@
 snippet article
+%{{{ Header
 
 \documentclass[12pt]{article}
 \usepackage{graphicx}
@@ -9,6 +10,20 @@ snippet article
 \usepackage{setspace}
 \usepackage{rotating}
 \usepackage[british]{datetime2}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{multicol}
+\usepackage{dcolumn}
+\usepackage[top=28truemm,bottom=26.5truemm,left=25.5truemm,right=25.5truemm]{geometry}
+
+\hypersetup{
+colorlinks=true,
+citecolor=black,
+urlcolor=blue
+}
+
+\renewcommand{\harvardurl}{\textbf{URL:} \url}
 
 
 \renewcommand\Affilfont{\itshape\small}
@@ -29,6 +44,9 @@ snippet article
 
 \maketitle
 
+% }}}
+
+% {{{ Abstract
 \begin{abstract}
 \end{abstract}
 
@@ -40,6 +58,8 @@ snippet article
 %\pagebreak
 
 \onehalfspacing
+
+% }}}
 
 \section{}
 
@@ -73,6 +93,7 @@ snippet beamerblack "Black Beamer presentation " b
 \setbeamercolor{frame title}{fg=ntnu}
 \setbeamercolor{title}{fg=ntnu}
 \setbeamercolor{subtitle}{fg=ntnu}
+\setbeamercovered{transparent}
 
 \usecolortheme[named=white]{structure} % White titles and such
 \setbeamercolor{normal text}{fg=white} % White text
@@ -139,6 +160,7 @@ snippet beamer "White themed beamer" b
 \documentclass{beamer}
 
 \usepackage{graphicx}
+\usepackage{tabularx}
 \usepackage[light]{FiraSans}
 \usepackage[british]{datetime2}
 \usetheme{default}
@@ -148,22 +170,28 @@ snippet beamer "White themed beamer" b
 \setbeamercolor{frame title}{fg=ntnu}
 \setbeamercolor{title}{fg=ntnu}
 \setbeamercolor{subtitle}{fg=ntnu}
+\setbeamercovered{transparent}
 
-\setbeamertemplate{itemize item}{\color{white}$\bullet$} % Comment this line for default bullet points (triangles)
+%\setbeamertemplate{itemize item}{\color{white}$\bullet$} 
+% Include above line to remove bullet indicators
 
-\setbeamertemplate{footline}
-{
-	\begin{center}
-	\begin{tabular}{ccccc|c}
-	\raisebox{-0.3cm}{\includegraphics[width=2cm, keepaspectratio]{logo_ntnu_u-slagord.pdf}} &
+\setbeamertemplate{footline}{
+\begin{tabularx}{\textwidth} {
+	 >{\raggedright\arraybackslash}X 
+  	 >{\centering\arraybackslash}X 
+  	 >{\centering\arraybackslash}X 
+  	 >{\centering\arraybackslash}X 
+  	 >{\centering\arraybackslash}X 
+  	 >{\centering\arraybackslash}X}
+	
+	\raisebox{-0.3cm}
+	{\includegraphics[width=2cm, keepaspectratio]{img/logo_ntnu_u-slagord.pdf}} &
 	\insertshortauthor & 
 	\insertshorttitle &
 	\insertdate &
-	\insertsection
-	\hspace{2cm} &
-	\insertframenumber
-	\end{tabular}
-	\end{center}
+	\insertsection &
+	$\big|$ \insertframenumber
+\end{tabularx}
 }
 
 \makeatletter
@@ -186,13 +214,7 @@ snippet beamer "White themed beamer" b
 \begin{frame}[plain]
 \titlepage 
 \centering
-\includegraphics[width=5cm]{logo_ntnu_u-slagord.pdf} 
-%\hspace{0.5cm} \includegraphics[width=5cm]{logo_ntnu_u-slagord.pdf} % Second logo, for use with black theme
-\end{frame}
-
-\begin{frame}
-\frametitle{${5:Overview}} % Table of contents slide, comment this block out to remove it
-\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+\includegraphics[width=5cm]{img/logo_ntnu_u-slagord.pdf} 
 \end{frame}
 
 \section{${6:First Section}} 
@@ -273,7 +295,7 @@ snippet \cp
 \citep{$1}
 endsnippet
 
-snippet \f
+snippet \f "" i
 \footnote{$1}
 endsnippet
 
@@ -303,9 +325,11 @@ snippet bullets "" b
 endsnippet
 
 snippet bb "" b
-\begin{itemize}[<+- | alert@+>]
-	\item $1 
+\begin{itemize}
+	\item[-] $1 \pause
 \end{itemize}
 endsnippet
 
-
+snippet i "" b
+\item[-] $1
+endsnippet

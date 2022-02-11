@@ -154,12 +154,15 @@ export EDITOR="nvim"
 export TERMINAL="kitty"
 export PATH="$HOME/scripts:$HOME/.cargo/bin:$HOME/.local/bin:$HOME/.wine/drive_c/users/username/Desktop:$PATH"
 #export NNN_OPENER=home/mariussw/.config/nnn/plugins/nuke
-export NNN_BMS='c:~/.config/;k:/run/media/;h:~/'
+export NNN_BMS='c:~/.config/;m:/run/media/;h:~/;w:~/work/;r:~/work/R/;p:~/work/POL2012/'
 export NNN_FIFO=/tmp/nnn.fifo
 export NNN_PLUG='m:nmount;f:fzcd;o:fzopen;e:suedit;p:preview-tabbed;i:preview-tui'
 export NNN_COLORS='1234' 
 export NNN_FCOLORS='c1e2272e006033f7c6d6abc4'
-export BW_SESSION="FdY38AHlf9+yDciqwUxWmZ1nuxacTCRRXBF9AhODvfTS3VBmEsu9AFK1iHGRFtwuVhIoQxVFENbfGd2sPBUURQ=="
+export YTFZF_CONFIG_DIR=$HOME/.config/ytfzf
+export ACCESS_KEY='SRJIpDVJ4V9T9RmThcH1'
+export EMAIL_ADDRESS='marius.wishman@ntnu.no'
+export NOT_CRAN='true'
 
 ##############################
 #####    ALIASES    ##########
@@ -179,14 +182,17 @@ alias ccat="highlight --out-format=ansi"
 alias dots='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias starti3='startx $HOME/.i3/.xinitrc'
 alias startsowm='startx $HOME/.sowm/.xinitrc'
-alias f='fff'
-alias n='nnn -eaxP i'
+alias n='nnn -eEaxRPi'
 #alias r='ranger'
 #alias arc='autorandr -c'
 alias tc='tty-clock -c'
 alias ncmp='ncmpcpp ; yams'
 alias mpdas='mpdas -d -c .config/mpdasrc'
 alias cc='CALCURSE_CALDAV_PASSWORD=$(pass show seedboxes.cc | head -n1) calcurse-caldav'
+alias SUAW='potato -s -w 45 -b 15 | toilet -t -f "ANSI Shadow"'
+alias yt='ytfzf --subs=1 -t'
+alias zathura='devour zathura'
+alias sxiv='devour sxiv'
 
 # Pywal colors
 cat ~/.cache/wal/sequences

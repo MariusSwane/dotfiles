@@ -26,12 +26,19 @@ if (interactive()) {
 #==============================================================================#
 
 library(rmarkdown)
-require(colorout)
+library(colorout)
 
 #==============================================================================#
 #	Aliases 							       #
 #==============================================================================#	
 
+Syu <- function(ask = "F", ...) {
+	update.packages(ask = ask, ...)
+}
+
+q <- function (save = "no", ...) {
+  quit(save = save, ...)
+}
 #==============================================================================#
 #	Customizing prompt				   		       #
 #==============================================================================#
@@ -42,7 +49,17 @@ options(prompt = "-> ", continue = "... ")
 #	Misc								       #
 #==============================================================================#
 
+# Enables tab-complete package names for use in "library()"
 utils::rc.settings(ipck=TRUE)
+
+# Disable GUI pop-ups and such
+options(menu.graphics=FALSE)
 
 # Ending if-loop
 }
+
+#==============================================================================#
+#	Message 							       #
+#==============================================================================#
+
+message("*** Successfully loaded personal .Rprofile ***\n")
