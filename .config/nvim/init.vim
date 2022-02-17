@@ -45,7 +45,6 @@ set clipboard+=unnamedplus "yank to clipboard
 set nocompatible
 set nohlsearch
 set tw=80
-set foldmethod=syntax
 
 " For all text files set 'textwidth' to 80 characters.
 "autocmd FileType text setlocal textwidth=80
@@ -62,11 +61,24 @@ syntax on
 set wildmode=longest,list,full
 
 " Disables automatic commenting on newline:
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-" For all tex files turn on spell checking
-autocmd FileType tex setlocal spell
-augroup END
+augroup tex
+	" For all tex files turn on spell checking
+	autocmd FileType tex setlocal spell
+	
+	" For all tex files use syntax folding
+	autocmd FileType tex set fdm=syntax
+augroup end
+
+" Otherwise use fold markers
+set fdm=marker
+
+" Remap help navigation
+augroup help
+	autocmd FileType help nnoremap <buffer> <CR> <C-]>
+	autocmd FileType help nnoremap <buffer> <BS> <C-T>
+augroup end
 
 "============================================================================="
 

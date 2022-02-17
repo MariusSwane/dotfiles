@@ -162,7 +162,7 @@ export NNN_FCOLORS='c1e2272e006033f7c6d6abc4'
 export YTFZF_CONFIG_DIR=$HOME/.config/ytfzf
 export ACCESS_KEY='SRJIpDVJ4V9T9RmThcH1'
 export EMAIL_ADDRESS='marius.wishman@ntnu.no'
-export NOT_CRAN='true'
+export NOT_CRAN='TRUE'
 
 ##############################
 #####    ALIASES    ##########
