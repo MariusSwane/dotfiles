@@ -1,10 +1,10 @@
 
-" ██╗   ██╗██╗      ██╗  ██╗██╗███╗   ██╗ ██████╗      ██████╗ ██████╗ ███╗   ██╗███████╗██╗ ██████╗ 
-" ██║   ██║██║      ██║ ██╔╝██║████╗  ██║██╔════╝     ██╔════╝██╔═══██╗████╗  ██║██╔════╝██║██╔════╝ 
-" ██║   ██║██║█████╗█████╔╝ ██║██╔██╗ ██║██║  ███╗    ██║     ██║   ██║██╔██╗ ██║█████╗  ██║██║  ███╗
-" ╚██╗ ██╔╝██║╚════╝██╔═██╗ ██║██║╚██╗██║██║   ██║    ██║     ██║   ██║██║╚██╗██║██╔══╝  ██║██║   ██║
-"  ╚████╔╝ ██║      ██║  ██╗██║██║ ╚████║╚██████╔╝    ╚██████╗╚██████╔╝██║ ╚████║██║     ██║╚██████╔╝
-"   ╚═══╝  ╚═╝      ╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝      ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝     ╚═╝ ╚═════╝  
+"		 ██╗   ██╗██╗      ██╗  ██╗██╗███╗   ██╗ ██████╗     
+"		 ██║   ██║██║      ██║ ██╔╝██║████╗  ██║██╔════╝     
+"		 ██║   ██║██║█████╗█████╔╝ ██║██╔██╗ ██║██║  ███╗    
+"		 ╚██╗ ██╔╝██║╚════╝██╔═██╗ ██║██║╚██╗██║██║   ██║    
+"		  ╚████╔╝ ██║      ██║  ██╗██║██║ ╚████║╚██████╔╝    
+"		   ╚═══╝  ╚═╝      ╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝     
 "       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀       
 "       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣢⣿⣿⣿⣸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣪⣿⣿⣿⣘⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀	      
 "       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣪⣿⣿⣿⣿⣿⣸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣪⣿⣿⣿⣿⣿⣸⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀       
@@ -66,13 +66,15 @@ setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 augroup tex
 	" For all tex files turn on spell checking
 	autocmd FileType tex setlocal spell
-	
-	" For all tex files use syntax folding
-	autocmd FileType tex set fdm=syntax
 augroup end
 
-" Otherwise use fold markers
-set fdm=marker
+augroup r
+	" For all r files use syntax folding
+	autocmd FileType r set fdm=marker
+augroup end
+
+" Otherwise use syntax folds
+set fdm=syntax
 
 " Remap help navigation
 augroup help
@@ -112,6 +114,7 @@ let maplocalleader = ","
 
 " Remap $ (end-of-line)
 nnoremap å $
+vnoremap å $
 
 " Map substitute
 nnoremap <LocalLeader>S :%s//g<Left><Left>
@@ -201,9 +204,9 @@ Plug 'matze/vim-tex-fold'
 
 Plug 'SirVer/ultisnips', { 'do': '/usr/local/bin/python3 install.py' }
 
-Plug 'junegunn/fzf', { 'do': './install --bin' }
+"Plug 'junegunn/fzf', { 'do': './install --bin' }
 
-Plug 'junegunn/fzf.vim'
+"Plug 'junegunn/fzf.vim'
 
 Plug 'mhinz/vim-startify'
 
@@ -212,8 +215,6 @@ Plug 'tpope/vim-surround'
 Plug 'jalvesaq/Nvim-R'
 
 "Plug 'junegunn/vim-emoji'
-
-Plug 'kshenoy/vim-signature'
 
 "Plug 'itchyny/calendar.vim'
 
