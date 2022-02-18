@@ -147,6 +147,12 @@ bindsym $mod+a exec --no-startup-id agenda
 # Flash current window
 bindsym $mod+shift+f exec --no-startup-id flash_window
 
+# Lock screen
+bindsym $mod+x exec betterlockscreen -l
+
+# Lock screen and suspend
+bindsym $mod+shift+x exec betterlockscreen -s
+
 #=============================================================================#
 #	Workspace and windows managment
 
@@ -178,11 +184,8 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# split in horizontal orientation
-bindsym $mod+x split h
-
-# split in vertical orientation
-bindsym $mod+z split v
+# Toggle split orientation
+bindsym $mod+z split toggle
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
