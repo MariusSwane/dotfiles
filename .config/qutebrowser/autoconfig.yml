@@ -8,6 +8,12 @@ config_version: 2
 settings:
   auto_save.session:
     global: true
+  colors.contextmenu.menu.bg:
+    global: black
+  colors.webpage.bg:
+    global: white
+  colors.webpage.darkmode.enabled:
+    global: true
   content.autoplay:
     global: false
   content.blocking.hosts.lists:
@@ -15,7 +21,9 @@ settings:
     - https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
   content.cookies.accept:
     global: no-3rdparty
-  content.notifications:
+  content.geolocation:
+    https://www.xl-bygg.no: false
+  content.notifications.enabled:
     https://mail.protonmail.com: true
     https://mariuswis.cloud.seedboxes.cc: true
     https://www.facebook.com: false
@@ -25,6 +33,8 @@ settings:
     global: true
   content.register_protocol_handler:
     https://mail.google.com?extsrc=mailto&url=%25s: false
+  downloads.position:
+    global: bottom
   fonts.completion.category:
     global: italic bold default_size default_family
   fonts.completion.entry:
@@ -60,7 +70,7 @@ settings:
   fonts.web.family.cursive:
     global: null
   url.default_page:
-    global: file:///home/mariussw/Documents/startpg/startpg.html
+    global: file:///home/mariussw/Documents/startpg/index.html
   url.incdec_segments:
     global:
     - path
@@ -71,4 +81,4 @@ settings:
     global:
       DEFAULT: https://duckduckgo.com/?q={}
   url.start_pages:
-    global: file:///home/mariussw/Documents/startpg/startpg.html
+    global: file:///home/mariussw/Documents/startpg/index.html

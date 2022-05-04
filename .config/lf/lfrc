@@ -1,0 +1,141 @@
+#set shell zsh
+set shellopts '-eu'
+set ifs "\n"
+set cleaner '~/.config/lf/cleaner'
+set previewer '~/.config/lf/scope'
+set scrolloff 10
+set icons
+
+# Dynamically set number of columns
+${{
+    w=$(tput cols)
+    if [ $w -le 80 ]; then
+        lf -remote "send $id set nopreview"
+        lf -remote "send $id set ratios 1"
+        lf -remote "send $id set info size:time"
+    elif [ $w -le 160 ]; then
+        lf -remote "send $id set ratios 1:2"
+    else
+        lf -remote "send $id set ratios 1:2:3"
+    fi
+}}
+
+# Set wallpaper
+cmd wall ${{
+	cp $f $HOME/.local/share/bg
+	fehbg
+}}
+
+# Trash file
+cmd trash ${{
+	clear; tput cup $(($(tput lines)/3)); tput bold
+	set -f
+	printf "%s\n\t" "$fx"
+	printf "trash?[y/N]"
+	read ans
+	[ $ans = "y" ] && trash-put $fx
+}}
+
+# Delete file
+cmd delete ${{
+	clear; tput cup $(($(tput lines)/3)); tput bold
+	set -f
+	printf "%s\n\t" "$fx"
+	printf "delete?[y/N]"
+	read ans
+	[ $ans = "y" ] && rm -rf -- $fx
+}}
+
+# Show progress while pasting
+cmd paste &{{
+    set -- $(cat ~/.local/share/lf/files)
+    mode="$1"
+    shift
+    case "$mode" in
+        copy)
+            rsync -av --ignore-existing --progress -- "$@" . |
+            stdbuf -i0 -o0 -e0 tr '\r' '\n' |
+            while IFS= read -r line; do
+                lf -remote "send $id echo $line"
+            done &&
+	    notify-send "📋 File(s) copied." 
+            ;;
+        move) 
+	    mv -n -- "$@" . &&
+	    notify-send "🚚 File(s) moved." 
+	;;
+    esac
+    rm ~/.local/share/lf/files
+    lf -remote "send clear"
+    lf -remote "send reload"
+}}
+
+# Open file
+cmd open ${{
+    case $(file --mime-type "$(readlink -f $f)" -b) in
+	application/vnd.openxmlformats-officedocument.spreadsheetml.sheet) localc $fx ;;
+	image/vnd.djvu|application/pdf|application/octet-stream|application/postscript) setsid -f zathura $fx >/dev/null 2>&1 ;;
+	text/html) $BROWSER $f;;
+        text/*|application/json|inode/x-empty) $EDITOR $fx;;
+	image/x-xcf) setsid -f gimp $f >/dev/null 2>&1 ;;
+	image/svg+xml) display -- $f ;;
+	image/*) sxiv -a $f ;;
+	audio/*) mpv --audio-display=no $f ;;
+	video/*) setsid -f mpv $f -quiet >/dev/null 2>&1 ;;
+	application/pdf|application/vnd*|application/epub*) setsid -f zathura $fx >/dev/null 2>&1 ;;
+	application/pgp-encrypted) $EDITOR $fx ;;
+        *) xdg-open $f ;;
+    esac
+}}
+
+# Make directory
+cmd mkdir $mkdir -p "$(echo $* | tr ' ' '\ ')"
+
+# Bulk rename
+cmd bulkrename $vidir
+
+# Extract archives
+cmd extract ${{
+	clear; tput cup $(($(tput lines)/3)); tput bold
+	set -f
+	printf "%s\n\t" "$fx"
+	printf "extract?[y/N]"
+	read ans
+	[ $ans = "y" ] && aunpack $fx
+}}
+
+cmd chmod ${{
+  printf "Mode Bits: "
+  read ans
+
+  for file in "$fx"
+  do
+    chmod $ans $file
+  done
+
+  lf -remote 'send reload'
+}}
+
+# Mapping commands
+map D delete
+map t trash
+map y copy
+map d cut
+map p paste
+map R bulkrename
+map E extract
+map Y $printf "%s" "$fx" | xclip -selection clipboard
+map A rename # at the very end
+#map c push A<c-u> # new rename
+map I push A<c-a> # at the very beginning
+map i push A<a-b><a-b><a-f> # before extention
+map a push A<a-b> # after extention
+map o &mimeopen $f
+map O $mimeopen --ask $f
+map n push :mkdir<space>
+map x chmod
+map b mark-load
+map e $$EDITOR $f
+map . set hidden!
+map W wall
+map r reload

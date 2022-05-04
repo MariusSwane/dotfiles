@@ -58,8 +58,9 @@ exec --no-startup-id yams
 exec --no-startup-id blueman-applet
 exec --no-startup-id $HOME/scripts/startup
 #exec --no-startup-id autorandr -c
-exec --no-startup-id $HOME/.fehbg 
-exec_always --no-startup-id $HOME/.cargo/bin/i3-auto-layout
+exec --no-startup-id $HOME/scripts/fehbg 
+#exec_always --no-startup-id $HOME/.cargo/bin/i3-auto-layout
+exec --no-startup-id autotiling
 exec --no-startup-id picom -b
 exec_always --no-startup-id flashfocus
 exec --no-startup-id $HOME/.config/polybar/launch.sh
@@ -85,6 +86,12 @@ bindsym $mod+Shift+s exec loginctl suspend
 	
 # kill focused window
 bindsym $mod+q kill
+
+# Lock screen
+bindsym $mod+x exec betterlockscreen -l
+
+# Lock screen and suspend
+bindsym $mod+shift+x exec betterlockscreen -s
 
 #=============================================================================#
 #	Sound and lighting
@@ -119,12 +126,10 @@ for_window [class="float"] floating enable resize set 971 600
 # rofi 
 bindsym $mod+d exec --no-startup-id rofi -show run
 bindsym $mod+Shift+d exec --no-startup-id rofi-pass
+bindsym $mod+e exec --no-startup-id emoji
 
 # browser
-bindsym $mod+b exec brave
-
-# sync email
-bindsym $mod+Shift+m exec mbsync -a
+bindsym $mod+b exec qutebrowser
 
 # relaunch i3-auto-layout
 bindsym $mod+shift+i exec ~/.cargo/bin/i3-auto-layout
@@ -132,26 +137,17 @@ bindsym $mod+shift+i exec ~/.cargo/bin/i3-auto-layout
 # relaunch polybar
 bindsym $mod+shift+p exec ~/.config/polybar/launch.sh
 
-# BitWarden
-bindsym $mod+shift+b exec bitwarden-desktop
-
 # change xrandr configuration
 bindsym $mod+shift+a exec --no-startup-id $HOME/scripts/arc
-
-# reapply wallpaper
-#bindsym $mod+shift+f exec --no-startup-id $HOME/.fehbg 
 
 # check agenda
 bindsym $mod+a exec --no-startup-id agenda
 
 # Flash current window
-bindsym $mod+shift+f exec --no-startup-id flash_window
+bindsym $mod+w exec --no-startup-id flash_window
 
-# Lock screen
-bindsym $mod+x exec betterlockscreen -l
-
-# Lock screen and suspend
-bindsym $mod+shift+x exec betterlockscreen -s
+# Launch external editor
+bindsym $mod+t exec $HOME/scripts/thundervim
 
 #=============================================================================#
 #	Workspace and windows managment

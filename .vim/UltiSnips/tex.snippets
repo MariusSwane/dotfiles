@@ -228,17 +228,17 @@ snippet beamer "White themed beamer" b
 endsnippet
 
 snippet sec
-\section{$1}
+\section{$1} \label{$1}
 $2
 endsnippet
 
 snippet sub
-\subsection{$1}
+\subsection{$1} \label{$1}
 $2
 endsnippet
 
 snippet subsub
-\subsubsection{$1}
+\subsubsection{$1} \label{$1}
 $2
 endsnippet
 
@@ -332,4 +332,12 @@ endsnippet
 
 snippet i "" b
 \item[-] $1
+endsnippet
+
+snippet fo "Fold open"
+% {{{ ${1:Fold name}
+endsnippet
+
+snippet fc "fold close"
+% }}}
 endsnippet

@@ -1,0 +1,39 @@
+#---System Control---#
+# Restart hotkey damon
+super + shift + x
+	killall sxhkd & notify-send "SXHKD config reloaded" && sxhkd &
+
+# Lock the screen
+super + alt + l
+	betterlockscreen -l
+
+# Lock screen and suspend
+super + shift + alt + l
+	betterlockscreen -s
+
+# Suspend system
+super + shift + s
+	loginctl suspend
+
+# Run autorandr
+super + shift + a
+	autorandr -c
+
+#---Applications---#
+# Rofi
+super + d 
+	rofi -show run
+
+super + shift + d
+	rofi-pass
+
+super + e 
+	emoji
+
+# Browser
+super + b
+	qutebrowser
+
+# Agenda
+super + a
+	agenda

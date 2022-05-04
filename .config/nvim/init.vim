@@ -23,8 +23,7 @@
 "       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⣿⢟⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡷⣿⣿⣸⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀       
 "       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣾⣿⣎⣹⣺⡺⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⢺⣺⣮⣷⣿⣿⣻⣈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀       
 "       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣪⣿⣿⣿⣿⠟⢧⡿⣹⠀⠀⠇⠷⣿⣿⣿⣿⣿⣿⠟⠕⠀⠀⣮⢿⡙⠇⢿⣿⣿⣿⣻⣈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀       
-"       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣪⣿⣿⣿⣿⠟⠁⠀⠀⢿⣻⣫⡀⠀⠀⠄⢧⣿⣿⣿⠁⠀⠀⢀⣾⣹⡿⠀⠀⠀⠄⠷⣿⣿⣿⣿⣸⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀       
-"       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⣿⣿⣿⣿⠟⠁⠀⠀⠀⠀⠄⢷⣿⣿⣻⣸⣨⣿⣿⣿⣿⣨⣺⣾⣿⣿⡟⠁⠀⠀⠀⠀⠀⠄⠷⣿⣿⣿⣿⣸⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀       
+"       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣪⣿⣿⣿⣿⠟⠁⠀⠀⢿⣻⣫⡀⠀⠀⠄⢧⣿⣿⣿⠁⠀⠀⢀⣾⣹⡿⠀⠀⠀⠄⠷⣿⣿⣿⣿⣸⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⣿⣿⣿⣿⠟⠁⠀⠀⠀⠀⠄⢷⣿⣿⣻⣸⣨⣿⣿⣿⣿⣨⣺⣾⣿⣿⡟⠁⠀⠀⠀⠀⠀⠄⠷⣿⣿⣿⣿⣸⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀       
 "       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣮⣿⣿⣿⣿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠇⠿⣿⣿⣿⣿⣿⣷⣿⣿⣿⣿⠿⠕⠀⠀⠀⠀⠀⠀⠀⠀⠀⠆⢿⣿⣿⣿⣿⣸⠀⠀⠀⠀⠀⠀⠀⠀       
 "       ⠀⠀⠀⠀⠀⠀⠀⠀⢢⣿⣿⣿⣿⡟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠅⠗⣿⣟⣿⣿⠟⠅⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠇⢿⣿⣿⣿⣻⠀⠀⠀⠀⠀⠀⠀       
 "       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠷⣿⡿⠕⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠅⠅⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠷⣿⣿⠑⠀⠀⠀⠀⠀⠀⠀       
@@ -129,16 +128,16 @@ noremap <F4> :set hlsearch! hlsearch?<CR>
 nnoremap S ea<C-X><C-S>
 
 " Yank file dir path
-nnoremap <Leader>yd :let @+=expand('%:p:h')<CR> 
+nnoremap <LocalLeader>yd :let @+=expand('%:p:h')<CR> 
 
 " Yank file path
-nnoremap <Leader>yf :let @+=expand('%:p:f')<CR> 
+nnoremap <LocalLeader>yf :let @+=expand('%:p:f')<CR> 
 
 " Paste file dir path
-nnoremap <Leader>pd :put =expand('%:p:h')<CR>
+nnoremap <LocalLeader>pd :put =expand('%:p:h')<CR>
 
 " Paste file path
-nnoremap <Leader>pf :put =expand('%:p:f')<CR>
+nnoremap <LocalLeader>pf :put =expand('%:p:f')<CR>
 
 " Save file as sudo on files that require root
 cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
@@ -212,13 +211,18 @@ Plug 'mhinz/vim-startify'
 
 Plug 'tpope/vim-surround'
 
-Plug 'jalvesaq/Nvim-R'
-
-"Plug 'junegunn/vim-emoji'
-
 "Plug 'itchyny/calendar.vim'
 
-"Plug 'vim-airline/vim-airline'
+"Plug 'ncm2/ncm2'
+
+"Plug 'roxma/nvim-yarp'
+
+"Plug 'gaalcaras/ncm-R'
+
+"Plug 'beauwilliams/focus.nvim'
+"lua require("focus").setup()
+
+Plug 'jalvesaq/Nvim-R'
 
 Plug 'itchyny/lightline.vim'
 
@@ -231,20 +235,23 @@ call plug#end()
 "	Plugin settings 						      "
 "============================================================================="
 
+"let g:python3_host_prog = '/usr/local/bin/python3'
+
 " Nvim-R settings
 
 let R_auto_start = 1
 let R_assign = 0
-let R_editor_w = 100
+let R_editor_w = 120
 let R_objbr_place = 'console,above'
 let R_objbr_h = 30
 let Rout_more_colors = 1
+let T_clear_line = 1
 
 "let R_set_omnifunc = ["r",  "rmd", "rnoweb", "rhelp", "rrst"]
 "let R_auto_omni = ["r",  "rmd", "rnoweb", "rhelp", "rrst"]
 
-autocmd VimResized * let R_editor_width = 100
-autocmd VimResized * let R_editor_height = 80
+autocmd VimResized * let R_editor_width = 120
+"autocmd VimResized * let R_editor_height = 80
 
 function! s:customNvimRMappings()
 	nmap <buffer> <Leader>rs<Plug>RStart
@@ -292,9 +299,12 @@ let $FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude ".wine"'
 "      \ "\(Ov\|Und\)erfull"
 "      \ "I moved some lines"
 
-
 " Vimtex-compile
 nnoremap <LocalLeader>c :VimtexCompile<CR>
+
+" Vimtex wordcount
+nnoremap <LocalLeader>w :VimtexCountWords<CR>
+vnoremap <LocalLeader>w :'<,'>VimtexCountWords<CR>
 
 " Compile on initialization, cleanup on quit
 augroup vimtex_event_1
@@ -319,35 +329,35 @@ nnoremap <Leader>h :ColorHighlight<CR>
 "============================================================================="
 " Lightline
 
-function! WordCount()
-    let currentmode = mode()
-    if !exists("g:lastmode_wc")
-        let g:lastmode_wc = currentmode
-    endif
-    " if we modify file, open a new buffer, be in visual ever, or switch modes
-    " since last run, we recompute.
-    if &modified || !exists("b:wordcount") || currentmode =~? '\c.*v' || currentmode != g:lastmode_wc
-        let g:lastmode_wc = currentmode
-        let l:old_position = getpos('.')
-        let l:old_status = v:statusmsg
-        execute "silent normal g\<c-g>"
-        if v:statusmsg == "--No lines in buffer--"
-            let b:wordcount = 0
-        else
-            let s:split_wc = split(v:statusmsg)
-            if index(s:split_wc, "Selected") < 0
-                let b:wordcount = str2nr(s:split_wc[11])
-            else
-                let b:wordcount = str2nr(s:split_wc[5])
-            endif
-            let v:statusmsg = l:old_status
-        endif
-        call setpos('.', l:old_position)
-        return b:wordcount
-    else
-        return b:wordcount
-    endif
-endfunction
+"function! WordCount()
+"    let currentmode = mode()
+"    if !exists("g:lastmode_wc")
+"        let g:lastmode_wc = currentmode
+"    endif
+"    " if we modify file, open a new buffer, be in visual ever, or switch modes
+"    " since last run, we recompute.
+"    if &modified || !exists("b:wordcount") || currentmode =~? '\c.*v' || currentmode != g:lastmode_wc
+"        let g:lastmode_wc = currentmode
+"        let l:old_position = getpos('.')
+"        let l:old_status = v:statusmsg
+"        execute "silent normal g\<c-g>"
+"        if v:statusmsg == "--No lines in buffer--"
+"            let b:wordcount = 0
+"        else
+"            let s:split_wc = split(v:statusmsg)
+"            if index(s:split_wc, "Selected") < 0
+"                let b:wordcount = str2nr(s:split_wc[11])
+"            else
+"                let b:wordcount = str2nr(s:split_wc[5])
+"            endif
+"            let v:statusmsg = l:old_status
+"        endif
+"        call setpos('.', l:old_position)
+"        return b:wordcount
+"    else
+"        return b:wordcount
+"    endif
+"endfunction
 
 "let g:lightline = {
 "      \ 'active': {
