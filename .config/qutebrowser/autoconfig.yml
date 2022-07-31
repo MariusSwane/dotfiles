@@ -22,17 +22,28 @@ settings:
   content.cookies.accept:
     global: no-3rdparty
   content.geolocation:
+    https://outlook.office.com: true
+    https://outlook.office365.com: true
+    https://www.elkjop.no: false
     https://www.xl-bygg.no: false
+  content.media.audio_capture:
+    https://www.facebook.com: true
+  content.media.audio_video_capture:
+    https://www.facebook.com: true
+  content.media.video_capture:
+    https://www.facebook.com: true
   content.notifications.enabled:
     https://mail.protonmail.com: true
     https://mariuswis.cloud.seedboxes.cc: true
     https://www.facebook.com: false
+    https://www.netflix.com: false
     https://www.reddit.com: false
     https://www.youtube.com: false
   content.plugins:
     global: true
   content.register_protocol_handler:
     https://mail.google.com?extsrc=mailto&url=%25s: false
+    https://outlook.office.com?mailtouri=%25s: false
   downloads.position:
     global: bottom
   fonts.completion.category:

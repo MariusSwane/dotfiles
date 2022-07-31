@@ -49,4 +49,4 @@ empty_tag_marker = ""
 execute_on_song_change =  notifyMusic
 
 ## Lyrics ##
-lyrics_fetchers = genius, azlyrics, musixmatch, sing365, metrolyrics, justsomelyrics, jahlyrics, plyrics, tekstowo, zeneszoveg, internet
+lyrics_fetchers = azlyrics, genius, musixmatch, sing365, metrolyrics, justsomelyrics, jahlyrics, plyrics, tekstowo, zeneszoveg, internet

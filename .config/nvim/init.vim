@@ -23,7 +23,7 @@
 "       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⣿⢟⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡷⣿⣿⣸⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀       
 "       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣾⣿⣎⣹⣺⡺⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⢺⣺⣮⣷⣿⣿⣻⣈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀       
 "       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣪⣿⣿⣿⣿⠟⢧⡿⣹⠀⠀⠇⠷⣿⣿⣿⣿⣿⣿⠟⠕⠀⠀⣮⢿⡙⠇⢿⣿⣿⣿⣻⣈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀       
-"       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣪⣿⣿⣿⣿⠟⠁⠀⠀⢿⣻⣫⡀⠀⠀⠄⢧⣿⣿⣿⠁⠀⠀⢀⣾⣹⡿⠀⠀⠀⠄⠷⣿⣿⣿⣿⣸⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⣿⣿⣿⣿⠟⠁⠀⠀⠀⠀⠄⢷⣿⣿⣻⣸⣨⣿⣿⣿⣿⣨⣺⣾⣿⣿⡟⠁⠀⠀⠀⠀⠀⠄⠷⣿⣿⣿⣿⣸⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀       
+"       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣪⣿⣿⣿⣿⠟⠁⠀⠀⢿⣻⣫⡀⠀⠀⠄⢧⣿⣿⣿⠁⠀⠀⢀⣾⣹⡿⠀⠀⠀⠄⠷⣿⣿⣿⣿⣸⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀       
 "       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣮⣿⣿⣿⣿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠇⠿⣿⣿⣿⣿⣿⣷⣿⣿⣿⣿⠿⠕⠀⠀⠀⠀⠀⠀⠀⠀⠀⠆⢿⣿⣿⣿⣿⣸⠀⠀⠀⠀⠀⠀⠀⠀       
 "       ⠀⠀⠀⠀⠀⠀⠀⠀⢢⣿⣿⣿⣿⡟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠅⠗⣿⣟⣿⣿⠟⠅⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠇⢿⣿⣿⣿⣻⠀⠀⠀⠀⠀⠀⠀       
 "       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠷⣿⡿⠕⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠅⠅⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠷⣿⣿⠑⠀⠀⠀⠀⠀⠀⠀       
@@ -36,14 +36,15 @@
 
 set number relativenumber "Line numbering
 set incsearch "Set incremental search
-set showcmd "show which commands are read
-set ic "Set Ignore case in search as default
+set showcmd "Show which commands are read
+set ignorecase "Set Ignore case in search as default
+set smartcase "Overrides ignore case if search contains capital letter
 set scrolloff=50 "Setting scroll centering
-"set showmatch "highlight matching {[()]}"
-set clipboard+=unnamedplus "yank to clipboard
-set nocompatible
-set nohlsearch
-set tw=80
+set clipboard+=unnamedplus "Yank to clipboard
+set nohlsearch "Do not highlight searches 
+set textwidth=80
+set smartindent
+set smarttab
 
 " For all text files set 'textwidth' to 80 characters.
 "autocmd FileType text setlocal textwidth=80
@@ -140,7 +141,7 @@ nnoremap <LocalLeader>pd :put =expand('%:p:h')<CR>
 nnoremap <LocalLeader>pf :put =expand('%:p:f')<CR>
 
 " Save file as sudo on files that require root
-cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
+"cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 
 " Remapping splits resizing
 nnoremap <silent> <LocalLeader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
@@ -169,6 +170,7 @@ nnoremap tn :tabnew<CR>
 "	Permanent macros						       "
 "=============================================================================="	
 
+"Not working...
 let @h = "yyp:s/./=/g"
 let @s = "yyp:s/./-/g"
 
@@ -191,8 +193,6 @@ command! -register CopyMatches call CopyMatches(<q-reg>)
 
 call plug#begin(stdpath('data') . '/plugged')
 
-Plug 'chrisbra/Colorizer'
-
 Plug 'Ron89/thesaurus_query.vim'
 
 Plug 'chrisbra/csv.vim'
@@ -201,32 +201,17 @@ Plug 'lervag/vimtex'
 
 Plug 'matze/vim-tex-fold'
 
-Plug 'SirVer/ultisnips', { 'do': '/usr/local/bin/python3 install.py' }
-
-"Plug 'junegunn/fzf', { 'do': './install --bin' }
-
-"Plug 'junegunn/fzf.vim'
+Plug 'SirVer/ultisnips' ", { 'do': '/usr/local/bin/python3 install.py' }
 
 Plug 'mhinz/vim-startify'
 
 Plug 'tpope/vim-surround'
 
-"Plug 'itchyny/calendar.vim'
-
-"Plug 'ncm2/ncm2'
-
-"Plug 'roxma/nvim-yarp'
-
-"Plug 'gaalcaras/ncm-R'
-
-"Plug 'beauwilliams/focus.nvim'
-"lua require("focus").setup()
+Plug 'frazrepo/vim-rainbow'
 
 Plug 'jalvesaq/Nvim-R'
 
 Plug 'itchyny/lightline.vim'
-
-"Plug 'dylanaraps/wal.vim'
 
 call plug#end()
 
@@ -241,16 +226,18 @@ call plug#end()
 
 let R_auto_start = 1
 let R_assign = 0
-let R_editor_w = 120
+"let R_min_editor_width = 90
 let R_objbr_place = 'console,above'
 let R_objbr_h = 30
 let Rout_more_colors = 1
-let T_clear_line = 1
+let R_clear_line = 1
+let R_rconsole_width = 0
+let R_rconsole_height = 15
 
-"let R_set_omnifunc = ["r",  "rmd", "rnoweb", "rhelp", "rrst"]
-"let R_auto_omni = ["r",  "rmd", "rnoweb", "rhelp", "rrst"]
+let R_set_omnifunc = ["r",  "rmd", "rnoweb", "rhelp", "rrst"]
+let R_auto_omni = ["r",  "rmd", "rnoweb", "rhelp", "rrst"]
 
-autocmd VimResized * let R_editor_width = 120
+"autocmd VimResized * let R_min_editor_width = 90
 "autocmd VimResized * let R_editor_height = 80
 
 function! s:customNvimRMappings()
@@ -302,6 +289,8 @@ let $FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude ".wine"'
 " Vimtex-compile
 nnoremap <LocalLeader>c :VimtexCompile<CR>
 
+let g:vimtex_compiler_enabled = 1
+
 " Vimtex wordcount
 nnoremap <LocalLeader>w :VimtexCountWords<CR>
 vnoremap <LocalLeader>w :'<,'>VimtexCountWords<CR>
@@ -310,7 +299,7 @@ vnoremap <LocalLeader>w :'<,'>VimtexCountWords<CR>
 augroup vimtex_event_1
   au!
   au User VimtexEventQuit     call vimtex#compiler#clean(0)
-  au User VimtexEventInitPost call vimtex#compiler#compile()
+  "au User VimtexEventInitPost call vimtex#compiler#compile()
 augroup END
 
 " Zathura/vimtex
@@ -327,49 +316,6 @@ let g:colorizer_auto_color = 1
 nnoremap <Leader>h :ColorHighlight<CR>
 
 "============================================================================="
-" Lightline
-
-"function! WordCount()
-"    let currentmode = mode()
-"    if !exists("g:lastmode_wc")
-"        let g:lastmode_wc = currentmode
-"    endif
-"    " if we modify file, open a new buffer, be in visual ever, or switch modes
-"    " since last run, we recompute.
-"    if &modified || !exists("b:wordcount") || currentmode =~? '\c.*v' || currentmode != g:lastmode_wc
-"        let g:lastmode_wc = currentmode
-"        let l:old_position = getpos('.')
-"        let l:old_status = v:statusmsg
-"        execute "silent normal g\<c-g>"
-"        if v:statusmsg == "--No lines in buffer--"
-"            let b:wordcount = 0
-"        else
-"            let s:split_wc = split(v:statusmsg)
-"            if index(s:split_wc, "Selected") < 0
-"                let b:wordcount = str2nr(s:split_wc[11])
-"            else
-"                let b:wordcount = str2nr(s:split_wc[5])
-"            endif
-"            let v:statusmsg = l:old_status
-"        endif
-"        call setpos('.', l:old_position)
-"        return b:wordcount
-"    else
-"        return b:wordcount
-"    endif
-"endfunction
-
-"let g:lightline = {
-"      \ 'active': {
-"      \   'right': [ [ 'lineinfo' ], [ 'percent', 'wordcount' ], [ 'fileformat', 'fileencoding', 'filetype' ] ]
-"      \ },
-"      \ 'component_function': {
-"      \   'wordcount': 'WordCount',
-"      \ },
-"      \ }
-
-"============================================================================="
-
 "Startify customization
 let g:ascii = [
 \'                                            ..						',

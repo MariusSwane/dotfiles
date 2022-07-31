@@ -116,7 +116,10 @@ cmd chmod ${{
   lf -remote 'send reload'
 }}
 
-# Mapping commands
+cmd halp ${{ printf "D delete\n t trash\n y copy\n d cut\n p paste\n R bulkrename\n Y yank path\n A rename at the very end\n I rename at the very beginning\n i rename before extension\n a rename after extention\n o mimeopen\n O mimeopen --ask\n n mkdir\n x chmod\n b mark-load\n e open in editor\n . toggle hidden\n W wall\n r reload" |
+rofi -dmenu -i -l 20
+}}
+
 map D delete
 map t trash
 map y copy
@@ -126,7 +129,6 @@ map R bulkrename
 map E extract
 map Y $printf "%s" "$fx" | xclip -selection clipboard
 map A rename # at the very end
-#map c push A<c-u> # new rename
 map I push A<c-a> # at the very beginning
 map i push A<a-b><a-b><a-f> # before extention
 map a push A<a-b> # after extention
@@ -139,3 +141,4 @@ map e $$EDITOR $f
 map . set hidden!
 map W wall
 map r reload
+map ? halp

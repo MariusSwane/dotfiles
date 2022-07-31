@@ -15,7 +15,7 @@ snippet article
 \usepackage{booktabs}
 \usepackage{multicol}
 \usepackage{dcolumn}
-\usepackage[top=28truemm,bottom=26.5truemm,left=25.5truemm,right=25.5truemm]{geometry}
+%\usepackage[top=28truemm,bottom=26.5truemm,left=25.5truemm,right=25.5truemm]{geometry}
 
 \hypersetup{
 colorlinks=true,
@@ -52,7 +52,7 @@ urlcolor=blue
 
 \keywords{}
 
-\pagebreak
+\clearpage
 
 %tableofcontents
 %\pagebreak
@@ -69,7 +69,7 @@ urlcolor=blue
 
 \section{}
 
-\pagebreak
+\clearpage
 
 \bibliographystyle{agsm}
 \bibliography{$2}
@@ -262,6 +262,10 @@ endsnippet
 
 snippet \i
 \textit{$1}
+endsnippet
+
+snippet \u
+\underline{$1}
 endsnippet
 
 snippet fig "Figure environment" b

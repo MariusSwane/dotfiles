@@ -171,6 +171,8 @@ export EMAIL_ADDRESS='marius.wishman@ntnu.no'
 export NOT_CRAN='TRUE'
 export PF_INFO="ascii os host kernel pkgs memory wm shell editor palette"
 export PASSWORD_STORE_ENABLE_EXTENSIONS="true"
+#export QT_STYLE_OVERRIDE="Adwaita-Qt"
+export QT_QPA_PLATFORMTHEME=qt5ct
 
 ##############################
 #####    ALIASES    ##########

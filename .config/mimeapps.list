@@ -8,6 +8,8 @@ x-scheme-handler/mailto=userapp-Thunderbird-VCSG90.desktop;
 x-scheme-handler/mid=userapp-Thunderbird-VCSG90.desktop;
 x-scheme-handler/webcal=userapp-Thunderbird-Z60J90.desktop;
 x-scheme-handler/webcals=userapp-Thunderbird-Z60J90.desktop;
+application/pgp-keys=org.kde.kate.desktop;nvim.desktop;
+text/rtf=abiword.desktop;
 
 [Default Applications]
 application/msword=libreoffice-writer.desktop;

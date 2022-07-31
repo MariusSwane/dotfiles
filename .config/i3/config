@@ -120,7 +120,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 bindsym $mod+Return exec kitty
 
 # floating terminal 
-bindsym $mod+Shift+Return exec kitty --class 'float' -o font_size=12
+bindsym $mod+Shift+Return exec kitty --class 'float' -o font_size=14
 for_window [class="float"] floating enable resize set 971 600 
 	
 # rofi 
@@ -148,6 +148,15 @@ bindsym $mod+w exec --no-startup-id flash_window
 
 # Launch external editor
 bindsym $mod+t exec $HOME/scripts/thundervim
+
+# Launch Thunderbird
+bindsym $mod+Shift+t exec thunderbird
+
+# Add printer
+bindsym $mod+p exec system-config-printer
+
+# Launch zathura
+bindsym $mod+Shift+z exec zathura
 
 #=============================================================================#
 #	Workspace and windows managment

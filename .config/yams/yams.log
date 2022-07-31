@@ -1,3 +1,2 @@
-2022-05-03 21:01:58,369 - yams - INFO - Starting up YAMS v0.7.3
-2022-05-03 21:01:59,115 - yams - INFO - Connected to mpd, version: 0.23.5
-2022-05-03 21:01:59,117 - yams - INFO - Wrote PID to file: /home/mariussw/.config/yams/yams.pid
+2022-07-26 14:13:54,611 - yams - INFO - Starting up YAMS v0.7.3
+2022-07-26 14:13:54,612 - yams - ERROR - Could not connect to MPD! Check that your config is correct and that MPD is running. Error: [Errno -9] Address family for hostname not supported
