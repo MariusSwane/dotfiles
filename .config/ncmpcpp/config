@@ -1,3 +1,5 @@
+#mpd_music_dir = "~/Synology/Music"
+
 autocenter_mode = "yes"
 follow_now_playing_lyrics = "yes"
 ignore_leading_the = "yes"

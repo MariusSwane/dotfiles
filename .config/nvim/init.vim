@@ -207,7 +207,7 @@ Plug 'mhinz/vim-startify'
 
 Plug 'tpope/vim-surround'
 
-Plug 'frazrepo/vim-rainbow'
+"Plug 'frazrepo/vim-rainbow'
 
 Plug 'jalvesaq/Nvim-R'
 
@@ -221,6 +221,9 @@ call plug#end()
 "============================================================================="
 
 "let g:python3_host_prog = '/usr/local/bin/python3'
+
+" Vim-Rainbow
+let g:rainbow_active = 1
 
 " Nvim-R settings
 

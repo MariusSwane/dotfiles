@@ -47,14 +47,15 @@ set $ws10 "10"
 #	Autostart							       #
 #==============================================================================#
 
-exec --no-startup-id connman-gtk
+exec --no-startup-id nm-applet
 exec --no-startup-id unclutter
 exec --no-startup-id dunst
 exec --no-startup-id dropbox
 exec --no-startup-id udiskie -nTa
 exec --no-startup-id syncthing -no-browser
-exec --no-startup-id mpd
+#exec --no-startup-id mpd
 exec --no-startup-id yams
+exec --no-startup-id emacs --daemon
 exec --no-startup-id blueman-applet
 exec --no-startup-id $HOME/scripts/startup
 #exec --no-startup-id autorandr -c
