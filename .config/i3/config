@@ -62,7 +62,7 @@ exec --no-startup-id $HOME/scripts/startup
 exec --no-startup-id $HOME/scripts/fehbg 
 #exec_always --no-startup-id $HOME/.cargo/bin/i3-auto-layout
 exec --no-startup-id autotiling
-exec --no-startup-id picom -b
+exec --no-startup-id picom -b --experimental-backends
 exec_always --no-startup-id flashfocus
 exec --no-startup-id $HOME/.config/polybar/launch.sh
 
@@ -77,14 +77,14 @@ exec --no-startup-id $HOME/.config/polybar/launch.sh
 bindsym $mod+Shift+c reload
 
 # restart 
-bindsym $mod+Shift+r exec loginctl reboot
+bindsym $mod+Shift+r exec rbt
 
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec i3-msg exit
 
 # suspend
 bindsym $mod+Shift+s exec loginctl suspend
-	
+
 # kill focused window
 bindsym $mod+q kill
 
@@ -123,7 +123,7 @@ bindsym $mod+Return exec kitty
 # floating terminal 
 bindsym $mod+Shift+Return exec kitty --class 'float' -o font_size=14
 for_window [class="float"] floating enable resize set 971 600 
-	
+
 # rofi 
 bindsym $mod+d exec --no-startup-id rofi -show run
 bindsym $mod+Shift+d exec --no-startup-id rofi-pass
@@ -131,6 +131,9 @@ bindsym $mod+e exec --no-startup-id emoji
 
 # browser
 bindsym $mod+b exec qutebrowser
+
+# bookmarks
+bindsym $mod+Shift+b exec bm
 
 # relaunch i3-auto-layout
 bindsym $mod+shift+i exec ~/.cargo/bin/i3-auto-layout

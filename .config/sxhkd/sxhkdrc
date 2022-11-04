@@ -34,6 +34,26 @@ super + e
 super + b
 	qutebrowser
 
+# Bookmarks
+super + shift + b
+	bm
+
 # Agenda
 super + a
 	agenda
+
+# Relaunch polybar
+super + shift + p
+	$HOME/.cofig/polybar/launch.sh
+
+# Launch external editor
+super + t
+	thundervim
+
+# Printer
+super + p
+	system-config-printer
+
+# Zathura
+super + shift + z
+	zathura
