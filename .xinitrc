@@ -58,6 +58,8 @@ case $session in
 	    exec sowm;;
     xfce|xfce4         ) 
 	    exec startxfce4;;
+    bspwm		)
+	    exec bspwm;;
     awesome		) 
 	    xset r rate 300 50 &
 	    setxkbmap -option caps:escape &
