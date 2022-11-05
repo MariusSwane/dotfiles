@@ -4,10 +4,21 @@
 nm-applet &
 xrdb ~/.Xresources &
 picom -b --experimental-backends &
+xset r rate 300 50 &
+setxkbmap -option caps:escape &
+unclutter &
+dunst &
+dropbox &
+udiskie -nTa &
+yams &
+emacs --daemon &
+blueman-applet &
+$HOME/scripts/startup &
+$HOME/.config/polybar/bspwm_launch.sh &
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-bspc monitor -d I II III IV V VI VII VIII IX X
+bspc monitor -d 1 2 3 4 5 6 7 8 9 10
 
 bspc config border_width         	2
 bspc config window_gap          	12

@@ -1,2 +1,3 @@
-2022-11-05 08:07:25,140 - yams - INFO - Starting up YAMS v0.7.3
-2022-11-05 08:07:25,141 - yams - ERROR - Could not connect to MPD! Check that your config is correct and that MPD is running. Error: [Errno 111] Connection refused
+2022-11-05 19:52:08,212 - yams - INFO - Starting up YAMS v0.7.3
+2022-11-05 19:52:08,214 - yams - INFO - Connected to mpd, version: 0.23.5
+2022-11-05 19:52:08,216 - yams - INFO - Wrote PID to file: /home/mariussw/.config/yams/yams.pid

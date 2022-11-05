@@ -21,7 +21,7 @@ super + shift + s
 super + shift + {q,r}
 	bspc {quit,wm -r}
 
-# close and kill
+# close and kill ?
 super + {_,}q
 	bspc node -{c,k}
 
@@ -35,7 +35,7 @@ super + shift + {h,j,k,l}
 
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
-	bspc {node -d,desktop -f} '^{1-9,10}'
+	bspc {desktop -f,node -d} '^{1-9,10}'
 
 # expand a window by moving one of its side outward
 super + alt + {h,j,k,l}
@@ -90,7 +90,7 @@ super + a
 
 # Relaunch polybar
 super + shift + p
-	$HOME/.cofig/polybar/launch.sh
+	$HOME/.config/polybar/bspwm_launch.sh
 
 # Launch external editor
 super + t
