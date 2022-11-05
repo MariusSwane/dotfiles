@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 
 # /usr/bin/pipewire &
 # /usr/bin/pipewire-pulse &

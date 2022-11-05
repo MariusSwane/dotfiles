@@ -1,2 +1,2 @@
-2022-11-03 20:27:08,559 - yams - INFO - Starting up YAMS v0.7.3
-2022-11-03 20:27:08,559 - yams - ERROR - Could not connect to MPD! Check that your config is correct and that MPD is running. Error: [Errno 111] Connection refused
+2022-11-05 08:07:25,140 - yams - INFO - Starting up YAMS v0.7.3
+2022-11-05 08:07:25,141 - yams - ERROR - Could not connect to MPD! Check that your config is correct and that MPD is running. Error: [Errno 111] Connection refused
