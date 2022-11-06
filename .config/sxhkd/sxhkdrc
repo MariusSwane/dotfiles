@@ -56,7 +56,7 @@ super + alt + shift + {h,j,k,l}
 
 # Toggle fullscreen on and off
 super + f
-	crystal --fullscreen
+	bspc node focused.tiled -t fullscreen || bspc node focused.fullscreen -t tiled
 
 # Toggle floating on and off
 super + o
