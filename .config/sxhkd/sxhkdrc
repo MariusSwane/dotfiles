@@ -1,3 +1,11 @@
+
+# ███████╗██╗  ██╗██╗  ██╗██╗  ██╗██████╗ 
+# ██╔════╝╚██╗██╔╝██║  ██║██║ ██╔╝██╔══██╗
+# ███████╗ ╚███╔╝ ███████║█████╔╝ ██║  ██║
+# ╚════██║ ██╔██╗ ██╔══██║██╔═██╗ ██║  ██║
+# ███████║██╔╝ ██╗██║  ██║██║  ██╗██████╔╝
+# ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ 
+
 #---System Control---#
 # Restart hotkey damon
 super + shift + x
@@ -95,6 +103,10 @@ super + shift + p
 # Launch external editor
 super + t
 	thundervim
+
+# Thunderbird
+super + shift + t
+	thunderbird
 
 # Printer
 super + p

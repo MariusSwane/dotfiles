@@ -1,5 +1,12 @@
 #! /bin/sh
 
+# ██████╗ ███████╗██████╗ ██╗    ██╗███╗   ███╗
+# ██╔══██╗██╔════╝██╔══██╗██║    ██║████╗ ████║
+# ██████╔╝███████╗██████╔╝██║ █╗ ██║██╔████╔██║
+# ██╔══██╗╚════██║██╔═══╝ ██║███╗██║██║╚██╔╝██║
+# ██████╔╝███████║██║     ╚███╔███╔╝██║ ╚═╝ ██║
+# ╚═════╝ ╚══════╝╚═╝      ╚══╝╚══╝ ╚═╝     ╚═╝
+
 ###---Autostart---###
 nm-applet &
 xrdb ~/.Xresources &
@@ -13,7 +20,6 @@ udiskie -nTa &
 yams &
 emacs --daemon &
 blueman-applet &
-$HOME/scripts/startup &
 $HOME/.config/polybar/bspwm_launch.sh &
 
 pgrep -x sxhkd > /dev/null || sxhkd &
@@ -39,6 +45,6 @@ bspc config merge_overlapping_monitors 	true
 
 bspc config normal_border_color		"#4c566a"
 bspc config active_border_color		"#1e1e1e"
-bspc config focused_border_color 	"#327bd1"
+bspc config focused_border_color 	"#EDB83F"
 bspc config presel_feedback_color	"#327bd1"
 bspc config urgent_border_color 	"#dd2727"
