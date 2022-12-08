@@ -6,7 +6,9 @@
 # ███████║██╔╝ ██╗██║  ██║██║  ██╗██████╔╝
 # ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ 
 
+#--------------------#
 #---System Control---#
+
 # Restart hotkey damon
 super + shift + x
 	killall sxhkd & notify-send "SXHKD config reloaded" && sxhkd &
@@ -21,7 +23,26 @@ super + shift + alt + l
 
 # Suspend system
 super + shift + s
-	loginctl suspend
+	systemctl suspend
+
+# Volume controls
+XF86AudioRaiseVolume 
+	changeVolume +1%
+
+XF86AudioLowerVolume 
+	changeVolume -1%
+
+XF86AudioMute
+	changeVolume
+
+XF86AudioPlay 
+	mediakeys -t
+
+XF86AudioNext 
+	mediakeys -f
+
+XF86AudioPrev 
+	mediakeys -b
 
 #---BSPWM---#
 
@@ -63,7 +84,7 @@ super + f
 	bspc node focused.tiled -t fullscreen || bspc node focused.fullscreen -t tiled
 
 # Toggle floating on and off
-super + o
+super + shift + f
   	bspc node focused.tiled -t floating || bspc node focused.floating -t tiled
 
 #---Applications & scripts---#
@@ -72,8 +93,12 @@ super + o
 super + Return
 	kitty
 
+super + shift + Return
+	bspc rule -a \* -o state=floating && $TERMINAL
+	#kitty --class 'float'
+
 # Run autorandr
-super + shift + a
+super + a
 	autorandr -c
 
 # Rofi
@@ -97,8 +122,8 @@ super + shift + b
 	bm
 
 # Agenda
-super + a
-	agenda
+#super + a
+#	agenda
 
 # Relaunch polybar
 super + shift + p
@@ -119,3 +144,15 @@ super + p
 # Zathura
 super + shift + z
 	zathura
+
+# Toggle DragonFly sample rate
+super + alt + s
+	smplrt
+
+# Music bindings
+super + {r,s,a}
+	{pra, pq, downbum}
+	
+# Turn on/off vsync
+super + {v,n}
+	{vs, nvs}

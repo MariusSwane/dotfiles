@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /bin/bash
 
 # ██████╗ ███████╗██████╗ ██╗    ██╗███╗   ███╗
 # ██╔══██╗██╔════╝██╔══██╗██║    ██║████╗ ████║
@@ -8,30 +8,38 @@
 # ╚═════╝ ╚══════╝╚═╝      ╚══╝╚══╝ ╚═╝     ╚═╝
 
 ###---Autostart---###
-nm-applet &
 xrdb ~/.Xresources &
-xsetroot -cursor_name left_ptr &
-picom -b --experimental-backends &
 xset r rate 300 50 &
+numlockx &
+#xsetroot -cursor_name left_ptr &
+nm-applet &
+bluez &
+picom -b &
 setxkbmap -option caps:escape &
 unclutter &
 dunst &
 dropbox &
 udiskie -nTa &
+mpd &
+mpc mount syno nfs://192.168.10.116/volume1/share/Music &
+mpc update &
+mount Synology &
 yams &
 emacs --daemon &
 blueman-applet &
-fehbg &
-$HOME/.config/polybar/bspwm_launch.sh &
+autorandr -c &
+.config/autorandr/postswitch &
+#feh --no-fehbg --bg-fill "$HOME/.local/share/bg" &
+#$HOME/.config/polybar/bspwm_launch.sh &
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
 ###---MONITORS---###
 bspc monitor eDP1 -d 1 2 3 4 5 6 7 8 9 10
 
-if [[ $(xrandr -q | grep 'HDMI1 connected') ]]; then
-	autorandr -c
-fi
+#if [[ $(xrandr -q | grep 'HDMI1 connected') ]]; then
+	#autorandr -c
+#fi
 
 ###---Gaps and borders---###
 bspc config border_width         	2
@@ -56,3 +64,9 @@ bspc config active_border_color		"#1e1e1e"
 bspc config focused_border_color 	"#EDB83F"
 bspc config presel_feedback_color	"#327bd1"
 bspc config urgent_border_color 	"#dd2727"
+
+###---Rules---###
+#bspc rule -a Kitty:float state=floating
+bspc rule -a Zathura state=tiled
+bspc rule -a Emacs state=tiled
+

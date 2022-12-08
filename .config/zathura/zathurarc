@@ -1,7 +1,11 @@
 set default-bg rgba(0,0,0,0.6)
 set recolor-lightcolor rgba(0,0,0,0)
-map i recolor 
 
 set selection-clipboard clipboard
 
+#set font "iosevka:medium:italic:size=12"
+
 map w exec "zathuraWC '$FILE'"
+map = adjust_window best-fit
+
+set zoom-step 2
