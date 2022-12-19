@@ -325,9 +325,28 @@ augroup END
 let g:vimtex_view_method = 'zathura'
 
 "============================================================================="
-" Vim-airline
+" Lightline
 
-"let g:airline_section_[...] = ""
+" Word count
+
+let g:word_count=wordcount().words
+function WordCount()
+    if has_key(wordcount(),'visual_words')
+        let g:word_count=wordcount().visual_words."/".wordcount().words " count selected words
+    else
+        let g:word_count=wordcount().cursor_words."/".wordcount().words " or shows words 'so far'
+    endif
+    return g:word_count
+endfunction
+
+let g:lightline = {
+      \ 'active': {
+      \   'right': [ [ 'lineinfo' ], [ 'percent', 'wordcount' ], [ 'fileformat', 'fileencoding', 'filetype' ] ]
+      \ },
+      \ 'component_function': {
+      \   'wordcount': 'WordCount',
+      \ },
+      \ }
 
 "============================================================================="
 " Remap thesaurus"
