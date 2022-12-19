@@ -42,9 +42,15 @@ set smartcase "Overrides ignore case if search contains capital letter
 set scrolloff=50 "Setting scroll centering
 set clipboard+=unnamedplus "Yank to clipboard
 set nohlsearch "Do not highlight searches 
-set textwidth=80
+set textwidth=80 
+" Warning color when above 80 width
+call matchadd('ColorColumn', '\%81v', 100)
 set smartindent
 set smarttab
+
+" too many times :W and :we Hence, the shortcuts
+ca W w
+ca we w
 
 " For all text files set 'textwidth' to 80 characters.
 "autocmd FileType text setlocal textwidth=80
@@ -59,6 +65,9 @@ syntax on
 
 " Enable autocompletion
 set wildmode=longest,list,full
+
+" Insert completion
+"silent! set complete& completeopt=menu,noinsert,noselect infercase pumheight=10 noshowfulltag shortmess+=c
 
 " Disables automatic commenting on newline:
 setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -163,20 +172,23 @@ nnoremap tl  :tablast<CR>
 nnoremap tx  :tabclose<CR>
 nnoremap tn :tabnew<CR>
 
+" yank to the end of line
+nnoremap Y y$
+
 " Help opens in new tab
 :cabbrev help tab help
 
-"=============================================================================="
-"	Permanent macros						       "
-"=============================================================================="	
+"============================================================================="
+"	Permanent macros						      "
+"============================================================================="
 
 "Not working...
 let @h = "yyp:s/./=/g"
 let @s = "yyp:s/./-/g"
 
-"=============================================================================="
-"	Functions							       "
-"=============================================================================="
+"============================================================================="
+"	Functions							      "
+"============================================================================="
 
 " Copy search matches
 function! CopyMatches(reg)
@@ -212,6 +224,10 @@ Plug 'tpope/vim-surround'
 Plug 'jalvesaq/Nvim-R'
 
 Plug 'itchyny/lightline.vim'
+
+Plug 'ycm-core/YouCompleteMe'
+
+"Plug 'vim-airline/vim-airline'
 
 call plug#end()
 
@@ -307,6 +323,11 @@ augroup END
 
 " Zathura/vimtex
 let g:vimtex_view_method = 'zathura'
+
+"============================================================================="
+" Vim-airline
+
+"let g:airline_section_[...] = ""
 
 "============================================================================="
 " Remap thesaurus"
