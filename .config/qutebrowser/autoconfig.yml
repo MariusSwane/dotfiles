@@ -22,6 +22,7 @@ settings:
   content.cookies.accept:
     global: no-3rdparty
   content.geolocation:
+    https://hageland.no: true
     https://outlook.office.com: true
     https://outlook.office365.com: true
     https://www.elkjop.no: false

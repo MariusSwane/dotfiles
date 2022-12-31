@@ -5,30 +5,6 @@
 # ███████╗███████║██║  ██║██║  ██║╚██████╗
 # ╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝
                              
-#The following lines were added by compinstall
-
-#zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
-#zstyle ':completion:*' file-sort name
-#zstyle ':completion:*' list-colors ''
-#zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
-#zstyle ':completion:*' original true
-#zstyle ':completion:*' verbose true
-#zstyle :compinstall filename '/home/mariuswis/.zshrc'
-#
-#autoload -Uz compinit
-#compinit
-# End of lines added by compinstall
-# Lines configured by zsh-newuser-install
-#setopt extendedglob
-# End of lines configured by zsh-newuser-install
-
-# Enable colors and change prompt:
-autoload -U colors && colors
-
-# Custom promt
-#PROMPT='%F{green}%n%F{white}@%m %(?..%?) %3~> '
-#PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%(?..%? )%~%{$fg[red]%}] >%b "
-
 # Automatically cd into typed directory.
 setopt autocd
 
@@ -60,7 +36,6 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
 zmodload zsh/complist
-compinit
 _comp_options+=(globdots)		# Include hidden files.
 
 # Completion from history
@@ -132,10 +107,6 @@ lfcd () {
 }
 bindkey -s '^o' 'lfcd\n'
 
-# Spaceship Prompt
-#autoload -U promptinit; promptinit
-#prompt spaceship
-
 # Launching Spaceship with Antigen
 source /usr/share/zsh/share/antigen.zsh
 antigen theme denysdovhan/spaceship-prompt
@@ -147,6 +118,16 @@ SPACESHIP_USER_SHOW=always
 SPACESHIP_HOST_SHOW=always
 SPACESHIP_VI_MODE_SHOW=false
 SPACESHIP_EXIT_CODE_SHOW=true
+
+# Autosuggest
+antigen bundle zsh-users/zsh-autosuggestions
+
+# Strategies to use to fetch a suggestion
+# Will try each strategy in order until a suggestion is returned
+(( ! ${+ZSH_AUTOSUGGEST_STRATEGY} )) && {
+	typeset -ga ZSH_AUTOSUGGEST_STRATEGY
+	ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+}
 
 antigen apply
 
@@ -290,8 +271,3 @@ ex=❗:\
 # Load syntax highlighting; should be last.
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
 
-#PATH="/home/mariussw/perl5/bin${PATH:+:${PATH}}"; export PATH;
-#PERL5LIB="/home/mariussw/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-#PERL_LOCAL_LIB_ROOT="/home/mariussw/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-#PERL_MB_OPT="--install_base \"/home/mariussw/perl5\""; export PERL_MB_OPT;
-#PERL_MM_OPT="INSTALL_BASE=/home/mariussw/perl5"; export PERL_MM_OPT;
