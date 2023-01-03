@@ -229,6 +229,8 @@ Plug 'ycm-core/YouCompleteMe'
 
 "Plug 'vim-airline/vim-airline'
 
+Plug 'dylanaraps/wal.vim'
+
 call plug#end()
 
 
@@ -347,6 +349,10 @@ let g:lightline = {
       \   'wordcount': 'WordCount',
       \ },
       \ }
+
+"============================================================================="
+"Pywal colors
+colorscheme wal
 
 "============================================================================="
 " Remap thesaurus"

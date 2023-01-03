@@ -8,6 +8,10 @@ config_version: 2
 settings:
   auto_save.session:
     global: true
+  bindings.commands:
+    global:
+      normal:
+        yt: spawn kitty invidious {url}
   colors.contextmenu.menu.bg:
     global: black
   colors.webpage.bg:
@@ -35,6 +39,7 @@ settings:
   content.notifications.enabled:
     https://mail.protonmail.com: true
     https://mariuswis.cloud.seedboxes.cc: true
+    https://play.qobuz.com: true
     https://www.facebook.com: false
     https://www.netflix.com: false
     https://www.reddit.com: false
