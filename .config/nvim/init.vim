@@ -231,6 +231,8 @@ Plug 'ycm-core/YouCompleteMe'
 
 Plug 'dylanaraps/wal.vim'
 
+Plug 'ervandew/supertab'
+
 call plug#end()
 
 
@@ -276,18 +278,23 @@ augroup end
 autocmd FileType r setlocal formatoptions+=t
 
 "============================================================================="
-" UltiSnips Settings
+" UltiSnips, YCM and Supertab Settings
 
-" Set ultisnips triggers and other Ultisnipps things
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-
-let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/UltiSnips']
 
 "Set UltiSnips file types
 "au FileType todo :UltiSnipsAddFiletypes todo
 "au FileType txt :UltiSnipsAddFiletypes txt 
+
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 "============================================================================="
 " Fzf settings

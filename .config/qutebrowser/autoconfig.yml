@@ -16,8 +16,10 @@ settings:
     global: black
   colors.webpage.bg:
     global: white
+  colors.webpage.darkmode.algorithm:
+    global: lightness-cielab
   colors.webpage.darkmode.enabled:
-    global: true
+    global: false
   content.autoplay:
     global: false
   content.blocking.hosts.lists:

@@ -2,7 +2,7 @@
 application/xhtml+xml=org.kde.falkon.desktop;
 inode/directory=pcmanfm.desktop;
 x-content/audio-player=org.kde.elisa.desktop;
-application/pdf=libreoffice-draw.desktop;gimp.desktop;qpdfview.desktop;
+application/pdf=gimp.desktop;libreoffice-draw.desktop;qpdfview.desktop;
 text/plain=org.kde.kwrite.desktop;
 x-scheme-handler/mailto=userapp-Thunderbird-VCSG90.desktop;userapp-Thunderbird-BKOWX1.desktop;
 x-scheme-handler/mid=userapp-Thunderbird-VCSG90.desktop;userapp-Thunderbird-BKOWX1.desktop;
@@ -11,6 +11,11 @@ x-scheme-handler/webcals=userapp-Thunderbird-Z60J90.desktop;userapp-Thunderbird-
 application/pgp-keys=org.kde.kate.desktop;nvim.desktop;
 text/rtf=abiword.desktop;
 image/png=nsxiv.desktop;
+image/tiff=nsxiv.desktop;feh.desktop;
+text/markdown=gvim.desktop;emacsclient.desktop;
+image/jp2=gimp.desktop;nsxiv.desktop;
+application/x-ms-dos-executable=wine.desktop;
+audio/prs.sid=wine.desktop;
 
 [Default Applications]
 application/msword=libreoffice-writer.desktop;
@@ -32,7 +37,7 @@ image/bmp=sxiv.desktop;
 image/gif=sxiv.desktop;
 image/jpeg=sxiv.desktop;
 image/png=sxiv.desktop;
-image/tiff=sxiv.desktop;
+image/tiff=feh.desktop
 inode/directory=pcmanfm.desktop;
 message/rfc822=userapp-Thunderbird-BKOWX1.desktop
 text/html=org.qutebrowser.qutebrowser.desktop
