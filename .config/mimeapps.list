@@ -16,6 +16,7 @@ text/markdown=gvim.desktop;emacsclient.desktop;
 image/jp2=gimp.desktop;nsxiv.desktop;
 application/x-ms-dos-executable=wine.desktop;
 audio/prs.sid=wine.desktop;
+application/x-shellscript=gvim.desktop;
 
 [Default Applications]
 application/msword=libreoffice-writer.desktop;

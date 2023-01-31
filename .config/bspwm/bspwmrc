@@ -27,7 +27,7 @@ mount Synology &
 yams &
 emacs --daemon &
 blueman-applet &
-autorandr -c &
+#autorandr -c &
 .config/autorandr/postswitch &
 #feh --no-fehbg --bg-fill "$HOME/.local/share/bg" &
 #$HOME/.config/polybar/bspwm_launch.sh &
@@ -35,11 +35,13 @@ autorandr -c &
 pgrep -x sxhkd > /dev/null || sxhkd &
 
 ###---MONITORS---###
-bspc monitor HDMI-0 -d 1 2 3 4 5 6 7 8 9 10
+bspc monitor eDP1 -d 1 2 3 4 5 6 7 8 9 10
 
-#if [[ $(xrandr -q | grep 'HDMI1 connected') ]]; then
-	#autorandr -c
-#fi
+if [[ $(xrandr -q | grep 'HDMI-.* connected') ]]; then
+	autorandr -c
+	bspc monitor eDP-1-1 -d 1 2 3 4 5 6 7 9 10 
+	bspc monitor HDMI-0 -d 1 2 3 4 5 6 7 8 9 10
+fi
 
 ###---Gaps and borders---###
 bspc config border_width         	2

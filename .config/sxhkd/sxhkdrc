@@ -66,9 +66,13 @@ super + shift + {h,j,k,l}
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '{1-9,10}'
 
-# cycle or send to monitors
-super + {_,shift + } m
-	bspc {monitor -f prev, node -m prev}
+# focus on other monitor
+super + shift + m
+	bspc monitor -f prev
+
+# move node to other monitor and change focus
+super + {_,m}
+	bspc node -m prev & bspc monitor -f prev
 
 # expand a window by moving one of its side outward
 super + alt + {h,j,k,l}
