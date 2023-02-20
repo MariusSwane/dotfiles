@@ -156,3 +156,7 @@ super + {r,s,a}
 # Turn on/off vsync
 super + {v,n}
 	{vs, nvs}
+
+# YouTube -> Invidious 
+super + i
+	invidious

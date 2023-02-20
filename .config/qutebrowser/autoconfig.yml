@@ -10,10 +10,12 @@ settings:
     global: true
   colors.contextmenu.menu.bg:
     global: black
+  colors.tabs.pinned.even.bg:
+    global: darkseagreen
   colors.webpage.bg:
     global: white
   colors.webpage.darkmode.enabled:
-    global: true
+    global: false
   content.autoplay:
     global: false
   content.blocking.hosts.lists:
