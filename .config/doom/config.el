@@ -21,10 +21,10 @@
 ;; See 'C-h v doom-font' for documentation and more examples of what they
 ;; accept. For example:
 ;;
-(setq doom-font "iosevka:medium:italic:size=16"
-doom-variable-pitch-font  "iosevka:medium:italic:size=16"
-doom-big-font "iosevka:medium:italic:size=24")
-;;
+(setq doom-font (font-spec :family "Iosevka" :weight 'normal :size 16 :slant 'italic)
+doom-variable-pitch-font (font-spec :family "Iosevka" :weight 'normal :size 16 :slant 'italic)
+doom-big-font (font-spec :family "Iosevka" :weight 'normal :size 24 :slant 'italic))
+
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
 ;; refresh your font settings. If Emacs still can't find your font, it likely
@@ -90,9 +90,10 @@ doom-big-font "iosevka:medium:italic:size=24")
              "DONE(d)"           ; Task has been completed
              "CANCELLED(c)" )))) ; Task has been cancelled
 
-(dolist 
+
+(with-eval-after-load 'org-faces (dolist 
   (face
-       '((org-level-1 1.7 "#458588" ultra-bold)
+       '((org-level-1 1.7 "#458588" bold)
          (org-level-2 1.6 "#b16286" extra-bold)
          (org-level-3 1.5 "#98971a" bold)
          (org-level-4 1.4 "#fb4934" semi-bold)
@@ -101,7 +102,7 @@ doom-big-font "iosevka:medium:italic:size=24")
          (org-level-7 1.1 "#d79921" normal)
          (org-level-8 1.0 "#8ec07c" normal)))
 (set-face-attribute (nth 0 face) nil :font doom-variable-pitch-font :weight (nth 3 face) :height (nth 1 face) :foreground (nth 2 face)))
-    (set-face-attribute 'org-table nil :font doom-font :weight 'normal :height 1.0 :foreground "#bfafdf")
+    (set-face-attribute 'org-table nil :font doom-font :weight 'normal :height 1.0 :foreground "#bfafdf"))
 
 ;; ORG Export
 (setq org-publish-use-timestamps-flag nil)

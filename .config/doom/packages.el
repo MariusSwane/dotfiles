@@ -51,3 +51,4 @@
 
 (package! org-auto-tangle)
 (package! org-web-tools)
+(package! org-superstar)
