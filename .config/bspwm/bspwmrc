@@ -27,7 +27,7 @@ mount Synology &
 yams &
 emacs --daemon &
 blueman-applet &
-#autorandr -c &
+autorandr -c &
 .config/autorandr/postswitch &
 #feh --no-fehbg --bg-fill "$HOME/.local/share/bg" &
 #$HOME/.config/polybar/bspwm_launch.sh &

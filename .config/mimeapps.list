@@ -17,6 +17,7 @@ image/jp2=gimp.desktop;nsxiv.desktop;
 application/x-ms-dos-executable=wine.desktop;
 audio/prs.sid=wine.desktop;
 application/x-shellscript=gvim.desktop;
+application/vnd.sqlite3=nvim.desktop;
 
 [Default Applications]
 application/msword=libreoffice-writer.desktop;
@@ -68,3 +69,4 @@ text/calendar=userapp-Thunderbird-5QMIX1.desktop
 application/x-extension-ics=userapp-Thunderbird-5QMIX1.desktop
 x-scheme-handler/webcals=userapp-Thunderbird-5QMIX1.desktop
 x-scheme-handler/discord-668477264995811338=nuclear.desktop
+application/vnd.sqlite3=nvim.desktop

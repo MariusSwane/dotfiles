@@ -1,21 +1,22 @@
 snippet article
 %{{{ Header
 
+
 \documentclass[12pt]{article}
-\usepackage{graphicx}
-\usepackage{caption}
-\usepackage{natbib}
 \usepackage{authblk}
-\usepackage[utf8]{inputenc}
-\usepackage{setspace}
-\usepackage{rotating}
-\usepackage[british]{datetime2}
-\usepackage{hyperref}
-\usepackage{tabularx}
 \usepackage{booktabs}
+\usepackage{caption}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{import}
+\usepackage[utf8]{inputenc}
+\usepackage{longtable}
 \usepackage{multicol}
-\usepackage{dcolumn}
-%\usepackage[top=28truemm,bottom=26.5truemm,left=25.5truemm,right=25.5truemm]{geometry}
+\usepackage{natbib}
+\usepackage{rotating}
+\usepackage{setspace}
+\usepackage{tabularx}
 
 \hypersetup{
 colorlinks=true,
@@ -57,21 +58,11 @@ urlcolor=blue
 %tableofcontents
 %\pagebreak
 
-\onehalfspacing
-
 % }}}
-
-\section{}
-
-\section{}
-
-\section{}
-
-\section{}
 
 \clearpage
 
-\bibliographystyle{agsm}
+\bibliographystyle{apsr}
 \bibliography{$2}
 
 \section{Appendix}
