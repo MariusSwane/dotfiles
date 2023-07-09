@@ -2,7 +2,7 @@
 application/xhtml+xml=org.kde.falkon.desktop;
 inode/directory=pcmanfm.desktop;
 x-content/audio-player=org.kde.elisa.desktop;
-application/pdf=gimp.desktop;libreoffice-draw.desktop;qpdfview.desktop;
+application/pdf=foxitreader.desktop;gimp.desktop;libreoffice-draw.desktop;qpdfview.desktop;
 text/plain=org.kde.kwrite.desktop;
 x-scheme-handler/mailto=userapp-Thunderbird-VCSG90.desktop;userapp-Thunderbird-BKOWX1.desktop;
 x-scheme-handler/mid=userapp-Thunderbird-VCSG90.desktop;userapp-Thunderbird-BKOWX1.desktop;
@@ -13,11 +13,14 @@ text/rtf=abiword.desktop;
 image/png=nsxiv.desktop;
 image/tiff=nsxiv.desktop;feh.desktop;
 text/markdown=gvim.desktop;emacsclient.desktop;
-image/jp2=gimp.desktop;nsxiv.desktop;
+image/jp2=nsxiv.desktop;org.darktable.darktable.desktop;gimp.desktop;
 application/x-ms-dos-executable=wine.desktop;
 audio/prs.sid=wine.desktop;
 application/x-shellscript=gvim.desktop;
 application/vnd.sqlite3=nvim.desktop;
+text/html=vim.desktop;emacsclient.desktop;wine-extension-txt.desktop;
+application/x-zerosize=nvim.desktop;
+text/x-bibtex=gvim.desktop;
 
 [Default Applications]
 application/msword=libreoffice-writer.desktop;
@@ -70,3 +73,4 @@ application/x-extension-ics=userapp-Thunderbird-5QMIX1.desktop
 x-scheme-handler/webcals=userapp-Thunderbird-5QMIX1.desktop
 x-scheme-handler/discord-668477264995811338=nuclear.desktop
 application/vnd.sqlite3=nvim.desktop
+application/x-zerosize=nvim.desktop

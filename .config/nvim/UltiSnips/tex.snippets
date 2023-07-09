@@ -218,18 +218,33 @@ snippet beamer "White themed beamer" b
 \end{document}
 endsnippet
 
-snippet sec
+snippet sec "Section" b
 \section{$1} \label{$1}
 $2
 endsnippet
 
-snippet sub
+snippet sub "Subsection" b
 \subsection{$1} \label{$1}
 $2
 endsnippet
 
-snippet subsub
+snippet subsub "Subsubsection" b
 \subsubsection{$1} \label{$1}
+$2
+endsnippet
+
+snippet sec* "Non-numebered section" b
+\section*{$1} \label{$1}
+$2
+endsnippet
+
+snippet sub* "Non-numebered subsection" b
+\subsection*{$1} \label{$1}
+$2
+endsnippet
+
+snippet subsub* "Non-numebered subsubsection" b
+\subsubsection*{$1} \label{$1}
 $2
 endsnippet
 
@@ -262,9 +277,9 @@ endsnippet
 snippet fig "Figure environment" b
 \begin{figure}[${2:htpb}]
 	\centering
-	\includegraphics[width=${3:0.8}\linewidth]{${4:name.ext}}
-	\caption{${4/(\w+)\.\w+/\u$1/}$0}%
-	\label{fig:${4/(\w+)\.\w+/$1/}}
+	\includegraphics[width=\linewidth]{${3:name.ext}}
+	\caption{${5/(\w+)\.\w+/\u$1/}$0}%
+	\label{${4/(\w+)\.\w+/$1/}}
 \end{figure}
 endsnippet
 
@@ -313,20 +328,24 @@ snippet comment
 % `echo $USER` `!v strftime("%c")`: $1
 endsnippet
 
-snippet bullets "" b
+snippet bullets "itemize environment" b
 \begin{itemize}
 	\item $1
 \end{itemize}
 endsnippet
 
-snippet bb "" b
+snippet bb "Points with pause" b
 \begin{itemize}
 	\item[-] $1 \pause
 \end{itemize}
 endsnippet
 
-snippet i "" b
+snippet i- "Item point" b
 \item[-] $1
+endsnippet
+
+snippet i "Item bullet point" b
+\item $1
 endsnippet
 
 snippet fo "Fold open"
@@ -335,4 +354,60 @@ endsnippet
 
 snippet fc "fold close"
 % }}}
+endsnippet
+
+snippet col "2 columns" b
+\begin{columns}
+	\column{.5\textwidth}
+
+	\column{.5\textwidth}
+
+\end{columns}
+endsnippet
+
+snippet recipe "Write a recipe" b
+%{{{ Header
+
+\documentclass[12pt, a4paper]{article}
+\usepackage{textcomp, gensymb}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage{multicol}
+\usepackage{titlesec}
+
+\titleformat*{\section}{\huge}
+
+
+\pagenumbering{gobble}
+% }}}
+
+\begin{document}
+
+\section*{$1} 
+
+\begin{figure}[hpbt]
+	\centering
+	\includegraphics[width=\linewidth]{img/}
+\end{figure}
+
+\begin{multicols}{2}
+
+	\subsection*{Ingredients} 
+		\itemsep-.5em
+
+		\begin{itemize}
+			\item 
+		\end{itemize}
+
+\end{multicols}
+
+\clearpage
+	
+\subsection*{Instructions}
+
+\begin{enumerate}
+	\item 
+\end{enumerate}
+
+\end{document}
 endsnippet

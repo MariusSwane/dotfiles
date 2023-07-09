@@ -105,6 +105,7 @@ super + shift + f
 super + Return
 	kitty
 
+# Not working...
 super + shift + Return
 	bspc rule -a \* -o state=floating && $TERMINAL
 	#kitty --class 'float'
@@ -127,7 +128,7 @@ super + e
 
 # Browser
 super + b
-	qutebrowser
+	firefox
 
 # Bookmarks
 super + shift + b
@@ -172,3 +173,11 @@ super + {v,n}
 # Launch emacs
 super + shift + e
 	emacs
+
+# Teams
+super + ctrl + t
+	teams
+
+# Steam
+super + ctrl + s
+	steam

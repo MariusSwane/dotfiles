@@ -126,7 +126,7 @@ nnoremap å $
 vnoremap å $
 
 " Map substitute
-nnoremap <LocalLeader>S :%s//g<Left><Left>
+nnoremap <LocalLeader>s :%s//g<Left><Left>
 
 " Turn on/off spell checking
 nnoremap s :set spell! nospell?<CR>

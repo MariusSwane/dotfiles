@@ -150,6 +150,9 @@ SPACESHIP_EXIT_CODE_SHOW=true
 
 antigen apply
 
+#  Fast syntax highlighting
+antigen bundle z-shell/F-Sy-H --branch=main
+
 #############################
 #   Environment Variables  ##
 #############################
@@ -288,7 +291,7 @@ ex=❗:\
 "
 
 # Load syntax highlighting; should be last.
-source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
+#source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
 
 #PATH="/home/mariussw/perl5/bin${PATH:+:${PATH}}"; export PATH;
 #PERL5LIB="/home/mariussw/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;

@@ -73,3 +73,7 @@ endsnippet
 snippet fc "fold close"
 # }}}
 endsnippet
+
+snippet req "Require, but install first if not available" b
+suppressPackageStartupMessages(require($1)||{install.packages("$1");require($1)})
+endsnippet
