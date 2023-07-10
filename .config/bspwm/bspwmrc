@@ -18,7 +18,7 @@ picom -b &
 setxkbmap -option caps:escape &
 unclutter &
 dunst &
-dropbox &
+syncthing --no-browser &
 udiskie -nTa &
 mpd &
 mpc mount syno nfs://192.168.10.116/volume1/share/Music &

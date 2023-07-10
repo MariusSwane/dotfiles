@@ -70,11 +70,11 @@ set wildmode=longest,list,full
 "silent! set complete& completeopt=menu,noinsert,noselect infercase pumheight=10 noshowfulltag shortmess+=c
 
 " Disables automatic commenting on newline:
-setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 augroup tex
 	" For all tex files turn on spell checking
-	autocmd FileType tex setlocal spell
+	autocmd FileType tex setlocal spell spelllang=en,nb
 augroup end
 
 augroup r
@@ -96,7 +96,7 @@ augroup end
 " Dictionary
 set dictionary?
 set dictionary+=/usr/share/dict/words
-set complete+=k
+"set complete+=k
 
 "============================================================================="
 
@@ -277,7 +277,7 @@ autocmd FileType r setlocal formatoptions+=t
 " UltiSnips Settings
 
 " Set ultisnips triggers and other Ultisnipps things
-let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsExpandTrigger="<enter>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 

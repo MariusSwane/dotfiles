@@ -44,6 +44,11 @@ XF86AudioNext
 XF86AudioPrev 
 	mediakeys -b
 
+XF86MonBrightnessUp 
+	xbacklight -inc 10
+XF86MonBrightnessDown 
+	xbacklight -dec 10
+
 #---BSPWM---#
 
 # quit/restart bspwm
@@ -115,7 +120,7 @@ super + e
 
 # Browser
 super + b
-	qutebrowser
+	firefox
 
 # Bookmarks
 super + shift + b

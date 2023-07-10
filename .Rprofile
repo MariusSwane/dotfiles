@@ -50,16 +50,27 @@ options(prompt = "-> ", continue = "... ")
 #==============================================================================#
 
 # Enables tab-complete package names for use in "library()"
-utils::rc.settings(ipck=TRUE)
+#utils::rc.settings(ipck=TRUE)
 
 # Disable GUI pop-ups and such
 options(menu.graphics=FALSE)
 
-# Ending if-loop
-}
+# Penalty applied to inhibit the use of scientific notation
+options(scipen = 2)
 
-#==============================================================================#
-#	Message 							       #
-#==============================================================================#
+local({
+# Detect the number of cores available for use in parallelisation
+  n <- max(parallel::detectCores() - 2L, 1L)
+  # Parallel package installation in install.packages()
+  options(Ncpus = n)                                          
+  # Parallel apply-type functions via 'parallel' package
+  options(mc.cores =  n)                                
+})
+
+# Post-mortem debugging facilities
+error <- quote(dump.frames("${R_HOME_USER}/testdump", TRUE))  
 
 message("*** Successfully loaded personal .Rprofile ***\n")
+
+# Ending if-loop
+}
