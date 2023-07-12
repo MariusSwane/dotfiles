@@ -9,3 +9,5 @@ map w exec "zathuraWC '$FILE'"
 map = adjust_window best-fit
 
 set zoom-step 2
+
+map p exec "lpr '$FILE' -P Bro -o print-quality=5 -o media=a4 -o sides=two-sided-long-edge"

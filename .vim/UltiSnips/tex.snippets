@@ -420,3 +420,59 @@ snippet recipe "Write a recipe" b
 
 \end{document}
 endsnippet
+
+snippet oppskrift "Skriv en oppskrift" b
+%{{{ Header
+
+\documentclass[12pt, a4paper]{article}
+\usepackage{textcomp, gensymb}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage{multicol}
+\usepackage{titlesec}
+
+\titleformat*{\section}{\huge}
+
+
+\pagenumbering{gobble}
+% }}}
+
+\begin{document}
+
+\section*{$1} 
+\addcontentsline{toc}{section}{$1}
+
+\begin{figure}[hpbt]
+	\centering
+	\includegraphics[width=\linewidth]{img/}
+\end{figure}
+
+\begin{multicols}{2}
+
+	\subsection*{Ingredienser} 
+
+		\begin{itemize}
+		\itemsep-.5em
+
+			\item 
+
+		\end{itemize}
+
+\end{multicols}
+
+\clearpage
+	
+\subsection*{Instruksjoner}
+
+\begin{enumerate}
+
+	\item 
+
+\end{enumerate}
+
+\vfill
+
+\raggedleft{\tiny{\textbf{Kilde:} $2}}
+
+\end{document}
+endsnippet
