@@ -2,7 +2,7 @@
 application/xhtml+xml=org.kde.falkon.desktop;firefox.desktop;
 inode/directory=pcmanfm.desktop;
 x-content/audio-player=org.kde.elisa.desktop;
-application/pdf=qpdfview.desktop;
+application/pdf=org.gnome.Evince.desktop;qpdfview.desktop;
 text/plain=org.kde.kwrite.desktop;
 x-scheme-handler/mailto=userapp-Thunderbird-VCSG90.desktop;userapp-Thunderbird-9CPH01.desktop;
 x-scheme-handler/mid=userapp-Thunderbird-VCSG90.desktop;userapp-Thunderbird-9CPH01.desktop;

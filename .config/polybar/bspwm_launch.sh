@@ -18,10 +18,10 @@ else
 fi
 
 # Top
-if type "xrandr"; then
-  for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-    MONITOR=$m polybar --reload -c ~/.config/polybar/bspwm_config.ini top &
-  done
-else
-  polybar --reload -c ~/.config/polybar/bspwm_config.ini top &
-fi
+#if type "xrandr"; then
+#  for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+#    MONITOR=$m polybar --reload -c ~/.config/polybar/bspwm_config.ini top &
+#  done
+#else
+#  polybar --reload -c ~/.config/polybar/bspwm_config.ini top &
+#fi

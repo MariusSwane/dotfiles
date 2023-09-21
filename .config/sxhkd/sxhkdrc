@@ -99,8 +99,7 @@ super + Return
 	kitty
 
 super + shift + Return
-	bspc rule -a \* -o state=floating && $TERMINAL
-	#kitty --class 'float'
+	bspc rule -a \* -o state=floating && kitty
 
 # Run autorandr
 super + a

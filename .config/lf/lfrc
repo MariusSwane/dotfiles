@@ -1,4 +1,4 @@
-#set shell zsh
+set shell zsh
 set shellopts '-eu'
 set ifs "\n"
 set cleaner '~/.config/lf/cleaner'
@@ -22,7 +22,7 @@ ${{
 
 # Set wallpaper
 cmd wall ${{
-	cp $f $HOME/.local/share/bg
+	cp $f $HOME/.local/share/bg.jpg
 	fehbg
 }}
 
@@ -139,6 +139,6 @@ map x chmod
 map b mark-load
 map e $$EDITOR $f
 map . set hidden!
-map W wall
+map w wall
 map r reload
 map ? halp

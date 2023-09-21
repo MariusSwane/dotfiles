@@ -123,7 +123,7 @@ precmd() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 # Use lf to switch directories and bind it to ctrl-o
 lfcd () {
     tmp="$(mktemp)"
-    lf -last-dir-path="$tmp" "$@"
+    lfub -last-dir-path="$tmp" "$@"
     if [ -f "$tmp" ]; then
         dir="$(cat "$tmp")"
         rm -f "$tmp" >/dev/null
@@ -192,7 +192,7 @@ alias grep="grep --color=auto"
 alias diff="diff --color=auto" 
 alias ccat="highlight --out-format=ansi"
 alias dots="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
-alias lf='lfub'
+alias lf='lfcd'
 alias tc='tty-clock -c'
 alias ncmp='ncmpcpp ; yams'
 alias mpdas="mpdas -d -c $XDG_CONFIG_HOME/mpdasrc"
