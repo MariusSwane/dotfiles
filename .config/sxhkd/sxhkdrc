@@ -119,7 +119,7 @@ super + e
 
 # Browser
 super + b
-	firefox
+	qutebrowser
 
 # Bookmarks
 super + shift + b

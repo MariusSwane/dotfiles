@@ -138,10 +138,10 @@ noremap <F4> :set hlsearch! hlsearch?<CR>
 nnoremap S ea<C-X><C-S>
 
 " Yank file dir path
-nnoremap <LocalLeader>yd :let @+=expand('%:p:h')<CR> 
+nnoremap yd :let @+=expand('%:p:h')<CR> 
 
 " Yank file path
-nnoremap <LocalLeader>yf :let @+=expand('%:p:f')<CR> 
+nnoremap yf :let @+=expand('%:p:f')<CR> 
 
 " Paste file dir path
 nnoremap <LocalLeader>pd :put =expand('%:p:h')<CR>
@@ -178,11 +178,14 @@ nnoremap Y y$
 " Help opens in new tab
 :cabbrev help tab help
 
+" Insert empty new linw without exiting normal mode
+nnoremap <LocalLeader>o o<ESC>0"_D
+nnoremap <LocalLeader>O O<ESC>0"_D
+
 "============================================================================="
 "	Permanent macros						      "
 "============================================================================="
 
-"Not working...
 let @h = "yyp:s/./=/g"
 let @s = "yyp:s/./-/g"
 
