@@ -275,11 +275,11 @@ snippet \u
 endsnippet
 
 snippet fig "Figure environment" b
-\begin{figure}[${2:htpb}]
+\begin{figure}[${2:htpb}]{${1:title}}
 	\centering
 	\includegraphics[width=\linewidth]{${3:name.ext}}
-	\caption{${5/(\w+)\.\w+/\u$1/}$0}%
-	\label{${4/(\w+)\.\w+/$1/}}
+	\caption{$5}
+	\label{$1}
 \end{figure}
 endsnippet
 

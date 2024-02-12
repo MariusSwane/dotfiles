@@ -21,6 +21,8 @@ application/x-extension-shtml=firefox.desktop;
 application/x-extension-xhtml=firefox.desktop;
 application/x-extension-xht=firefox.desktop;
 application/mbox=nvim.desktop;
+image/jp2=nsxiv.desktop;
+image/jpeg=nsxiv.desktop;
 
 [Default Applications]
 application/msword=libreoffice-writer.desktop;
@@ -78,3 +80,4 @@ application/x-extension-html=firefox.desktop
 application/x-extension-shtml=firefox.desktop
 application/x-extension-xhtml=firefox.desktop
 application/x-extension-xht=firefox.desktop
+image/jp2=nsxiv.desktop
