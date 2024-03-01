@@ -1,6 +1,7 @@
 set shell zsh
-set shellopts '-eu'
+set shellopts '-euy'
 set ifs "\n"
+set filesep "\n"  # default already
 set cleaner '~/.config/lf/cleaner'
 set previewer '~/.config/lf/scope'
 set scrolloff 10
@@ -36,6 +37,7 @@ cmd trash ${{
 	read ans
 	[ $ans = "y" ] && trash-put $fx
 }}
+#cmd trash %trash-put $fx
 
 # Delete file
 cmd delete ${{
@@ -48,28 +50,30 @@ cmd delete ${{
 }}
 
 # Show progress while pasting
-cmd paste &{{
-    set -- $(cat ~/.local/share/lf/files)
-    mode="$1"
-    shift
-    case "$mode" in
-        copy)
-            rsync -av --ignore-existing --progress -- "$@" . |
-            stdbuf -i0 -o0 -e0 tr '\r' '\n' |
-            while IFS= read -r line; do
-                lf -remote "send $id echo $line"
-            done &&
-	    notify-send "📋 File(s) copied." 
-            ;;
-        move) 
-	    mv -n -- "$@" . &&
-	    notify-send "🚚 File(s) moved." 
-	;;
-    esac
-    rm ~/.local/share/lf/files
-    lf -remote "send clear"
-    lf -remote "send reload"
-}}
+#cmd paste &{{
+#    set -- $(cat ~/.local/share/lf/files)
+#    mode="$1"
+#    shift
+#    case "$mode" in
+#        copy)
+#            rsync -av --ignore-existing --progress -- "$@" . |
+#            stdbuf -i0 -o0 -e0 tr '\r' '\n' |
+#            while IFS= read -r line; do
+#                lf -remote "send $id echo $line"
+#            done &&
+#	    notify-send "📋 File(s) copied." 
+#            ;;
+#        move) 
+#	    mv -n -- "$@" . &&
+#	    notify-send "🚚 File(s) moved." 
+#	;;
+#    esac
+#    rm ~/.local/share/lf/files
+#    lf -remote "send clear"
+#    lf -remote "send reload"
+#}}
+
+cmd paste $cp-p --lf-paste $id
 
 # Open file
 cmd open ${{
@@ -117,6 +121,10 @@ cmd chmod ${{
   lf -remote 'send reload'
 }}
 
+cmd on-select &{{
+    lf -remote "send $id set statfmt \"$(eza -ld --color=always --total-size "$f")\""
+}}
+
 cmd halp ${{ printf "D delete\n t trash\n y copy\n d cut\n p paste\n R bulkrename\n Y yank path\n A rename at the very end\n I rename at the very beginning\n i rename before extension\n a rename after extention\n o mimeopen\n O mimeopen --ask\n n mkdir\n x chmod\n b mark-load\n e open in editor\n . toggle hidden\n W wall\n r reload" |
 rofi -dmenu -i -l 20
 }}
@@ -135,7 +143,7 @@ map i push A<a-b><a-b><a-f> # before extention
 map a push A<a-b> # after extention
 map o &mimeopen $f
 map O $mimeopen --ask $f
-map n push :mkdir<space>
+map m push :mkdir<space>
 map x chmod
 map b mark-load
 map e $$EDITOR $f

@@ -132,6 +132,9 @@ lfcd () {
 }
 bindkey -s '^o' 'lfcd\n'
 
+# z.lua config
+eval "$(lua /usr/share/z.lua/z.lua --init zsh)"
+
 # Spaceship Prompt
 #autoload -U promptinit; promptinit
 #prompt spaceship
@@ -201,6 +204,7 @@ alias SUAW='potato -s -w 45 -b 15 | toilet -t -f "ANSI Shadow"'
 alias yt='ytfzf --subs=1 -t'
 alias zathura='devour zathura'
 alias sxiv='devour sxiv'
+alias eza='eza --group-directories-first'
 
 # Pywal colors
 cat ~/.cache/wal/sequences

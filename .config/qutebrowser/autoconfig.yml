@@ -39,6 +39,7 @@ settings:
     https://mail.protonmail.com: true
     https://mariuswis-jellyfin.cloud.seedboxes.cc: true
     https://mariuswis.cloud.seedboxes.cc: true
+    https://red.trackerstatus.info: true
     https://www.facebook.com: false
     https://www.netflix.com: false
     https://www.reddit.com: false

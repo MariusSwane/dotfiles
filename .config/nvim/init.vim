@@ -232,6 +232,10 @@ Plug 'ycm-core/YouCompleteMe'
 
 "Plug 'vim-airline/vim-airline'
 
+Plug 'junegunn/gv.vim'
+
+Plug 'airblade/vim-gitgutter'
+
 call plug#end()
 
 
