@@ -69,7 +69,7 @@ super + shift + {h,j,k,l}
 
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
-	bspc {desktop -f,node -d} '{1-9,10}'
+	bspc {desktop -f,node -d} '{1-9,10}'.local
 
 # cycle or send to monitors
 super + {_,shift + } m
