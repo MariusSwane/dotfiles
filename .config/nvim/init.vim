@@ -165,11 +165,11 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " Tabs
-nnoremap th  :tabfirst<CR>
-nnoremap tk  :tabnext<CR>
-nnoremap tj  :tabprev<CR>
-nnoremap tl  :tablast<CR>
-nnoremap tx  :tabclose<CR>
+nnoremap th :tabfirst<CR>
+nnoremap tk :tabnext<CR>
+nnoremap tj :tabprev<CR>
+nnoremap tl :tablast<CR>
+nnoremap tx :tabclose<CR>
 nnoremap tn :tabnew<CR>
 
 " yank to the end of line
@@ -267,8 +267,8 @@ let R_auto_omni = ["r",  "rmd", "rnoweb", "rhelp", "rrst"]
 "autocmd VimResized * let R_editor_height = 80
 
 function! s:customNvimRMappings()
-	nmap <buffer> <Leader>rs<Plug>RStart
-	nmap <buffer> <Leader>rx<Plug>RClose
+	nmap <buffer> <Leader>rs <Plug>RStart
+	nmap <buffer> <Leader>rx <Plug>RClose
 	nmap <buffer> <Space> <Plug>REDSendParagraph
    	vmap <Space> <Plug>RDSendSelection
 endfunction
