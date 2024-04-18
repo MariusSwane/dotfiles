@@ -220,15 +220,15 @@ Plug 'SirVer/ultisnips' ", { 'do': '/usr/local/bin/python3 install.py' }
 
 Plug 'mhinz/vim-startify'
 
-Plug 'lilydjwg/colorizer'
+"Plug 'lilydjwg/colorizer'
 
-"Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
+Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 
 Plug 'tpope/vim-surround'
 
 "Plug 'frazrepo/vim-rainbow'
 
-"Plug 'ellisonleao/gruvbox.nvim'
+Plug 'ellisonleao/gruvbox.nvim'
 
 Plug 'jalvesaq/Nvim-R'
 
@@ -368,18 +368,24 @@ nnoremap <LocalLeader>t :ThesaurusQueryReplaceCurrentWord<CR>
 
 "============================================================================="
 " Colorizer
-let g:colorizer_auto_color = 1
-nnoremap <Leader>c :ColorToggle<CR>
+"let g:colorizer_auto_color = 1
+"nnoremap <Leader>c :ColorToggle<CR>
 
 "============================================================================="
 " Hexokinase
-"set termguicolors
-"let g:Hexokinase_highlighters = ['backgroundfull']
-"nnoremap <Leader>h :HexokinaseToggle
+set termguicolors
+let g:Hexokinase_highlighters = ['backgroundfull']
+nnoremap <Leader>h :HexokinaseToggle
 
 "============================================================================="
 " Gruvbox
-"colorscheme gruvbox
+lua << EOF
+require('gruvbox').setup({
+	transparent_mode = true,
+})
+EOF
+
+colorscheme gruvbox
 
 "============================================================================="
 "Startify customization
