@@ -22,7 +22,7 @@ ${{
 
 # Set wallpaper
 cmd wall ${{
-	cp $f $HOME/.local/share/bg
+	cp $f $HOME/.local/share/bg.jpg
 	fehbg
 }}
 

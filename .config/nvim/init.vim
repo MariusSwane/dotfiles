@@ -48,10 +48,6 @@ call matchadd('ColorColumn', '\%81v', 100)
 set smartindent
 set smarttab
 
-" too many times :W and :we Hence, the shortcuts
-ca W w
-ca we w
-
 " For all text files set 'textwidth' to 80 characters.
 "autocmd FileType text setlocal textwidth=80
 "augroup END
@@ -219,6 +215,14 @@ Plug 'mhinz/vim-startify'
 
 Plug 'tpope/vim-surround'
 
+Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
+
+Plug 'ellisonleao/gruvbox.nvim'
+
+Plug 'junegunn/gv.vim'
+
+Plug 'airblade/vim-gitgutter'
+
 Plug 'jalvesaq/Nvim-R'
 
 Plug 'itchyny/lightline.vim'
@@ -347,18 +351,30 @@ let g:lightline = {
       \ }
 
 "============================================================================="
-"Pywal colors
-colorscheme wal
-
-"============================================================================="
 " Remap thesaurus"
 
 nnoremap <LocalLeader>t :ThesaurusQueryReplaceCurrentWord<CR>
 
 "============================================================================="
 " Colorizer
-let g:colorizer_auto_color = 1
-nnoremap <Leader>h :ColorHighlight<CR>
+"let g:colorizer_auto_color = 1
+"nnoremap <Leader>h :ColorHighlight<CR>
+
+"============================================================================="
+" Hexokinase
+set termguicolors
+let g:Hexokinase_highlighters = ['backgroundfull']
+nnoremap <Leader>h :HexokinaseToggle
+
+"============================================================================="
+" Gruvbox
+lua << EOF
+require('gruvbox').setup({
+	transparent_mode = true,
+})
+EOF
+
+colorscheme gruvbox
 
 "============================================================================="
 "Startify customization

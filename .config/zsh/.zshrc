@@ -39,8 +39,7 @@ stty stop undef
 setopt interactive_comments
 
 # Flex on newbs
-printf "\n"
-pfetch
+fastfetch
 
 # If not running interactively, don't flex
 [[ $- != *i* ]] && return

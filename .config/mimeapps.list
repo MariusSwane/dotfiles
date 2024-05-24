@@ -21,6 +21,7 @@ application/vnd.sqlite3=nvim.desktop;
 text/html=vim.desktop;emacsclient.desktop;wine-extension-txt.desktop;
 application/x-zerosize=nvim.desktop;
 text/x-bibtex=gvim.desktop;
+application/x-wine-extension-inf=emacs.desktop;
 
 [Default Applications]
 application/msword=libreoffice-writer.desktop;
@@ -74,3 +75,4 @@ x-scheme-handler/webcals=userapp-Thunderbird-5QMIX1.desktop
 x-scheme-handler/discord-668477264995811338=nuclear.desktop
 application/vnd.sqlite3=nvim.desktop
 application/x-zerosize=nvim.desktop
+application/x-wine-extension-inf=emacs.desktop

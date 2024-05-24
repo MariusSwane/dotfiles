@@ -1,5 +1,3 @@
-2023-06-29 19:26:43,632 - yams - INFO - Starting up YAMS v0.7.3
-2023-06-29 19:26:43,758 - yams - INFO - Connected to mpd, version: 0.23.5
-2023-06-29 19:26:43,759 - yams - INFO - Wrote PID to file: /home/mariussw/.config/yams/yams.pid
-2023-06-29 19:26:43,837 - yams - INFO - Recieved event in subsystem: ['player']
-2023-06-29 19:26:43,837 - yams - INFO - Received state: pause
+2024-04-25 20:31:27,965 - yams - INFO - Starting up YAMS v0.7.3
+2024-04-25 20:31:28,073 - yams - INFO - Connected to mpd, version: 0.23.5
+2024-04-25 20:31:28,074 - yams - INFO - Wrote PID to file: /home/mariussw/.config/yams/yams.pid

@@ -13,36 +13,28 @@
 super + shift + x
 	killall sxhkd & notify-send "SXHKD config reloaded" && sxhkd &
 
-# Lock the screen
-super + alt + l
-	betterlockscreen -l
-
 # Lock screen and suspend
-super + shift + alt + l
-	betterlockscreen -s
-
-# Suspend system
 super + shift + s
-	systemctl suspend
+	betterlockscreen -s
 
 # Volume controls
 XF86AudioRaiseVolume 
-	changeVolume +1%
+	$HOME/scripts/changeVolume +1%
 
 XF86AudioLowerVolume 
-	changeVolume -1%
+	$HOME/scripts/changeVolume -1%
 
 XF86AudioMute
-	changeVolume
+	$HOME/scripts/changeVolume
 
 XF86AudioPlay 
-	mediakeys -t
+	$HOME/scripts/mediakeys -t
 
 XF86AudioNext 
-	mediakeys -f
+	$HOME/scripts/mediakeys -f
 
 XF86AudioPrev 
-	mediakeys -b
+	$HOME/scripts/mediakeys -b
 
 #---BSPWM---#
 
@@ -106,8 +98,8 @@ super + Return
 	kitty
 
 # Not working...
-super + shift + Return
-	bspc rule -a \* -o state=floating && $TERMINAL
+#super + shift + Return
+	#bspc rule -a \* -o state=floating && $TERMINAL
 	#kitty --class 'float'
 
 # Run autorandr
@@ -124,15 +116,15 @@ super + shift + @space
 
 # Emojis
 super + e 
-	emoji
+	$HOME/scripts/emoji
 
 # Browser
 super + b
-	firefox
+	qutebrowser
 
 # Bookmarks
 super + shift + b
-	bm
+	$HOME/scripts/bm
 
 # Agenda
 #super + a
@@ -144,31 +136,31 @@ super + shift + p
 
 # Launch external editor
 super + t
-	thundervim
+	$HOME/scripts/thundervim
 
 # Thunderbird
 super + shift + t
 	thunderbird
 
-# Printer
+# Pavucontrol
 super + p
-	system-config-printer
+	pavucontrol
 
 # Zathura
-super + shift + z
+super + z
 	zathura
 
 # Toggle DragonFly sample rate
-super + alt + s
-	smplrt
+#super + alt + s
+	#smplrt
 
 # Music bindings
 super + {r,s,a}
-	{pra, pq, downbum}
+	{$HOME/scripts/pra, $HOME/scripts/pq, $HOME/scripts/downbum}
 	
 # Turn on/off vsync
 super + {v,n}
-	{vs, nvs}
+	{$HOME/scripts/vs, $HOME/scripts/nvs}
 
 # Launch emacs
 super + shift + e
