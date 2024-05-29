@@ -1,3 +1,19 @@
-2024-04-25 20:31:27,965 - yams - INFO - Starting up YAMS v0.7.3
-2024-04-25 20:31:28,073 - yams - INFO - Connected to mpd, version: 0.23.5
-2024-04-25 20:31:28,074 - yams - INFO - Wrote PID to file: /home/mariussw/.config/yams/yams.pid
+2024-05-24 14:49:28,617 - yams - INFO - Starting up YAMS v0.7.3
+2024-05-24 14:49:28,617 - yams - INFO - Connected to mpd, version: 0.23.5
+2024-05-24 14:49:28,618 - yams - WARNING - Could not call setsid()!
+2024-05-24 14:49:28,619 - yams - INFO - Wrote PID to file: /home/mariussw/.config/yams/yams.pid
+2024-05-24 14:49:38,168 - yams - INFO - Recieved event in subsystem: ['player']
+2024-05-24 14:49:38,168 - yams - INFO - Received state: stop
+2024-05-24 14:49:38,264 - yams - INFO - Recieved event in subsystem: ['player']
+2024-05-24 14:49:38,266 - yams - INFO - Received state: play
+2024-05-24 14:49:38,266 - yams - INFO - Playing Drive My Car, by The Beatles (from Rubber Soul)
+2024-05-24 14:49:38,266 - yams - INFO - 0/149s (0.0%)
+2024-05-24 14:49:43,279 - yams - INFO - While the scrobbling threshold would normally be 50%, since we're starting at 0.6s (out of 148.9s, a.k.a. 0.4%), it's now 50.2%
+2024-05-24 14:49:43,279 - yams - INFO - Starting to watch track: Drive My Car by The Beatles, currently at: 6/149s (3.8%). Will scrobble in: 69s
+2024-05-24 14:49:43,496 - yams - INFO - Now playing was a success!
+2024-05-24 14:49:54,511 - yams - INFO - While the scrobbling threshold would normally be 50%, since we're starting at 0.6s (out of 285.2s, a.k.a. 0.2%), it's now 50.1%
+2024-05-24 14:49:54,511 - yams - INFO - Starting to watch track: Fire Across The Sky by Night, currently at: 6/285s (2.0%). Will scrobble in: 137s
+2024-05-24 14:49:54,512 - yams - WARNING - Found multiple instances of key 'track', returning first match: 1
+2024-05-24 14:49:54,696 - yams - INFO - Now playing was a success!
+2024-05-24 14:50:53,830 - yams - INFO - Recieved event in subsystem: ['player']
+2024-05-24 14:50:53,831 - yams - INFO - Received state: pause
