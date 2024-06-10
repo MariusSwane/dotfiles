@@ -91,6 +91,9 @@ augroup help
 	autocmd FileType help nnoremap <buffer> <BS> <C-T>
 augroup end
 
+" Autocompile markdown (defaults to pdf)
+autocmd FileType markdown nnoremap <buffer> <C-C> :!pandoc % -o %:r.pdf
+
 "============================================================================="
 
 " Dictionary
@@ -182,12 +185,18 @@ nnoremap Y y$
 nnoremap <LocalLeader>o o<ESC>0"_D
 nnoremap <LocalLeader>O O<ESC>0"_D
 
+" Easier reformatting
+nnoremap Q gq
+
 "============================================================================="
 "	Permanent macros						      "
 "============================================================================="
 
 let @h = "yyp:s/./=/g"
 let @s = "yyp:s/./-/g"
+let @b = "wbi**ea**"
+let @i = "wbi*ea*"
+let @c = "I- [ ] j"
 
 "============================================================================="
 "	Functions							      "

@@ -6,10 +6,16 @@
 
 config_version: 2
 settings:
+  auto_save.interval:
+    global: 15000
   auto_save.session:
     global: true
   colors.contextmenu.menu.bg:
     global: black
+  colors.contextmenu.menu.fg:
+    global: white
+  colors.contextmenu.selected.bg:
+    global: gray
   colors.tabs.pinned.even.bg:
     global: darkseagreen
   colors.webpage.bg:
@@ -56,11 +62,11 @@ settings:
   fonts.completion.entry:
     global: italic default_size default_family
   fonts.contextmenu:
-    global: null
+    global: Serif
   fonts.debug_console:
     global: italic default_size default_family
   fonts.default_family:
-    global: Iosevka
+    global: Serif
   fonts.default_size:
     global: 10pt
   fonts.downloads:
@@ -95,6 +101,6 @@ settings:
     global: false
   url.searchengines:
     global:
-      DEFAULT: https://duckduckgo.com/?q={}
+      DEFAULT: https://searx.work/search?q={}&categories=general&pageno=1&time_range=&language=auto&safesearch=0
   url.start_pages:
     global: file:///home/mariussw/Documents/startpg/index.html

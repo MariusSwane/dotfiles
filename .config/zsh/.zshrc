@@ -39,8 +39,13 @@ stty stop undef
 setopt interactive_comments
 
 # Flex on newbs
-printf "\n"
-pfetch
+#printf "\n"
+if hyprctl activewindow | grep "class: myfloat" ; then
+	clear
+	fastfetch -c $XDG_CONFIG_HOME/fastfetch/smallConfig.jsonc
+else
+	fastfetch
+fi
 
 # If not running interactively, don't flex
 [[ $- != *i* ]] && return
@@ -190,10 +195,10 @@ alias cp='cp -riv'
 alias mv='mv -iv'
 alias rm='rm -rvI'
 alias mkdir='mkdir -pv'
-alias ls="ls -hN --color=auto --group-directories-first" 
+alias ls="eza --icons -a --group-directories-first" 
 alias grep="grep --color=auto"
 alias diff="diff --color=auto" 
-alias ccat="highlight --out-format=ansi"
+#alias cat="highlight --out-format=ansi"
 alias dots="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 alias lf='lfcd'
 alias tc='tty-clock -c'
@@ -205,12 +210,28 @@ alias yt='ytfzf --subs=1 -t'
 alias zathura='devour zathura'
 alias sxiv='devour sxiv'
 alias eza='eza --group-directories-first'
+# Copy output of last command
+alias c='"$(history | tail -2 | sed "s/  [0-9]*  //;2d")" > /tmp/cmdoutput && cat /tmp/cmdoutput | xsel -b && notify-send "Terminal" "Ouput Copied"'
+alias ntnu='kitten ssh -X -C mariussw@login.ansatt.ntnu.no -t "zsh --login"'
+alias synology='kitten ssh -X -C 192.168.10.151 -p 837 -l marius -t "zsh --login"'
+# Git aliases
+alias g='git'
+alias gst='git status'
+alias gc='git commit'
+alias ga='git add'
+alias gpl='git pull'
+alias gpom='git pull origin master'
+alias gpu='git push'
+alias gpuom='git push origin master'
+alias gd='git diff'
+alias grm='git remote'
+alias gb='git branch'
+alias gm='git merge'
+alias gf='git fetch'
+alias lg='lazygit'
 
 # Pywal colors
-cat ~/.cache/wal/sequences
-
-# Icons-in-terminal
-#source ~/.local/share/icons-in-terminal/icons_bash.sh
+#cat ~/.cache/wal/sequences
 
 # lf icons
 export LF_ICONS="di=📁:\

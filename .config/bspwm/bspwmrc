@@ -69,4 +69,5 @@ bspc config urgent_border_color 	"#dd2727"
 #bspc rule -a Kitty:float state=floating
 bspc rule -a Zathura state=tiled
 bspc rule -a Emacs state=tiled
+bspc rule -a pavucontrole state=floating
 

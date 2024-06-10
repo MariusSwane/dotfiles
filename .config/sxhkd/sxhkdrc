@@ -141,9 +141,9 @@ super + t
 super + shift + t
 	thunderbird
 
-# Printer
+# Pavucontrol
 super + p
-	system-config-printer
+	pavucontrol
 
 # Zathura
 super + shift + z

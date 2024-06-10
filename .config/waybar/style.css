@@ -2,6 +2,7 @@
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: FreeMono, FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     font-size: 16px;
+    border-radius: 4px;
 }
 
 window#waybar {
@@ -39,7 +40,7 @@ button {
     box-shadow: inset 0 -3px transparent;
     /* Avoid rounded borders under each button name */
     border: none;
-    border-radius: 0;
+    border-radius: 4px;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
@@ -50,7 +51,7 @@ button:hover {
 
 #workspaces button {
     padding: 0 5px;
-    background-color: transparent;
+    background-color: #262626;
     color: #ffffff;
 }
 
@@ -87,12 +88,16 @@ button:hover {
 #mode,
 #idle_inhibitor,
 #scratchpad,
+#custom-updates,
 #mpd {
     padding: 0 10px;
     color: #ffffff;
 }
 
-#window,
+#window {
+    background-color: #8a8a8a;
+}
+
 #workspaces {
     margin: 0 4px;
 }
@@ -108,16 +113,17 @@ button:hover {
 }
 
 #clock {
+    background-color: #8a8a8a;
 }
 
 #battery {
-    background-color: #ffffff;
+    background-color: #dab997;
     color: #000000;
 }
 
 #battery.charging, #battery.plugged {
     color: #ffffff;
-    background-color: #26A65B;
+    background-color: #afaf00;
 }
 
 @keyframes blink {
@@ -128,7 +134,7 @@ button:hover {
 }
 
 #battery.critical:not(.charging) {
-    background-color: #f53c3c;
+    background-color: #d75f5f;
     color: #ffffff;
     animation-name: blink;
     animation-duration: 0.5s;
@@ -142,12 +148,12 @@ label:focus {
 }
 
 #cpu {
-    background-color: #2ecc71;
+    background-color: #ffaf00;
     color: #000000;
 }
 
 #memory {
-    background-color: #9b59b6;
+    background-color: #83adad;
 }
 
 #disk {
@@ -155,11 +161,11 @@ label:focus {
 }
 
 #backlight {
-    background-color: #90b1b1;
+    background-color: #85ad85;
 }
 
 #network {
-    background-color: #2980b9;
+    background-color: #afaf00;
 }
 
 #network.disconnected {
@@ -167,7 +173,7 @@ label:focus {
 }
 
 #pulseaudio {
-    background-color: #f1c40f;
+    background-color: #d75f5f;
     color: #000000;
 }
 
@@ -185,6 +191,10 @@ label:focus {
     background-color: #f53c3c;
 }
 
+#custom-updates {
+    background-color: #d485ad;
+}
+
 #custom-media {
     background-color: #66cc99;
     color: #2a5c45;
@@ -200,7 +210,7 @@ label:focus {
 }
 
 #temperature {
-    background-color: #f0932b;
+    background-color: #d485ad;
 }
 
 #temperature.critical {
@@ -208,7 +218,7 @@ label:focus {
 }
 
 #tray {
-    background-color: #2980b9;
+    background-color: #8a8a8a;
 }
 
 #tray > .passive {
@@ -230,20 +240,20 @@ label:focus {
 }
 
 #mpd {
-    background-color: #66cc99;
-    color: #2a5c45;
+    background-color: #262626;
+    color: #ffffff;
 }
 
 #mpd.disconnected {
-    background-color: #f53c3c;
+    background-color: #d75f5f;
 }
 
 #mpd.stopped {
-    background-color: #90b1b1;
+    background-color: #262626;
 }
 
 #mpd.paused {
-    background-color: #51a37a;
+    background-color: #262626;
 }
 
 #language {

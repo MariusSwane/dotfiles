@@ -15,8 +15,8 @@
     separator_height = 2
     padding = 15
     horizontal_padding = 30
-    frame_width = 0
- frame_color = "#353131"
+    frame_width = 2
+    frame_color = "#afaf00"
     alignment = center
     #x = 15
     #y = 15
@@ -91,13 +91,13 @@
     #icon = ~/.local/share/arch.png
 
 [urgency_normal]
- background = "#282a38CC"
- foreground = "#dfdfdf"
+ background = "#262626"
+ foreground = "#ffffff"
     timeout = 5
 
 [urgency_critical]
- background = "#282a38CC"
- foreground = "#dfdfdf"
+ background = "#d75f5f"
+ foreground = "#ffffff"
     timeout = 0
 # geometry = "400x60+1100+450"
 
