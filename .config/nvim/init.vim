@@ -182,11 +182,12 @@ nnoremap Y y$
 :cabbrev help tab help
 
 " Insert empty new linw without exiting normal mode
-nnoremap <LocalLeader>o o<ESC>0"_D
-nnoremap <LocalLeader>O O<ESC>0"_D
+nnoremap <Leader>o o<ESC>0"_D
+nnoremap <Leader>O O<ESC>0"_D
 
 " Easier reformatting
-nnoremap Q gq
+nnoremap Q gqip
+nnoremap W gwip
 
 "============================================================================="
 "	Permanent macros						      "
@@ -250,6 +251,8 @@ Plug 'ycm-core/YouCompleteMe'
 Plug 'junegunn/gv.vim'
 
 Plug 'airblade/vim-gitgutter'
+
+Plug 'jamessan/vim-gnupg'
 
 call plug#end()
 

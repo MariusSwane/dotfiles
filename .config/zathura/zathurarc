@@ -12,4 +12,4 @@ set zoom-step 2
 
 #map p exec "lpr '$FILE' -P Bro -o print-quality=5 -o media=a4 -o sides=two-sided-long-edge 
 
-map p exec "printscript '$FILE'"
+map p exec "/home/mariussw/scripts/printscript '$FILE'"

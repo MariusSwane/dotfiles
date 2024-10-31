@@ -217,7 +217,7 @@ alias synology='kitten ssh -X -C 192.168.10.151 -p 837 -l marius -t "zsh --login
 # Git aliases
 alias g='git'
 alias gst='git status'
-alias gc='git commit'
+alias gc='git commit -m '
 alias ga='git add'
 alias gpl='git pull'
 alias gpom='git pull origin master'
