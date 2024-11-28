@@ -182,8 +182,8 @@ nnoremap Y y$
 :cabbrev help tab help
 
 " Insert empty new linw without exiting normal mode
-nnoremap <Leader>o o<ESC>0"_D
-nnoremap <Leader>O O<ESC>0"_D
+nnoremap ø o<ESC>0"_D
+nnoremap Ø O<ESC>0"_D
 
 " Easier reformatting
 nnoremap Q gqip
@@ -299,12 +299,12 @@ augroup end
 autocmd FileType r setlocal formatoptions+=t
 
 "============================================================================="
-" UltiSnips Settings
+"UltiSnips Settings
 
 " Set ultisnips triggers and other Ultisnipps things
 let g:UltiSnipsExpandTrigger="<enter>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-n>"
+let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
 
