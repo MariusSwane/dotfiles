@@ -1,3 +1,4 @@
+@import "colors.css";
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: FreeMono, FontAwesome, Roboto, Helvetica, Arial, sans-serif;
@@ -6,9 +7,9 @@
 }
 
 window#waybar {
-    background-color: rgba(43, 48, 59, 0.5);
+    background-color: alpha(@base00, 0.5);
     border-bottom: 3px rgba(43, 48, 59, 0.5);
-    color: #ffffff;
+    color: @base07;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -51,25 +52,27 @@ button:hover {
 
 #workspaces button {
     padding: 0 5px;
-    background-color: #262626;
-    color: #ffffff;
+    background-color: @base0E;
+    color: @base00;
 }
 
 #workspaces button:hover {
-    background: rgba(0, 0, 0, 0.2);
+    background: @base0D;
+    color: @base00;
 }
 
 #workspaces button.active {
-    background-color: #64727D;
+    background-color: @base0B;
     box-shadow: inset 0 -3px #ffffff;
+    color: @base07;
 }
 
 #workspaces button.urgent {
-    background-color: #eb4d4b;
+    background-color: @base0A;
 }
 
 #mode {
-    background-color: #64727D;
+    background-color: @base07;
     border-bottom: 3px solid #ffffff;
 }
 
@@ -91,11 +94,12 @@ button:hover {
 #custom-updates,
 #mpd {
     padding: 0 10px;
-    color: #ffffff;
+    color: @base07;
 }
 
 #window {
-    background-color: #8a8a8a;
+    background-color: @base07;
+    color: @base00;
 }
 
 #workspaces {
@@ -113,17 +117,18 @@ button:hover {
 }
 
 #clock {
-    background-color: #8a8a8a;
+    background-color: @base09;
+    color: @base07;
 }
 
 #battery {
-    background-color: #dab997;
-    color: #000000;
+    background-color: @base07;
+    color: @base01;
 }
 
 #battery.charging, #battery.plugged {
-    color: #ffffff;
-    background-color: #afaf00;
+    color: @base07;
+    background-color: @base0F;
 }
 
 @keyframes blink {
@@ -134,8 +139,8 @@ button:hover {
 }
 
 #battery.critical:not(.charging) {
-    background-color: #d75f5f;
-    color: #ffffff;
+    background-color: @base0A;
+    color: @base05;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
@@ -148,38 +153,37 @@ label:focus {
 }
 
 #cpu {
-    background-color: #ffaf00;
-    color: #000000;
+    background-color: @base08;
+    color: @base00;
 }
 
 #memory {
-    background-color: #83adad;
+    background-color: @base0C;
 }
 
 #disk {
-    background-color: #964B00;
+    background-color: @base0B;
 }
 
 #backlight {
-    background-color: #85ad85;
+    background-color: @base08;
+    color: @base00;
 }
 
 #network {
-    background-color: #afaf00;
+    background-color: @base0B;
 }
 
 #network.disconnected {
-    background-color: #f53c3c;
+    background-color: @base0A;
 }
 
 #pulseaudio {
-    background-color: #d75f5f;
-    color: #000000;
+    background-color: @base0C;
 }
 
 #pulseaudio.muted {
-    background-color: #90b1b1;
-    color: #2a5c45;
+    background-color: @base0C;
 }
 
 #wireplumber {
@@ -192,7 +196,8 @@ label:focus {
 }
 
 #custom-updates {
-    background-color: #d485ad;
+    background-color: @base0E;
+    color: @base00;
 }
 
 #custom-media {
@@ -218,7 +223,8 @@ label:focus {
 }
 
 #tray {
-    background-color: #8a8a8a;
+    background-color: @base0C;
+    color: @base00;
 }
 
 #tray > .passive {
@@ -240,20 +246,23 @@ label:focus {
 }
 
 #mpd {
-    background-color: #262626;
-    color: #ffffff;
+    background-color: @base0D;
+    color: @base00;
 }
 
 #mpd.disconnected {
-    background-color: #d75f5f;
+    background-color: @base0A;
+    color: @base00;
 }
 
 #mpd.stopped {
-    background-color: #262626;
+    background-color: @base0D;
+    color: @base00;
 }
 
 #mpd.paused {
-    background-color: #262626;
+    background-color: @base0D;
+    color: @base00;
 }
 
 #language {

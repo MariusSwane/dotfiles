@@ -22,10 +22,15 @@ application/x-extension-xhtml=org.qutebrowser.qutebrowser.desktop;userapp-Pulse 
 application/x-extension-xht=org.qutebrowser.qutebrowser.desktop;userapp-Pulse Browser-RAU6R2.desktop;
 application/mbox=nvim.desktop;
 image/jp2=nsxiv.desktop;
-image/jpeg=nsxiv.desktop;
-application/vnd.microsoft.portable-executable=wine.desktop;
+image/jpeg=feh.desktop;org.darktable.darktable.desktop;nsxiv.desktop;
+application/vnd.microsoft.portable-executable=nvim.desktop;wine.desktop;
 application/x-msdownload=wine.desktop;
 application/x-openvpn-profile=gvim.desktop;
+application/zip=J7Z.desktop;peazip.desktop;
+x-scheme-handler/msteams=teams.desktop
+application/x-7z-compressed=peazip.desktop;
+text/x-log=nvim.desktop;
+application/x-wine-extension-ini=nvim.desktop;
 
 [Default Applications]
 application/msword=libreoffice-writer.desktop;
@@ -84,3 +89,4 @@ application/x-extension-shtml=userapp-Pulse Browser-RAU6R2.desktop
 application/x-extension-xhtml=userapp-Pulse Browser-RAU6R2.desktop
 application/x-extension-xht=userapp-Pulse Browser-RAU6R2.desktop
 image/jp2=nsxiv.desktop
+application/zip=peazip.desktop

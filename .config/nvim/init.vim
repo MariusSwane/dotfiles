@@ -371,6 +371,7 @@ let g:lightline = {
       \ 'component_function': {
       \   'wordcount': 'WordCount',
       \ },
+      \ 'colorscheme': 'wombat',
       \ }
 
 "============================================================================="
@@ -397,7 +398,7 @@ require('gruvbox').setup({
 })
 EOF
 
-colorscheme gruvbox
+colorscheme base16
 
 "============================================================================="
 "Startify customization

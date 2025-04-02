@@ -164,6 +164,7 @@ antigen apply
 export EDITOR="nvim"
 export BROWSER="qutebrowser"
 export TERMINAL="kitty"
+export MANPAGER="nvim +Man!"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_Data_HOME="$HOME/.local/share"
@@ -208,12 +209,17 @@ alias mpdas="mpdas -d -c $XDG_CONFIG_HOME/mpdasrc"
 alias SUAW='potato -s -w 45 -b 15 | toilet -t -f "ANSI Shadow"'
 alias yt='ytfzf --subs=1 -t'
 alias zathura='devour zathura'
-alias sxiv='devour sxiv'
+alias nsxiv='devour nsxiv-rifle'
 alias eza='eza --group-directories-first'
 # Copy output of last command
 alias c='"$(history | tail -2 | sed "s/  [0-9]*  //;2d")" > /tmp/cmdoutput && cat /tmp/cmdoutput | xsel -b && notify-send "Terminal" "Ouput Copied"'
 alias ntnu='kitten ssh -X -C mariussw@login.ansatt.ntnu.no -t "zsh --login"'
 alias synology='kitten ssh -X -C 192.168.10.151 -p 837 -l marius -t "zsh --login"'
+alias arch="wikiman"
+alias archwiki="wikiman"
+alias cat="bat"
+alias find="fd"
+
 # Git aliases
 alias g='git'
 alias gst='git status'

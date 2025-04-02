@@ -4,7 +4,7 @@ show-icons: true;
 lines: 4;
 }
 
-@theme "~/.cache/wal/colors-rofi-dark.rasi"
+@import "~/.config/rofi/themes/run.rasi"
 
 element-text, element-icon {
     background-color: inherit;
