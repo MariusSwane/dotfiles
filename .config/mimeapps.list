@@ -31,6 +31,7 @@ x-scheme-handler/msteams=teams.desktop
 application/x-7z-compressed=peazip.desktop;
 text/x-log=nvim.desktop;
 application/x-wine-extension-ini=nvim.desktop;
+application/xml=pulse-browser.desktop;nvim.desktop;
 
 [Default Applications]
 application/msword=libreoffice-writer.desktop;

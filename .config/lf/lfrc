@@ -3,7 +3,7 @@ set shellopts '-euy'
 set ifs "\n"
 set filesep "\n"  # default already
 set cleaner '~/.config/lf/cleaner'
-set previewer '~/.config/lf/scope'
+set previewer '~/.config/lf/previewer'
 set scrolloff 10
 set icons
 
@@ -23,9 +23,9 @@ ${{
 
 # Set wallpaper
 cmd wall ${{
-	identify $f &&
+	#identify $f &&
 	cp $f $HOME/.local/share/bg.jpg
-	fehbg
+	hyprctl hyprpaper reload ,"$f"
 }}
 
 # Trash file
@@ -148,6 +148,6 @@ map x chmod
 map b mark-load
 map e $$EDITOR $f
 map . set hidden!
-map w wall
+map W wall
 map r reload
 map ? halp
