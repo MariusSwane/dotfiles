@@ -1,0 +1,111 @@
+/* Top Left Icons */
+span.material-icons.arrow_back, span.material-icons.home, span.material-icons.menu {
+    color: #a89984;
+}
+
+/* Top Right Icons */
+span.material-icons.sync_disabled, span.material-icons.sync_enabled, span.material-icons.cast, span.material-icons.search, span.material-icons.person {
+  color: #a89984;
+}
+
+ /* Background Color */
+.backgroundContainer, .dialog, html { background-color: #1d2021; }
+
+ /* Drawer Color */
+.skinHeader, .mainDrawer, .emby-input, .emby-textarea, .emby-select, .navMenuOption-selected, .cardBox, .paperList { background: #282828; }
+
+ /* Console Panel Color */
+.mainDrawer-scrollContainer { color: #a89984; }
+
+ /* General Page Custom Color */
+.dashboardGeneralForm { color: #a89984; }
+
+/* Record/Record Series Icon Color */
+span.material-icons.recordingIcon.fiber_manual_record, span.material-icons.recordingIcon.fiber_smart_record {
+  color: #cc241d;
+}
+
+/* 
+    ////////////////////////////////////////////////////////////////////
+        Guide Colors
+    ////////////////////////////////////////////////////////////////////
+*/
+
+ /* Guide - Date Active Color */
+button.emby-tab-button.guide-date-tab-button.emby-button.emby-tab-button-active {
+    color: #fcfcfc;
+}
+
+ /* Guide - Date Color */
+button.emby-tab-button.guide-date-tab-button.emby-button {
+    color: #fcfcfc75;
+}
+
+ /* Guide - New Notification Color */
+span.newTvProgram.guideProgramIndicator, div.mediaInfoProgramAttribute.mediaInfoItem.newTvProgram { 
+    background-color: #689d6a;
+    color: #dab997;
+}
+
+ /* Guide - Play Button Color */
+button.raised.btnPlay.block.formDialogFooterItem.button-submit.emby-button {
+   background-color: #458588; 
+   color: #dab997;
+}
+
+ /* Guide - Channel Cell Color */
+button.guide-channelHeaderCell.itemAction {
+    background-color: #665c54;
+}
+
+ /* Guide - Inactive Program Color */
+button.programCell.itemAction {
+    background-color: #928374;
+}
+
+ /* Guide - Empty Program Color */
+div.channelPrograms {
+    background-color: #1d202175;
+}
+
+.mdl-slider-background-lower {
+background-color: #d75f5f !important
+}
+
+.button-submit {
+    color: #d75f5f !important;
+}
+
+/*Border Highlight*/
+.emby-input, .emby-textarea, .emby-select { border-color: #d75f5f !important; }
+.emby-input:focus, .emby-textarea:focus, .emby-select-withcolor { border-color: #d75f5f !important; }
+
+.raised {
+    color: #fff !important;
+    background-color: #d75f5f !important;
+}
+
+.paper-icon-button-light {
+    color: #a89984;
+}
+
+.detailButton-content {
+   color: #d75f5f;
+}
+
+/*Checkbox Selector*/
+.emby-checkbox:checked + span + .checkboxOutline {
+	border-color: #d75f5f !important;
+}
+.emby-checkbox:checked + span + .checkboxOutline, .itemProgressBarForeground {
+	background-color: #d75f5f !important;
+}
+
+/*Spinner*/
+.mdl-spinner__layer-1 {
+	border-color: #d90000 !important;
+}
+*/
+
+.mdl-slider::-webkit-slider-thumb { color: #d75f5f; }
+.mdl-slider::-webkit-slider-thumb { background: #d75f5f; }
