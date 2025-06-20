@@ -71,7 +71,7 @@ _comp_options+=(globdots)		# Include hidden files.
 # Completion from history
 autoload -Uz history-beginning-search-menu
 zle -N history-beginning-search-menu
-bindkey '^X^X' history-beginning-search-menu
+bindkey '^X' history-beginning-search-menu
 
 # Use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char
@@ -165,6 +165,7 @@ export EDITOR="nvim"
 export BROWSER="qutebrowser"
 export TERMINAL="kitty"
 export MANPAGER="nvim +Man!"
+export PAGER=/usr/local/bin/moar
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_Data_HOME="$HOME/.local/share"
@@ -182,6 +183,9 @@ export PF_INFO="ascii os host kernel pkgs memory wm shell editor palette"
 export PASSWORD_STORE_ENABLE_EXTENSIONS="true"
 #export QT_STYLE_OVERRIDE="Adwaita-Qt"
 export QT_QPA_PLATFORMTHEME=qt5ct
+export KITTY_SHELL_INTEGRATION="enabled"
+
+autoload -Uz -- $XDG_CONFIG_HOME/kitty/kitty-integration; kitty-integration; unfunction kitty-integration
 
 ##############################
 #####    ALIASES    ##########
@@ -205,20 +209,22 @@ alias lf='lfcd'
 alias tc='tty-clock -c'
 alias ncmp='ncmpcpp ; yams'
 alias mpdas="mpdas -d -c $XDG_CONFIG_HOME/mpdasrc"
-#alias cc="CALCURSE_CALDAV_PASSWORD=$(pass show seedboxes.cc | head -n1) calcurse-caldav"
 alias SUAW='potato -s -w 45 -b 15 | toilet -t -f "ANSI Shadow"'
 alias yt='ytfzf --subs=1 -t'
-alias zathura='devour zathura'
-alias nsxiv='devour nsxiv-rifle'
+alias nsxiv='nsxiv-rifle'
 alias eza='eza --group-directories-first'
+alias lftpseedbox='lftp mariuswis@mariuswis.cloud.seedboxes.cc:2222'
 # Copy output of last command
 alias c='"$(history | tail -2 | sed "s/  [0-9]*  //;2d")" > /tmp/cmdoutput && cat /tmp/cmdoutput | xsel -b && notify-send "Terminal" "Ouput Copied"'
 alias ntnu='kitten ssh -X -C mariussw@login.ansatt.ntnu.no -t "zsh --login"'
 alias synology='kitten ssh -X -C 192.168.10.151 -p 837 -l marius -t "zsh --login"'
 alias arch="wikiman"
 alias archwiki="wikiman"
-alias cat="bat"
+#alias cat="bat -p --pager never"
+alias bat="bat -p --pager never"
 alias find="fd"
+alias dsent='sent -f "CMU Serif" -c "#bdae93" -b "#282828"'
+alias lisent='sent -f "CMU Serif" -c "#282828" -b "#bdae93"'
 
 # Git aliases
 alias g='git'

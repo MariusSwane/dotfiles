@@ -306,7 +306,7 @@ let g:UltiSnipsExpandTrigger="<enter>"
 let g:UltiSnipsJumpForwardTrigger="<c-n>"
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 
-let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/UltiSnips']
 
 "Set UltiSnips file types
 "au FileType todo :UltiSnipsAddFiletypes todo

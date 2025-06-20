@@ -9,7 +9,8 @@
     // Choose the order of the modules
     "modules-left": ["hyprland/workspaces","hyprland/window"],
     "modules-center": ["clock"],
-    "modules-right": ["mpd", "pulseaudio", "custom/updates", "network", "backlight", "battery", "tray"],
+    "modules-right": ["mpd", "pulseaudio", "custom/updates", "network",
+    "backlight", "disk", "battery", "tray"],
     // Modules configuration
     // "hyprland/workspaces": {
     //     "disable-scroll": true,
@@ -38,6 +39,9 @@
     "hyprland/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
+    "hyprland/window": {
+	    "icon": true
+    },
     "hyprland/scratchpad": {
         "format": "{icon} {count}",
         "show-empty": false,
@@ -46,7 +50,7 @@
         "tooltip-format": "{app}: {title}"
     },
     "mpd": {
-        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
+        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {title} ",
         "format-disconnected": "Disconnected ",
         "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
         "unknown-tag": "N/A",
@@ -55,7 +59,6 @@
             "on": " "
         },
         "random-icons": {
-            "off": "<span color=\"#f53c3c\"></span> ",
             "on": " "
         },
         "repeat-icons": {
@@ -68,7 +71,8 @@
             "paused": "",
             "playing": ""
         },
-        "tooltip-format": "MPD (connected)",
+        "on-click": "mpc toggle",
+        "tooltip-format": "{album}",
         "tooltip-format-disconnected": "MPD (disconnected)"
     },
     "idle_inhibitor": {
@@ -126,9 +130,9 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-wifi": "{signalStrength}% ",
         "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
+        "tooltip-format": "{essid} on {ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
@@ -165,11 +169,15 @@
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     },
     "custom/updates":{
-	"format": " 📦 {} ",
+	"format": " {} ",
         "exec": "checkupdates | wc -l",
         "exec-if": "[[ $(checkupdates | wc -l) ]]",
         "interval": 150,
 	"on-click": "kitty --class myfloat -e yay"
-    }
+    },
+    "disk": {
+	"interval": 30,
+	"format": " {free}"
+	}
 }
 

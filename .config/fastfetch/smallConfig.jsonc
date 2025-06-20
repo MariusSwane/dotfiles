@@ -1,0 +1,35 @@
+{
+    "logo": {
+	"type": "small",
+        "padding": {
+            "top": 2
+        }
+    },
+    "modules": [
+        "title",
+        "separator",
+        {
+            "type": "os",
+            "format": "{3} {12}"
+        },
+        "kernel",
+        "shell",
+        "de",
+        "wm",
+        "wmtheme",
+        "terminal",
+        {
+            "type": "terminalfont",
+            "format": "{/2}{-}{/}{2}{?3} {3}{?}"
+        },
+        {
+            "type": "memory",
+            "format": "{/1}{-}{/}{/2}{-}{/}{} / {}"
+        },
+        "break",
+	{
+            "type": "colors",
+	    "symbol": "circle"
+	}
+    ]
+}

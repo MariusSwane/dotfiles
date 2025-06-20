@@ -1,0 +1,101 @@
+{
+    "logo": {
+	//"type": "small",
+        "padding": {
+            "top": 2
+        }
+    },
+    "modules": [
+        {
+            "type": "custom",
+            "format": "\u001b[31m┌──────────────────Software──────────────────┐"
+        },
+        {
+            "key": " OS",
+            "keyColor": "33",
+            "type": "os",
+            "format": "{3}"
+        },
+        {
+            "type": "kernel",
+            "key": " ├ ",
+            "keyColor": "33"
+        },
+        {
+            "type": "terminal",
+            "key": " ├ ",
+            "keyColor": "33"
+        },
+        {
+            "type": "shell",
+            "key": " ├ ",
+            "keyColor": "33"
+        },
+        {
+            "type": "wm",
+            "key": " ├ ",
+            "keyColor": "33"
+        },
+        {
+            "type": "packages",
+            "key": " └󰏖 ",
+            "keyColor": "33"
+        },
+        {
+            "type": "custom",
+            "format": "\u001b[31m└────────────────────────────────────────────┘"
+        },
+	"break",
+	{
+            "type": "colors",
+            "paddingLeft": 15,
+	    "symbol": "circle"
+	},
+	"break",
+        {
+            "type": "custom",
+            "format": "\u001b[31m┌──────────────────Hardware──────────────────┐"
+        },
+        {
+            "type": "host",
+            "key": "󰌢 PC",
+            "keyColor": "32",
+            "format": "{/1}{-}{/}{/2}{-}{/}{} ({})"
+        },
+        {
+            "type": "cpu",
+            "key": " ├󰻠 ",
+            "keyColor": "32",
+	    "format": "{/2}{-}{/}{2}{?3} {3}{?}"
+        },
+        {
+            "type": "gpu",
+            "key": " ├󰍛 ",
+            "keyColor": "32",
+            "format": "{/1}{-}{/}{/2}{-}{/}{} / {}"
+        },
+        {
+            "type": "disk",
+            "key": " ├ ",
+            "keyColor": "32",
+            "format": "{/1}{-}{/}{/2}{-}{/}{} / {}"
+        },
+        {
+            "type": "memory",
+            "key": " ├󰑭 ",
+            "keyColor": "32",
+            "format": "{/1}{-}{/}{/2}{-}{/}{} / {}"
+        },
+        {
+            "type": "sound",
+            "key": " └ ",
+            "keyColor": "32",
+	    "format": "{2}"
+        },
+        {
+            "type": "custom",
+            "format": "\u001b[31m└────────────────────────────────────────────┘"
+        }
+    ]
+}
+

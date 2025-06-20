@@ -97,7 +97,7 @@ cmd open ${{
 cmd mkdir $mkdir -p "$(echo $* | tr ' ' '\ ')"
 
 # Bulk rename
-cmd bulkrename $vidir
+cmd bulkrename $edir
 
 # Extract archives
 cmd extract ${{

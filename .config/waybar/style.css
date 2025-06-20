@@ -7,7 +7,7 @@
 }
 
 window#waybar {
-    background-color: alpha(@base00, 0.5);
+    background-color: alpha(@base00, 0);
     border-bottom: 3px rgba(43, 48, 59, 0.5);
     color: @base07;
     transition-property: background-color;
@@ -98,7 +98,7 @@ button:hover {
 }
 
 #window {
-    background-color: @base07;
+    background-color: @base0A;
     color: @base00;
 }
 
@@ -162,16 +162,18 @@ label:focus {
 }
 
 #disk {
-    background-color: @base0B;
+    background-color: @base0A;
+    color: @base00;
 }
 
 #backlight {
     background-color: @base08;
-    color: @base00;
+    color: @base07;
 }
 
 #network {
     background-color: @base0B;
+    color: @base00;
 }
 
 #network.disconnected {
@@ -180,6 +182,7 @@ label:focus {
 
 #pulseaudio {
     background-color: @base0C;
+    color: @base00;
 }
 
 #pulseaudio.muted {
@@ -223,8 +226,7 @@ label:focus {
 }
 
 #tray {
-    background-color: @base0C;
-    color: @base00;
+    background-color: @base0D;
 }
 
 #tray > .passive {

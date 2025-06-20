@@ -1,0 +1,9 @@
+zoom_in	plus
+zoom_out minus
+next_img j Right
+prev_img k Left
+scroll_left H
+scroll_right L
+scroll_up K
+scroll_down J
+toggle_auto_zoom z

@@ -19,7 +19,7 @@ playlist_display_mode = "columns"
 #song_status_format = " $6%a $7⟫⟫ $3%t $7⟫⟫ $4%b "
 
 ## Navigation ##
-cyclic_scrolling = "yes"
+cyclic_scrolling = "no"
 header_text_scrolling = "yes"
 jump_to_now_playing_song_at_start = "yes"
 lines_scrolled = "2"
@@ -48,7 +48,7 @@ enable_window_title = "yes"
 empty_tag_marker = ""
 
 ## Notification ##
-execute_on_song_change =  notifyMusic
+execute_on_song_change =  notifyMusic & bum &
 
 ## Lyrics ##
-lyrics_fetchers = azlyrics, genius, musixmatch, sing365, metrolyrics, justsomelyrics, jahlyrics, plyrics, tekstowo, zeneszoveg, internet
+lyrics_fetchers = justsomelyrics, genius, jahlyrics, plyrics, tekstowo, zeneszoveg, internet
